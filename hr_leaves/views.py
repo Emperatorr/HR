@@ -245,6 +245,66 @@ def list_employ(request):
     return render(request, 'hr_leaves/list_employees.html', {'all_user':all_user})
 
 @login_required
+def register(request):
+    form = EmployeForm()
+
+    if request.method == 'POST':
+        form = EmployeForm(request.POST)
+        typ_conge = Type_conge.objects.all()
+
+        if form.is_valid():
+            empoly = Employe()
+            
+
+            empoly.matricule = form.cleaned_data['matricule']
+            empoly.first_name = form.cleaned_data['first_name']
+            empoly.last_name = form.cleaned_data['last_name']
+            empoly.email = form.cleaned_data['email']
+            empoly.genre = form.cleaned_data['genre']
+            empoly.fonction = form.cleaned_data['fonction']
+            empoly.departement = form.cleaned_data['departement']
+            empoly.phone1 = form.cleaned_data['phone1']
+            empoly.phone2 = form.cleaned_data['phone2']
+            empoly.address = form.cleaned_data['address']
+
+            empoly.save()
+
+            for typ in Type_conge.objects.all():
+
+                conge = Conge()
+                
+                conge.employe = Employe.objects.last()
+                conge.type_conge = typ
+                conge.nombre_jour = 0
+                print(typ.indice)
+                conge.save()
+                print("end save")
+
+            messages.success(request, 'Vous avez bien ajouté un employé')
+            return redirect('employees')
+            
+        else:
+            print("not valid")
+
+    return render(request, 'hr_leaves/employe.html', {'form':form})
+
+def employe_details(request, emp_id):
+
+    employ = Employe.objects.get(id=emp_id)
+    try:
+        conges = Conge.objects.filter(employe=employ)
+    except Conge.DoesNotExist:
+        conges = None
+
+    return render(request, 'hr_leaves/employe_details.html', {'employ':employ, 'conges':conges})
+
+@login_required
+def list_employ(request):
+    all_user = Employe.objects.all()
+
+    return render(request, 'hr_leaves/list_employees.html', {'all_user':all_user})
+
+@login_required
 def user_account(request, user_id):
     company = User.objects.get(id=user_id)
     missions = Mission.objects.all()

@@ -70,9 +70,6 @@ class LoginForm(AuthenticationForm):
         )
 
 class DemandeForm(forms.ModelForm):
-    
-    # def __init__(self, *args, **kwargs):
-    #     super(DemandeForm, self).__init__(*args, **kwargs)
 
     class Meta:
         model = Demande
