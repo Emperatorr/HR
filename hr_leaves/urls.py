@@ -9,6 +9,7 @@ from .views import (
     create_success,
     delete_user,
     demande
+    acceuil
     )
 
 urlpatterns = [
@@ -21,5 +22,6 @@ urlpatterns = [
     url(r'^changement-de-mot-de-passe/$', change_password, name='change_password'),
     url(r'^creation-avec-success/$', create_success, name='create_success'),
     url(r'^creation-demande/$', demande, name='leave_request'),
+    url(r'^acceuil/$', acceuil, name='acceuil'),
     
 ]
