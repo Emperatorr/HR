@@ -102,8 +102,12 @@ the default password 1234. <br/>
 
 
 ## Setting cron job to send email
-In order to offert more user experiance, and avoid some timeout error when sending email by using google api, we're storing all email in our database and send them later by using a backend script every 2 minutes.
+In order to calculate automatically the employe leaves at the end of the month.
+set a cron job wich gonna run at the end of every month
 
+`
+* * 27-31 * * /scripts/calculate_leave.sh
+`
 Follow the instruction bellow to set this up in your server :
 
 ### 1. Python and Django
