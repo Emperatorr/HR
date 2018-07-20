@@ -52,21 +52,7 @@ class LoginView(generic.FormView):
         """
         Returns the supplied URL.
         """
-        if self.success_url:
-            self.request.user.is_agency = False
-            if self.request.user.is_agency:
-                url = reverse('agency', args=[self.request.user.id])
-            else:
-                url = reverse('user_missions')
-        else:
-            try:
-                url = self.object.get_absolute_url()
-            except AttributeError:
-                raise ImproperlyConfigured(
-                    "No URL to redirect to.  Either provide a url or define"
-                    " a get_absolute_url method on the Model."
-                )
-        return url
+        return reverse('leave_request')
 
     def form_valid(self, form):
         username = form.cleaned_data['username']
@@ -128,6 +114,21 @@ def change_password(request):
     return render(request, 'hr_leaves/change_password.html', {
         'form': form
         })
+
+@login_required
+def demande(request):
+    if request.method == 'POST':
+        form = DemandeForm(request, request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, _('Your request is successfuly sent'))
+            return redirect('leave_request', request.user)
+        else:
+            messages.error(request, _('Please correct the errors below!'))
+    else:
+        form = DemandeForm(request)
+    return render(request, 'hr_leaves/demande.html', {'form': form })
+
 
 @login_required
 def user_profile(request, user_id):

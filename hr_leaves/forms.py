@@ -68,3 +68,50 @@ class LoginForm(AuthenticationForm):
                 Submit('login', _('Log in'))
             )
         )
+
+class DemandeForm(forms.ModelForm):
+    
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+    class Meta:
+        model = Demande
+        fields = ('type_conge', 'nombre_jour', 'date_debut', 'date_fin')
+        widgets = {
+            'type_conge': forms.Select(attrs={
+                'placeholder': _('Type'),
+                'class': 'form-control'
+            }),
+            'nombre_jour': forms.fields.TextInput(attrs={
+                'placeholder': _('Nomber of day'),
+                'class': 'form-control',
+                'type': 'number',
+                'required': 'True',
+                'title' : _('A integer > 0')
+            }),
+             'date_debut': forms.fields.DateInput(attrs={
+                'type': 'date',
+                'class': 'form-date',
+                'required': 'true'
+            }),
+            'date_fin': forms.fields.DateInput(attrs={
+                'type': 'date',
+                'class': 'form-date',
+                'required': 'true'
+            })
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.helper = FormHelper()
+        self.helper.layout = Layout(
+            Fieldset(
+                _('Demande'),
+                Field('type_conge', id="type_conge-field", placeholder=_("type de conge")),
+                Field('status', id="status-field", placeholder=_("Your status"))
+            ),
+            ButtonHolder(
+                Submit('envoi', _('Envoyer'))
+            )
+        )

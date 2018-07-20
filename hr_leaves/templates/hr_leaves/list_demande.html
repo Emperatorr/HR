@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% load staticfiles %}
+
+{% block style %}
+  <style>
+    #edit {
+      color: blue;
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+
+  <h2 class="text-center">{% trans "Leave Requests List" %}</h2>
+  <div class="content">
+    <table class="table table-striped table-bordered" cellspacing="0" width="100%" id="datatable">
+      <thead>
+        <tr>
+          <th>{% trans "#" %}</th>
+          <th>{% trans "Type" %}</th>
+          <th>{% trans "Nomber of DAY" %}</th>
+          <th>{% trans "Start Date" %}</th>
+          <th>{% trans "End Date" %}</th>
+          <th>{% trans "Status" %}</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for demande in demandes %}
+            <tr>
+              <td></td>
+              <td>{{ demande.type_conge }}</td>
+              <td>{{ demande.nombre_jour}}</td>
+              <td>{{ demande.date_debut }}</td>
+              <td>{{ demande.date_fin }}</td>
+              <td>{{ demande.status }}</td>
+            </tr>
+            
+          {% endfor %}
+        {% endif %}
+      </tbody>
+    </table>
+  </div>
+
+{% endblock %}
