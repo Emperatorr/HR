@@ -9,9 +9,9 @@ from .views import (
     create_success,
     delete_user,
     add_department,
-    add_function
+    add_function,
     acceuil
-    )
+)
 
 urlpatterns = [
     url(r'^$', LoginView.as_view(), name='login'),
@@ -24,7 +24,6 @@ urlpatterns = [
     url(r'^creation-avec-success/$', create_success, name='create_success'),
     url(r'^add-department/$', add_department, name='department'),
     url(r'^add-function/$', add_function, name='function'),
-
     url(r'^acceuil/$', acceuil, name='acceuil'),
     
 ]
