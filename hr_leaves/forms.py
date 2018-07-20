@@ -89,14 +89,11 @@ class DepartementForm(forms.ModelForm):
 class FonctionForm(forms.ModelForm):
     class Meta:
         model = Fonction
-        fields = ['name', 'categorie']
+        fields = ['name']
 
         widgets = {
             'name': forms.TextInput(attrs={
                 'placeholder': 'Function name',
-                'class': 'form-control'
-            }),
-            'categorie': forms.Select(attrs={
                 'class': 'form-control'
             })
         }
@@ -134,6 +131,8 @@ class EmployeForm(forms.ModelForm):
     class Meta:
         model = Employe
         fields = ('matricule', 'first_name', 'last_name', 'phone1', 'phone2', 'address', 'email' )
+
+        exclude = ('is_manager', 'id_manager')
 
         widgets = {
             'matricule': forms.fields.TextInput(attrs={

@@ -66,7 +66,65 @@
         <p><strong class="label-text">{% trans "Address : " %}</strong> {{employ.address}}</p>
     </div>
     <div class="row">
-
+			{% if employ.id_manager is None and employ.is_manager == False %}
+				<div>
+					<a href="#" data-toggle="modal" data-target="#PopView" class="btn btn-lg btn-success" id="name">
+						{% trans "Add Manager for department" %}
+					</a>
+				</div>
+			{% elif employ.is_manager %}
+				<div>
+				<a href="#" data-toggle="modal" data-target="#PopView2" class="btn btn-lg btn-danger" id="name">
+						{% trans "Desabled Manager" %}
+					</a>
+				</div>
+			{% endif %}
+						  <div id="PopView2" class="modal fade" role="dialog">
+					<div class="modal-dialog">
+						<!-- Modal content -->
+						<form class="form-horizontal" method="post" action="{% url 'delete_manager' employ.id %}">
+								{% csrf_token %}  
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal">&times;</button>
+										<h4 class="modal-title">{% trans "Delete manager" %}</h4>
+									</div>
+									<div class="modal-body" id="user-details">
+										<h3>
+											Do you want to delete this manager ?
+										</h3>
+									</div>
+									<div class="modal-footer">
+										<button type="submit" class="btn btn-success">{% trans "yes" %}</button>
+										<button type="button" class="btn btn-primary" data-dismiss="modal">{% trans "No" %}</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+			  <div id="PopView" class="modal fade" role="dialog">
+					<div class="modal-dialog">
+						<!-- Modal content -->
+						<form class="form-horizontal" method="post" action="{% url 'add_manager' employ.id %}">
+								{% csrf_token %}  
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal">&times;</button>
+										<h4 class="modal-title">{% trans "Add manager" %}</h4>
+									</div>
+									<div class="modal-body" id="user-details">
+										<h3>
+											Do you want add this manage ?
+										</h3>
+									</div>
+									<div class="modal-footer">
+										<button type="submit" class="btn btn-success">{% trans "yes" %}</button>
+										<button type="button" class="btn btn-primary" data-dismiss="modal">{% trans "No" %}</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
 
     <h2 class="text-center">{% trans "list of leave" %}</h2>
 

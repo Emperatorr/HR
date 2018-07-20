@@ -20,6 +20,8 @@ from .views import (
     register,
     list_employ,
     employe_details,
+    add_manager,
+    delete_manager
     )
 
 urlpatterns = [
@@ -38,6 +40,9 @@ urlpatterns = [
 
     url(r'^update-function/(?P<function_id>[0-9]+)$', update_function, name='update_function'),
     url(r'^update-departement/(?P<departement_id>[0-9]+)$', update_departement, name='update_departement'),
+
+    url(r'^add-manager/(?P<employ_id>[0-9]+)$', add_manager, name='add_manager'),
+     url(r'^delete-manager/(?P<employ_id>[0-9]+)$', delete_manager, name='delete_manager'),
     
     url(r'^creation-demande/$', demande, name='leave_request'),
     url(r'^all-demande/$', all_demande, name='all_demande'),
