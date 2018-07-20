@@ -178,3 +178,6 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     )
 }
+
+ROLEPERMISSIONS_MODULE = 'hr_leaves.roles'
+ROLEPERMISSIONS_REDIRECT_TO_LOGIN = True
