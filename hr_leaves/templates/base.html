@@ -311,13 +311,11 @@
 						<div id="navbar" class="navbar-collapse collapse">
 							<ul class="nav navbar-nav navbar-right">
 								<li><a id="missions" href="{% url 'acceuil' %}">{% trans "Home" %}</a></li>
-								<li>
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{% trans "Employee" %}<b class="caret"></b></a>
+								<li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{% trans "Employee" %}<span class="caret"></span></a>
                                         <ul class="dropdown-menu">
                                         <li><a href="{% url 'register' %}">{% trans "registration" %}</a></li>
                                         <li><a href="{% url 'employees' %}">{% trans "list" %}</a></li>
-                                                    
-                                        
                                         </ul>
                                     
                                 </li>
@@ -328,8 +326,8 @@
 									</a>
 									<ul class="dropdown-menu">
 										{% if user.is_admin %}
-											<li><a id="leave_request" href="{% url 'leave_request' %}">{% trans "New Leave request" %}</a></li>
-											<li><a id="all_demande" href="{% url 'all_demande' %}">{% trans "All request" %}</a></li>
+											<li><a href="{% url 'leave_request' %}">{% trans "New Leave request" %}</a></li>
+											<li><a href="{% url 'all_demande' %}">{% trans "All request" %}</a></li>
 										{% endif %}
 										
 									</ul>
