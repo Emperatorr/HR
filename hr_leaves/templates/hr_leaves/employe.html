@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block style %}
+   <style type="text/css">
+     .btn-send {
+	  background-color: #337ab7 !important; 
+	  color: #FFFFFF;
+      }
+
+   	 #_login {
+   	 	color: #F0A2CD;
+   	 }
+
+   	 #form {
+   	 	margin-top: 1%;
+   	 }
+
+   	 .well {
+   	 	background: rgba(255, 255, 255, 1);
+		opacity: 0.8;
+   	 }
+
+   	 .head {
+   	 	margin-top: 1%;
+		padding: 0;
+   	 }
+	 .head p a {
+		background-color: transparent;
+		color: #337ab7;
+		text-decoration: none;
+		padding: 3px;
+	 }
+	 .head p a:hover,
+	 .head p a:active {
+		background: #337ab7;
+		color: white;
+		border-radius: 3px;
+	 }
+	 .buttonHolder {
+		text-align: left;
+	 }
+	 .buttonHolder input{
+	    font-weight: bold;
+	    font-size: 100%;
+	 }
+	 .buttonHolder input:hover {
+	   cursor: pointer;
+	 }
+   </style>
+{% endblock %}
+
+{% block content %}
+	<h2 class="text-center">{% trans "Add employe" %}</h2>
+    <div class="row">
+        <form class="form-horizontal" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label class="col-sm-4 control-label">{% trans "Matricule :" %}</label>
+                <div class="col-sm-5">
+                    {{form.matricule}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">{% trans "First name :" %}</label>
+                <div class="col-sm-5">
+                    {{form.first_name}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">{% trans "Last name :" %}</label>
+                <div class="col-sm-5">
+                    {{form.last_name}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">{% trans "Mail :" %}</label>
+                <div class="col-sm-5">
+                    {{form.email}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">{% trans "Gender :" %}</label>
+                <div class="col-sm-5">
+                    {{form.genre}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">{% trans "Function :" %}</label>
+                <div class="col-sm-5">
+                    {{form.fonction}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">{% trans "Department :" %}</label>
+                <div class="col-sm-5">
+                    {{form.departement}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">{% trans "Phone 1 ☎️ :" %}</label>
+                <div class="col-sm-5">
+                    {{form.phone1}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">{% trans "Phone 2 ☎️ :" %}</label>
+                <div class="col-sm-5">
+                    {{form.phone2}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">{% trans "Address :" %}</label>
+                <div class="col-sm-5">
+                    {{form.address}}
+                </div>
+            </div>
+            <div class="form-group text-center">
+                <input class="btn btn-success btn-lg" type="submit" value="Submit">
+                <a class="btn btn-warning btn-lg" href="{% url 'employees' %}">Back</a>
+            </div>
+        </form>
+    </div>
+{% endblock content %}
+{% block javascript %}
+	<script>
+		$("input[name=passport_number]").focusout(function () {
+				if ($(this).val().length < 7) {
+					$(this).addClass('error')
+				} else {
+					$(this).removeClass('error')
+				}
+			})
+			$("form").on('submit', function (e) {
+				if ($("input[name=passport_number]").val().length < 7) {
+					$("input[name=passport_number]").addClass('error')
+					return false
+				} else {
+					$("input[name=passport_number]").removeClass('error')
+					return true
+				}
+			})
+	</script>
+{% endblock javascript%}

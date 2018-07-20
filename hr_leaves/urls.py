@@ -16,8 +16,11 @@ from .views import (
     update_departement,
     demande,
     all_demande,
-    acceuil
-)
+    acceuil,
+    register,
+    list_employ,
+    employe_details,
+    )
 
 urlpatterns = [
     url(r'^$', LoginView.as_view(), name='login'),
@@ -39,5 +42,8 @@ urlpatterns = [
     url(r'^creation-demande/$', demande, name='leave_request'),
     url(r'^all-demande/$', all_demande, name='all_demande'),
     url(r'^acceuil/$', acceuil, name='acceuil'),
+    url(r'^register/$', register, name='register'  ),
+    url(r'^list_employe/$', list_employ, name='employees'),
+    url(r'^employe_details/(?P<emp_id>[0-9]+)$', employe_details, name='employe_details')
     
 ]

@@ -306,6 +306,14 @@
 								<li><a id="missions" href="{% url 'department' %}">{% trans "Departments" %}</a></li>
 								<li><a href="{% url 'function' %}">{% trans "Functions" %}</a></li>
 								<li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{% trans "Employee" %}<span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                        <li><a href="{% url 'register' %}">{% trans "registration" %}</a></li>
+                                        <li><a href="{% url 'employees' %}">{% trans "list" %}</a></li>
+                                        </ul>
+                                    
+                                </li>
+								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 										<span class="glyphicon glyphicon-user"></span> 
 										{% trans "Leaves" %}
@@ -313,8 +321,8 @@
 									</a>
 									<ul class="dropdown-menu">
 										{% if user.is_admin %}
-											<li><a id="leave_request" href="{% url 'leave_request' %}">{% trans "New Leave request" %}</a></li>
-											<li><a id="all_demande" href="{% url 'all_demande' %}">{% trans "All request" %}</a></li>
+											<li><a href="{% url 'leave_request' %}">{% trans "New Leave request" %}</a></li>
+											<li><a href="{% url 'all_demande' %}">{% trans "All request" %}</a></li>
 										{% endif %}
 										
 									</ul>
