@@ -8,17 +8,14 @@ from .views import (
     change_password,
     create_success,
     delete_user,
-<<<<<<< HEAD
     add_department,
     add_function,
     delete_function,
     delete_department,
     update_function,
     update_departement,
-=======
     demande,
     all_demande,
->>>>>>> 6fb30cb3e80b07efaed20b977f7e7eda2db0ef19
     acceuil
 )
 
