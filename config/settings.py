@@ -68,7 +68,7 @@ INSTALLED_APPS = (
     'django_countries',
 )
 
-AUTH_USER_MODEL = 'hr_leaves.User'
+AUTH_USER_MODEL = 'hr_leaves.Employe'
 
 LOGIN_URL = 'login'
 
