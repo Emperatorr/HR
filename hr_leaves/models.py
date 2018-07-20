@@ -106,6 +106,7 @@ class Conge(models.Model):
     employe = models.ForeignKey(Employe, related_name='conges')
     type_conge = models.ForeignKey(Type_conge, related_name='conges')
     nombre_jour = models.IntegerField(default=0)
+    last_calculation_date = models.DateTimeField(null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
