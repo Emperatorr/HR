@@ -56,8 +56,8 @@ class User(AbstractBaseUser, PermissionsMixin):
 class Fonction(models.Model):
     name = models.CharField(max_length=100, null=True)
     categorie = models.CharField(max_length=100, blank=True, choices=CATEGORIE_CHOICES, default='')
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, blank=True)
 
 # Departements
 class Departement(models.Model):
