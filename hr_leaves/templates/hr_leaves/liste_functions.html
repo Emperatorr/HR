@@ -40,7 +40,6 @@
         <tr>
           <th>{% trans "#" %}</th>
           <th>{% trans "Functions" %}</th>
-           <th>{% trans "Category" %}</th>
           <th>{% trans "Created at" %}</th>
           <th>{% trans "Actions" %}</th>
         </tr>
@@ -50,7 +49,6 @@
             <tr>
               <td></td>
               <td>{{ fonction.name }}</td>
-              <td>{{ fonction.categorie }}</td>
               <td>{{ fonction.created_at }}</td>
               <td>
                   <a href="#" data-toggle="modal" data-target="#{{fonction.id}}View" class="btn-user" id="name">
@@ -128,10 +126,6 @@
                     <div class="form-group">
                       <label class="control-label">{% trans "Function name" %}:</label>
                       {{form.name}}
-                    </div>
-                     <div class="form-group">
-                      <label class="control-label">{% trans "Category" %}:</label>
-                      {{form.categorie}}
                     </div>
                   </div>
                   <div class="modal-footer">

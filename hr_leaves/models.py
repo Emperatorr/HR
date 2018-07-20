@@ -55,12 +55,11 @@ class User(AbstractBaseUser, PermissionsMixin):
 # les fonctions
 class Fonction(models.Model):
     name = models.CharField(max_length=100, null=True)
-    categorie = models.CharField(max_length=100, blank=True, choices=CATEGORIE_CHOICES, default='')
     created_at = models.DateTimeField(auto_now_add=True, blank=True)
     updated_at = models.DateTimeField(auto_now=True, blank=True)
 
     def __str__(self):
-        return '{}'.format(self.categorie)
+        return '{}'.format(self.name)
 
 # Departements
 class Departement(models.Model):
@@ -87,6 +86,8 @@ class Employe(User):
     last_name = models.CharField(max_length=40, default='', null=True)
     fonction = models.ForeignKey(Fonction, related_name='fonctions')
     departement = models.ForeignKey(Departement, related_name='departements')
+    is_manager = models.BooleanField(default=False, blank=True)
+    id_manager = models.CharField(max_length=100, blank=True, null=True)
     phone1 = models.CharField(max_length=50, null=True)
     phone2 = models.CharField(max_length=50, null=True)
     address = models.CharField(max_length=100, null=True)

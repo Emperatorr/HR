@@ -281,6 +281,12 @@ def register(request):
         typ_conge = Type_conge.objects.all()
 
         if form.is_valid():
+
+            try:
+                manager = Employe.objects.get(departement_id=form.cleaned_data['departement'], is_manager=True)
+            except Employe.DoesNotExist:
+                manager = None
+
             empoly = Employe()
             
 
@@ -295,7 +301,11 @@ def register(request):
             empoly.phone2 = form.cleaned_data['phone2']
             empoly.address = form.cleaned_data['address']
 
-            empoly.save()
+            if manager:
+                empoly.id_manager = manager.matricule
+                empoly.save()
+            else:
+                empoly.save()
 
             for typ in Type_conge.objects.all():
 
@@ -467,4 +477,38 @@ def update_departement(request, departement_id):
 
                 return redirect('department')
     except expression as identifier:
+        pass
+
+@login_required
+def add_manager(request, employ_id):
+    try:
+        employ = Employe.objects.get(id=employ_id)
+        employ.is_manager = True
+        employ.save()
+
+        employ_dep = Employe.objects.filter(departement_id=employ.departement_id)
+
+        for employs in employ_dep:
+            employs.id_manager = employ.matricule
+            employs.save()
+
+        return redirect('employe_details', employ_id)
+    except Employe.DoesNotExist:
+        pass
+
+@login_required
+def delete_manager(request, employ_id):
+    try:
+        employ = Employe.objects.get(id=employ_id)
+        employ.is_manager = False
+        employ.save()
+
+        employ_dep = Employe.objects.filter(departement_id=employ.departement_id)
+
+        for employs in employ_dep:
+            employs.id_manager = None
+            employs.save()
+
+        return redirect('employe_details', employ_id)
+    except Employe.DoesNotExist:
         pass
