@@ -100,3 +100,71 @@ class DemandeForm(forms.ModelForm):
                 'required': 'true'
             })
         }
+class EmployeForm(forms.ModelForm):
+
+    class Meta:
+        model = Employe
+        fields = ('matricule', 'first_name', 'last_name', 'phone1', 'phone2', 'address', 'email' )
+
+        widgets = {
+            'matricule': forms.fields.TextInput(attrs={
+                'placeholder': 'Le matricule de l\'employé',
+                'class': 'form-control'
+            }),
+            'first_name': forms.fields.TextInput(attrs={
+                'placeholder': 'Le prénom de l\'employé',
+                'class': 'form-control'
+            }),
+            'last_name': forms.fields.TextInput(attrs={
+                'placeholder': 'Le nom de l\'employé',
+                'class': 'form-control'
+            }),
+            'email': forms.fields.EmailInput(attrs={
+                'placeholder': 'Adresse email',
+                'class': 'form-control'
+            }),
+            'phone1': forms.fields.TextInput(attrs={
+                'placeholder': 'Numero de telephone',
+                'class': 'form-control',
+                'type': 'tel',
+                'id' : 'phone',
+                'min' : '600000000',
+                'max' : '699999999',
+                'pattern' : '^6(3|2|6|5)[0-9]{7}',
+                'title' : 'S\'il vous plait veuiller respecter le format de telephone guineen'
+            }),
+            'phone2': forms.fields.TextInput(attrs={
+                'placeholder': 'Numero de telephone',
+                'class': 'form-control',
+                'type': 'tel',
+                'id' : 'phone',
+                'min' : '600000000',
+                'max' : '699999999',
+                'pattern' : '^6(3|2|6|5)[0-9]{7}',
+                'title' : 'S\'il vous plait veuiller respecter le format de telephone guineen'
+            }),
+            'address': forms.Textarea(attrs={
+                'placeholder': 'Adresse',
+                'class': 'form-control',
+                'cols': '10',
+                'row': '5'
+            }),
+            
+        }
+
+    CHOICES = (
+        ("Masculin", _("Masculin")),
+        ("Feminin", _("Feminin"))
+    )
+
+    genre = forms.ChoiceField(choices = CHOICES, label="Genre", initial='', widget=forms.Select(attrs={'class':'form-control'}), required=True)
+
+    departement = forms.ModelChoiceField(
+                    queryset=Departement.objects.all(),
+                    widget=forms.Select(attrs={'class':'form-control'})
+                    )
+
+    fonction = forms.ModelChoiceField(
+                    queryset=Fonction.objects.all(),
+                    widget=forms.Select(attrs={'class':'form-control'})
+                    )
