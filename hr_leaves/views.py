@@ -54,6 +54,7 @@ class LoginView(generic.FormView):
         """
         if self.success_url:
             self.request.user.is_agency = False
+
             url = reverse('acceuil')
         else:
             try:
@@ -333,12 +334,109 @@ def create_success(request):
 
 @login_required
 def delete_user(request, user_id):
-    user = Employe.objects.get(id=user_id)
-    user.delete()
-    messages.success(request, _('Account succesfully deleted'))
-    return redirect('users')
+    if request.user.is_admin:
+        user = User.objects.get(id=user_id)
+        user.delete()
+        messages.success(request, _('Account succesfully deleted'))
+        return redirect('users')
+        
+
+
+@login_required
+def add_department(request):
+   
+    form = DepartementForm(request.POST or None)
+
+    try:
+        departement = Departement.objects.all()
+    except expression as identifier:
+        pass 
+
+    if request.method == "POST":
+        
+        if form.is_valid():
+            name = form.cleaned_data['name']            
+            departement = Departement()
+            departement.name = name
+            departement.save()
+
+            return redirect('department')
+    return render(request, 'hr_leaves/liste_departments.html', {'form': form, 'departements': departement})
+
+@login_required
+def add_function(request):
+
+    form = FonctionForm(request.POST or None)
+
+    try:
+        fonction = Fonction.objects.all()
+    except expression as identifier:
+        pass 
+
+    if request.method == "POST":
+        
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            categorie = form.cleaned_data['categorie']
+
+            fonction = Fonction()
+            fonction.name = name
+            fonction.categorie = categorie
+            fonction.save()
+
+            return redirect('function')
+    return render(request, 'hr_leaves/liste_functions.html', {'form': form, 'fonctions': fonction})
 
 
 @login_required
 def acceuil(request):
     return render(request, 'hr_leaves/acceuil.html',)
+
+@login_required
+def delete_function(request, delete_id):
+    try:
+        fonction = Fonction.objects.get(id=delete_id)
+        fonction.delete()
+        return redirect('function')
+    except expression as identifier:
+        pass
+
+@login_required
+def delete_department(request, department_id):
+    try:
+        departement = Departement.objects.get(id=department_id)
+        departement.delete()
+        return redirect('department')
+    except expression as identifier:
+        pass
+
+@login_required
+def update_function(request, function_id):
+    try:
+        fonction = Fonction.objects.get(id=function_id)
+        form = FonctionForm(request.POST)
+        if request.method == 'POST':
+            if form.is_valid():
+                name = form.cleaned_data['name']
+                fonction.name = name
+                fonction.save()
+
+                return redirect('function')
+    except expression as identifier:
+        pass
+
+
+@login_required
+def update_departement(request, departement_id):
+    try:
+        departement = Departement.objects.get(id=departement_id)
+        form = DepartementForm(request.POST)
+        if request.method == 'POST':
+            if form.is_valid():
+                name = form.cleaned_data['name']
+                departement.name = name
+                departement.save()
+
+                return redirect('department')
+    except expression as identifier:
+        pass
