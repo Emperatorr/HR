@@ -73,14 +73,6 @@
 			margin-top: 1%;
 			margin-bottom: 5%;
 		}
-		.logo {
-			position: relative;
-		}
-		.logo-img {
-			width: 250px;
-			height: 90px;
-		}
-
 		.body {
 			display: block;
 			padding-bottom:20px;
@@ -116,41 +108,16 @@
             background-size: 38%;
 			opacity: .1;
         }
-		.nav li a:focus,
-		.nav li a:hover {
-			background-color: #2773A9;
-			font-weight: bold;
-			color: #ffffff;
-		}
-		.nav .open>a, .nav .open>a:focus,
-		.nav .open>a:hover,
-		.dropdown-menu>li>a:hover {
-			background-color: #2773A9;
-			background-image: linear-gradient(to bottom,#2773A9 0,#2773A9 100%);
-		}
-		.dropdown-menu,
-		.navbar-inverse .navbar-nav>.open>a,
-		.navbar-inverse .navbar-nav>.open>a {
-			background-color: #2773A9;
-			background-image: linear-gradient(to bottom,#2773A9 0,#2773A9 100%);
-		}
-		.navbar-nav li a {
-			color: #ffffff !important;
-			font-size: 20px;
-			text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black !important;
-		}
-		.navbar-nav li a:hover {
-			text-decoration: underline;
-			font-weight: bold;
-		}
 
-		.title-center {
-			text-align: center;
-			font-weight: bold;
-		}
-		.list-group-item {
-			margin: 2%;
-			font-size: 1.2rem;
+		.navbar-inverse {
+			background-image: linear-gradient(to bottom,#337ab7 0,#337ab7 100%);
+			background-repeat: repeat-x;
+			background-color: #337ab7;
+			width: 100%;
+			border-radius: 0;
+			border-color: #F5F5F5;
+			color: #fff;
+			height: 70px;
 		}
 
 		.footer {
@@ -173,20 +140,6 @@
 			font-weight: bold;
 		}
 
-		.navbar{
-		  margin-bottom: 0;
-		}
-
-		.navbar-inverse {
-			background-image: url({% static 'images/cover.jpg' %});
-			background-position: center;
-			background-repeat: no-repeat;
-			background-size: cover;
-			width: 100%;
-			border-radius: 0;
-			border-color: #F5F5F5;
-			height: 100px;
-		}
 		.navbar-brand {
 			padding: 3px 15px;
 		}
@@ -250,7 +203,7 @@
 		@media screen and (max-width: 997px) {
 			#navbar {
 				position: relative;
-				margin-top: 48px;
+				margin-top: 15px;
 				border-color: transparent;
 				background-color: #337ab7;
 				z-index: 100000;
@@ -340,148 +293,71 @@
 					{% if user.is_authenticated %}
 				<nav class="navbar navbar-inverse">
 					<div class="container-fluid">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					</button>
-					{% if user.is_admin  or user.is_agency or user.is_controller %}
-						<a class="navbar-brand" href="{% url 'all_missions' %}">
-							<div class="logo">
-								<img src="{% static 'images/logo.png' %}" alt="logo" class="logo-img">
-							</div>
-						</a>
-					{% else %}
-						<a class="navbar-brand" href="{% url 'user_missions' %}">
-							<div class="logo">
-								<img src="{% static 'images/logo.png' %}" alt="logo" class="logo-img">
-							</div>
-						</a>
-					{% endif %}
-					</div>
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a class="navbar-brand" href="{% url 'acceuil' %}">
+								<div class="logo">
+									HR-APP
+								</div>
+							</a>
+						</div>
 
-				<div id="navbar" class="navbar-collapse collapse">
-					<ul class="nav navbar-nav navbar-right">
-						{% if user.is_admin or user.is_agency or user.is_controller %}
-							<li><a id="missions" href="{% url 'all_missions' %}">{% trans "Missions" %}</a></li>
-						{% else %}
-							<li><a href="{% url 'user_missions' %}">{% trans "Missions" %}</a></li>
-						{% endif %}
-						{% if user.is_authenticated %}
-							{% if user.is_admin %}
+						<div id="navbar" class="navbar-collapse collapse">
+							<ul class="nav navbar-nav navbar-right">
+								<li><a id="missions" href="{% url 'acceuil' %}">{% trans "Home" %}</a></li>
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-										{% trans "Users" %}
+										<span class="glyphicon glyphicon-user"></span> 
+										{% trans "My Account" %}
 										<span class="caret"></span>
 									</a>
-									<ul class="dropdown-menu">
-										{% if user.is_admin %}
-											<li><a id="agency" href="{% url 'user_send_mail' %}">{% trans "Register User" %}</a></li>
-											<li><a id="all_controller" href="{% url 'users' %}">{% trans "All Ch. to Outside Travels" %}</a></li>
-											<li><a id="all_daaf" href="{% url 'daafs' %}">{% trans "All DAF " %}</a></li>
-										{% endif %}
-										
-									</ul>
-								</li>
-							{% elif user.is_controller %}
-								<li><a id="all_daaf" href="{% url 'daafs' %}">{% trans "All DAF" %}</a></li>
-							{% endif %}
-						{% endif %}
-						{% if not user.is_agency %}
-							<li><a id="pers" href="{% url 'personnes_all' %}">{% trans "Travellers" %}</a></li>
-							{% if user.is_admin %}
-								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-										{% trans "Charts" %}
-										<span class="caret"></span>
-									</a>
-									<ul class="dropdown-menu">
-										<li><a id="charts" href="{% url 'charts' %}">{% trans "Charts" %}</a></li>
-										<li><a id="actions" href="{% url 'users_action_tracking' %}">{% trans "Users Actions" %}</a></li>
-									</ul>
-								</li>
-							{% else %}
-								<li><a id="charts" href="{% url 'charts' %}">{% trans "Charts" %}</a></li>
-							{% endif %}
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-									{% trans "Agencies" %}
-									<span class="caret"></span>
-								</a>
-								<ul class="dropdown-menu">
-									{% if user.is_admin %}
-										<li><a id="agency" href="{% url 'agency_send_mail' %}">{% trans "Register Agency" %}</a></li>
-									{% endif %}
-									<li><a id="all_agency" href="{% url 'all_agency' %}">{% trans "All Agencies" %}</a></li>
-									<li><a id="company" href="{% url 'company' %}">{% trans " All Company" %}</a></li>
-								</ul>
-							</li>
-						{% endif %}
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-								<span class="glyphicon glyphicon-user"></span> 
-								{% trans "My Account" %}
-								<span class="caret"></span>
-							</a>
-							<ul class="dropdown-menu">
-								{% if user.is_authenticated %}
-									<li>
-										<div class="navbar-login">
-											<div class="row">
-												<div class="col-lg-12">
-													<p class="text-left"><strong>{{user.get_full_name}}</strong></p>
-													<p class="text-left small">{{user.email}}</p>
-													{% if user.is_admin %}
-														<p class="text-left small">{% trans "Administrator" %}</p>
-													{% elif user.is_controller %}
-														<p class="text-left small">{% trans "Ch. to Outside Travels" %}</p>
-													{% elif user.is_agency %}
-														<p class="text-left small">{% trans "Agency" %}</p>
-													{% else %}
-														<p class="text-left small">{% trans "User" %}</p>
-													{% endif %}
-													{% if user.is_admin %}
-														<p class="text-left">
-															<a class="btn btn-primary btn-block btn-sm" id="profile" href="{% url 'user_profile' user.id %}">
-																<i class="glyphicon glyphicon-user"></i>
-																{% trans "My Profile" %}
-															</a>
-														</p>
-													{% endif %}
-												</div>
-												<div class="reset_password">
-													<a href="{% url 'change_password' %}">{% trans "Change my Password" %}</a>
-												</div>
-											</div>
-										</div>
+										<ul class="dropdown-menu">
+											{% if user.is_authenticated %}
+												<li>
+													<div class="navbar-login">
+														<div class="row">
+															<div class="col-lg-12">
+																<p class="text-left"><strong>{{user.get_full_name}}</strong></p>
+																<p class="text-left small">{{user.email}}</p>
+																<p class="text-left small">{% trans "Administrator" %}</p>
+																<p class="text-left">
+																	<a class="btn btn-primary btn-block btn-sm" id="profile" href="{% url 'user_profile' user.id %}">
+																		<i class="glyphicon glyphicon-user"></i>
+																		{% trans "My Profile" %}
+																	</a>
+																</p>
+															</div>
+															<div class="reset_password">
+																<a href="{% url 'change_password' %}">{% trans "Change my Password" %}</a>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="divider"></li>
+												<li>
+													<div class="navbar-login navbar-login-session">
+														<div class="row">
+															<div class="col-lg-12">
+																<p>
+																	<a id="logout" class="btn btn-danger btn-block" href="{% url 'logout' %}">
+																		<i class="glyphicon glyphicon-log-out"></i>
+																		{% trans "Logout" %}
+																	</a>
+																</p>
+															</div>
+														</div>
+													</div>
+												</li>
+											{% endif %}
+										</ul>
 									</li>
-									<li class="divider"></li>
-									<li>
-										<div class="navbar-login navbar-login-session">
-											<div class="row">
-												<div class="col-lg-12">
-													<p>
-														<a id="logout" class="btn btn-danger btn-block" href="{% url 'logout' %}">
-															<i class="glyphicon glyphicon-log-out"></i>
-															{% trans "Logout" %}
-														</a>
-													</p>
-												</div>
-											</div>
-										</div>
-									</li>
-								{% endif %}
 							</ul>
-						</li>
-						<li>
-							<a target="_blank" href="{% url 'user_guide' %}">
-								<i style="color: #FFFFFF;font-size: 25px" class="fa">&#63;</i>
-							</a>
-						</li>
-					</ul>
-				</div>
+						</div>
 					</div>
 				</nav>
 				{% endif %}
