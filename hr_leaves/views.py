@@ -231,13 +231,13 @@ def register(request):
         else:
             print("not valid")
 
-    return render(request, 'hr_leaves/register.html', {'form':form})
+    return render(request, 'hr_leaves/employe.html', {'form':form})
 
 @login_required
 def list_employ(request):
     all_user = Employe.objects.all()
 
-    return render(request, 'hr_leaves/users.html', {'all_user':all_user})
+    return render(request, 'hr_leaves/list_employees.html', {'all_user':all_user})
 
 @login_required
 def user_account(request, user_id):

@@ -10,7 +10,9 @@ from .views import (
     delete_user,
     demande,
     all_demande,
-    acceuil
+    acceuil,
+    register,
+    list_employ,
     )
 
 urlpatterns = [
@@ -25,5 +27,7 @@ urlpatterns = [
     url(r'^creation-demande/$', demande, name='leave_request'),
     url(r'^all-demande/$', all_demande, name='all_demande'),
     url(r'^acceuil/$', acceuil, name='acceuil'),
+    url(r'^register/$', register, name='register'  ),
+    url(r'^list_employe/$', list_employ, name='employees'),
     
 ]
