@@ -45,7 +45,7 @@ class LoginView(generic.FormView):
     form_class = LoginForm
     form_valid_message = 'you are logged in'
     model = User
-    success_url = reverse_lazy('mission')
+    success_url = reverse_lazy('account')
     template_name = 'hr_leaves/login.html'
 
     def get_success_url(self):
@@ -75,27 +75,12 @@ class LoginView(generic.FormView):
 
         if user is not None and user.is_active:
             login(self.request, user)
-            track = Track_Actions()
-            track.page = 'connexion'
-            track.ip_addresse = get_client_ip(self.request)
-            track.navigateur = self.request.META['HTTP_USER_AGENT']
-            track.action_effectue = _('Connexion')
-            track.user = self.request.user
-            track.save()
             return super().form_valid(locals())
         else:
             return self.form_invalid(locals())
 
 
 def logout_view(request):
-    track = Track_Actions()
-    track.page = request.META['PATH_INFO'].split('/')[2]
-    track.ip_addresse = get_client_ip(request)
-    track.navigateur = request.META['HTTP_USER_AGENT']
-    track.action_effectue = _('Deconnexion')
-    track.user = request.user
-    track.save()
-    
     logout(request)
     return redirect('login')
 
@@ -107,22 +92,14 @@ def delete_user(request, user_id):
         context = {'user': user.get_full_name()}
         html_content = render_to_string('mails/user_account_delete.html', context)
 
-        mail = SentMail()
-        mail.full_name = request.user.get_full_name()
-        mail.title = _('Account Deleted')
-        mail.email = user.email
-        mail.message = html_content
-        mail.save()
+        # mail = SentMail()
+        # mail.full_name = request.user.get_full_name()
+        # mail.title = _('Account Deleted')
+        # mail.email = user.email
+        # mail.message = html_content
+        # mail.save()
 
         user.delete()
-
-        track = Track_Actions()
-        track.page = request.META['PATH_INFO'].split('/')[2]
-        track.ip_addresse = get_client_ip(request)
-        track.navigateur = request.META['HTTP_USER_AGENT']
-        track.action_effectue = _('Suppression utilisateur')
-        track.user = request.user
-        track.save()
         messages.success(request, _('Account succesfully deleted'))
         return redirect('users')
     else:
@@ -135,14 +112,6 @@ def change_password(request):
         if form.is_valid():
             user = form.save()
             update_session_auth_hash(request, user)
-
-            track = Track_Actions()
-            track.page = request.META['PATH_INFO'].split('/')[2]
-            track.ip_addresse = get_client_ip(request)
-            track.navigateur = request.META['HTTP_USER_AGENT']
-            track.action_effectue = _('Mise à jour de mot de passe utilisateur')
-            track.user = request.user
-            track.save()
 
             messages.success(request, _('Your password was Successfully Updated!'))
             if request.user.is_agency:
@@ -164,15 +133,6 @@ def change_password(request):
 def user_profile(request, user_id):
     if request.user.is_admin:
         user = User.objects.get(id=user_id)
-        ministries = Ministry.objects.all()
-        
-        track = Track_Actions()
-        track.page = request.META['PATH_INFO'].split('/')[2]
-        track.ip_addresse = get_client_ip(request)
-        track.navigateur = request.META['HTTP_USER_AGENT']
-        track.action_effectue = _('Affichage du profil utilisateur')
-        track.user = request.user
-        track.save()
 
         return render(request, 'hr_leaves/user_profile.html', {'users': user, 'ministries': ministries})
     else:
@@ -223,14 +183,6 @@ def update_user_profile(request, user_id):
 
             user.save()
 
-            track = Track_Actions()
-            track.page = request.META['PATH_INFO'].split('/')[2]
-            track.ip_addresse = get_client_ip(request)
-            track.navigateur = request.META['HTTP_USER_AGENT']
-            track.action_effectue = _('Mise à jour du profil utilisateur')
-            track.user = request.user
-            track.save()
-
             updated= True
             # messages.success(request, _('You Profil has been updated succesfully'))
         else:
@@ -245,14 +197,6 @@ def user_account(request, user_id):
     if request.user.is_admin:
         company = User.objects.get(id=user_id)
         missions = Mission.objects.all()
-
-        track = Track_Actions()
-        track.page = request.META['PATH_INFO'].split('/')[2]
-        track.ip_addresse = get_client_ip(request)
-        track.navigateur = request.META['HTTP_USER_AGENT']
-        track.action_effectue = _('Affichage de compte utilisateur')
-        track.user = request.user
-        track.save()
 
         return render(request, 'hr_leaves/user_account.html', {
             'user': company,
@@ -275,13 +219,6 @@ def get_client_ip(request):
     return ip
 
 def create_success(request):
-    track = Track_Actions()
-    track.page = request.META['PATH_INFO'].split('/')[2]
-    track.ip_addresse = get_client_ip(request)
-    track.navigateur = request.META['HTTP_USER_AGENT']
-    track.action_effectue = _('Affichage de la page de reussite de la creation de compte')
-    track.user = request.user
-    track.save()
     return render(request, 'hr_leaves/create_success.html',)
     
 
