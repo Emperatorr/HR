@@ -117,6 +117,8 @@ class Demande(models.Model):
     status = models.IntegerField(default=0)
     date_debut = models.DateTimeField()
     date_fin = models.DateTimeField()
+    reason = models.TextField(null=True)
+    by = models.ForeignKey(Employe, related_name='reviewer', null=True, blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

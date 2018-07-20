@@ -144,12 +144,7 @@ LOCALE_PATHS = (
 )
 
 ALLOWED_HOSTS = [
-    '10.13.15.16',
-    '127.0.0.1',
-    '41.77.184.233',
-    '41.77.184.232',
-    'ebiassi.mbudget.gov.gn',
-    'localhost'
+    '*'
 ]
 
 # Static files (CSS, JavaScript, Images)

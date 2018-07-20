@@ -133,6 +133,7 @@ def demande(request):
             nombre_jour = form.cleaned_data['nombre_jour']
             date_debut = form.cleaned_data['date_debut']
             date_fin = form.cleaned_data['date_fin']
+            reason = form.cleaned_data['reason']
 
             print('type: ' + str(type_conge))
             print('nombre: ' + str(nombre_jour))
@@ -144,6 +145,7 @@ def demande(request):
             demande.nombre_jour = nombre_jour
             demande.date_debut = date_debut
             demande.date_fin = date_fin
+            demande.reason = reason
             demande.employe = request.user
             demande.save()
 
@@ -155,9 +157,25 @@ def demande(request):
 
 @login_required
 def all_demande(request):
-    demandes = Demande.objects.filter(employe=request.user)
+    demandes = Demande.objects.filter(employe=request.user, status=0)
+    demandes_history = Demande.objects.filter(employe=request.user, status__range=[1,2])
     return render(request, 
-    'hr_leaves/all_demande.html', {'demandes': demandes })
+    'hr_leaves/all_demande.html', {'demandes': demandes, 'demandes_history':  demandes_history})
+
+@login_required
+def validate_demande(request, dmd_id):
+    demande = Demande.objects.get(id=dmd_id)
+
+    if request.POST.get('valid') == 'yes':
+        demande.status = 1
+    else:
+        demande.status = 2
+    demande.reason = request.POST.get('reason', None)
+    demande.by = request.user
+
+    demande.save()
+
+    return redirect('all_demande')
 
 @login_required
 def user_profile(request, user_id):

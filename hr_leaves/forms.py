@@ -105,7 +105,7 @@ class DemandeForm(forms.ModelForm):
 
     class Meta:
         model = Demande
-        fields = ('type_conge', 'nombre_jour', 'date_debut', 'date_fin')
+        fields = ('type_conge', 'nombre_jour', 'date_debut', 'date_fin', 'reason')
         widgets = {
             'type_conge': forms.Select(attrs={
                 'placeholder': _('Type'),
@@ -127,6 +127,14 @@ class DemandeForm(forms.ModelForm):
                 'type': 'date',
                 'class': 'form-date',
                 'required': 'true'
+            }),
+            'reason': forms.Textarea(attrs={
+                'placeholder': _('Reason'),
+                'class': 'form-control',
+                'required': 'True',
+                'cols': '40',
+                'rows': '4',
+                'title' : _('Reason')
             })
         }
 class EmployeForm(forms.ModelForm):
