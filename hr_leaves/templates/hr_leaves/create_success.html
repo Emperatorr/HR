@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block style %}
+   <style type="text/css">
+     .btn-send {
+	  background-color: #337ab7 !important; 
+	  color: #FFFFFF;
+      }
+
+   	 #_login {
+   	 	color: #F0A2CD;
+   	 }
+
+   	 #form {
+   	 	margin-top: 1%;
+   	 }
+
+   	 .well {
+   	 	background: rgba(255, 255, 255, 1);
+		opacity: 0.8;
+   	 }
+
+   	 .head {
+   	 	margin-top: 1%;
+		padding: 0;
+   	 }
+	 .head p a {
+		background-color: transparent;
+		color: #337ab7;
+		text-decoration: none;
+		padding: 3px;
+	 }
+	 .head p a:hover,
+	 .head p a:active {
+		background: #337ab7;
+		color: white;
+		border-radius: 3px;
+	 }
+	 .buttonHolder {
+		text-align: left;
+	 }
+	 .buttonHolder input{
+	    font-weight: bold;
+	    font-size: 100%;
+	 }
+	 .buttonHolder input:hover {
+	   cursor: pointer;
+	 }
+   </style>
+{% endblock style %}
+
+{% block content %}
+		<div class="head row col-md-6 col-md-offset-3">
+            <p>{% trans "Your account has been successfully created. It will be activated soon, please wait." %}</p>
+         </div>
+
+{% endblock content %}

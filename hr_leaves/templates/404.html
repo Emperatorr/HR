@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'css/error.css' %}">
+    <style>
+        .agile {
+            font-size: 17px;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+		<div class="agile">
+            <div class="text_content">  
+                <h1 class="title">{% trans "PAGE NOT FOUND" %}</h1>
+                
+                <p class="message_text">{% trans "You have been tricked into click on a link that can not be found. Please check the url or go to" %} <a href="{% url 'login' %}">{% trans "main page" %}</a> {% trans "and see if you can locate what you are looking for" %}</p>
+            </div>
+            <div class="smile_image">
+                <img src="{% static 'images/404.png' %}">
+            </div>
+		</div>
+{% endblock %}

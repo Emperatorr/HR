@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block style %}
+  <style>
+    .missions {
+      margin-top: 3%;
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+
+<a href="{% url 'mission' %}" class="btn btn-lg btn-success">
+  <span class="glyphicon glyphicon-pencil"></span>
+  {% trans " Create a mission" %}
+</a>
+
+<div class="missions">
+  {% if data %}
+    <div class="col-md-4">
+      <h3 class="title-center">{% trans "Approved Missions" %}</h3>
+      <div class="list-group">
+        {% for approval in user.approvals.all %}
+          {% if approval.approved %}
+          <a href="#" data-toggle="modal" data-target="#{{approval.id}}" class="list-group-item">
+            {{approval.mission.mission_title}}
+          </a>
+          <!-- Modal -->
+            <div id="{{approval.id}}" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">{% trans "Mission Details" %}</h3>
+                  </div>
+                  <div class="modal-body">
+                    <p><strong>{% trans "Email" %}: <em>{{ approval.user.email }}</em></strong></p>
+                    <p><strong>{% trans "Title" %}: <em>{{ approval.mission.mission_title }}</em></strong></p>
+                    <p><strong>{% trans "Description" %}: <em>{{ approval.mission.mission_description }}</em></strong></p>
+                    <p><strong>{% trans "Place" %}: <em>{{ approval.mission.mission_place }}</em></strong></p>
+                    <p><strong>{% trans "City or State" %}: <em>{{ approval.mission.mission_city }}</em></strong></p>
+                    <p><strong>{% trans "Country" %}: <em>{{ approval.mission.mission_country.name }}</em></strong></p>
+                    <p><strong>{% trans "Departure Date" %}: <em>{{ approval.mission.mission_departure_date }}</em></strong></p>
+                    <p><strong>{% trans "Return Date" %}: <em>{{ approval.mission.mission_return_date }}</em></strong></p>
+                    <p><strong>{% trans "Class" %}: <em>{{ approval.mission.class_type }}</em></strong></p>
+                    <hr>
+                    <p><strong>{% trans "Mission Flight Price" %}: <em>{{approval.mission.confirmed.final_price|prepend_gnf }}</em></strong></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="col-md-4">
+      <h3 class="title-center">{% trans "Rejected Missions" %}</h3>
+      <div class="list-group">
+        {% for approval in user.approvals.all %}
+          {% if approval.not_approved %}
+          <a href="#" data-toggle="modal" data-target="#{{approval.id}}" class="list-group-item">
+            {{approval.mission.mission_title}}
+          </a>
+          <!-- Modal -->
+            <div id="{{approval.id}}" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">{% trans "Mission Details" %}</h3>
+                  </div>
+                  <div class="modal-body">
+                    <p><strong>{% trans "Email" %}: <em>{{ approval.user.email }}</em></strong></p>
+                    <p><strong>{% trans "Title" %}: <em>{{ approval.mission.mission_title }}</em></strong></p>
+                    <p><strong>{% trans "Description" %}: <em>{{ approval.mission.mission_description }}</em></strong></p>
+                    <p><strong>{% trans "Place" %}: <em>{{ approval.mission.mission_place }}</em></strong></p>
+                    <p><strong>{% trans "City or State" %}: <em>{{ approval.mission.mission_city }}</em></strong></p>
+                    <p><strong>{% trans "Country" %}: <em>{{ approval.mission.mission_country.name }}</em></strong></p>
+                    <p><strong>{% trans "Departure Date" %}: <em>{{ approval.mission.mission_departure_date }}</em></strong></p>
+                    <p><strong>{% trans "Return Date" %}: <em>{{ approval.mission.mission_return_date }}</em></strong></p>
+                    <p><strong>{% trans "Class" %}: <em>{{ approval.mission.class_type }}</em></strong></p>
+                    <div class="modal-header">
+                      <h3 class="modal-title">{% trans "Why this Mission is not been Approved" %}</h3>
+                    </div>
+                    <div class="modal-body">
+                      <p><strong><em>{{approval.why_not_approved}}</em></strong></p>
+                      <p><em><a href="{% url 'edit_mission' approval.mission.slug %}" id="edit">{% trans "Click here to edit" %}</a></em></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="col-md-4">
+      <h3 class="title-center">{% trans "Waiting for Confirmation" %}</h3>
+      <div class="list-group">
+        {% for mission in missions %}
+          <a href="{% url 'confirm' mission.slug %}" class="list-group-item">{{mission.mission_title}}</a>
+        {% endfor %}
+      </div>
+    </div>
+  {% else %}
+  <div id="no-data">
+    <h3 class="text-center">{% trans "You don't have any approved or not approved mission yet." %}<h3>
+
+  </div>
+  {% endif %}
+</div>
+
+{% endblock content %}

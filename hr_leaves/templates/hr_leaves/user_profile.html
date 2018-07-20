@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block style %}
+  <style>
+    .container {
+        margin: 0;
+        width: 100%;
+    }
+    .content {
+        margin: auto;
+        width: 60%;
+    }
+    .form-horizontal .control-label {
+        text-align: left;
+    }
+    .col-sm-4 {
+		margin: auto;
+		padding: 0;
+	}
+    .btn-rigth {
+        text-align: right;
+        padding: 10px;
+        margin: 10px;
+    }
+    .btn-left {
+        text-align: left;
+        padding: 10px;
+        margin: 10px;
+    }
+    .btn-send {
+		background-color: #337ab7 !important; 
+		color: #FFFFFF;
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+{% if users.is_admin %}
+    <h2 class="text-center">{% trans "My Profile" %}</h2>
+{% elif users.is_agency %}
+    <h2 class="text-center">{% trans "Agency Profile" %}</h2>
+{% elif users.is_controller %}
+    <h2 class="text-center">{% trans "Ch. to Outside Travel Profile" %}</h2>
+{% else %}
+    <h2 class="text-center">{% trans "DAF Profile" %}</h2>
+{% endif %}
+<div class="content">
+    <form class="form-horizontal" action="{% url 'update_user' users.id %}" method="post">
+        {% csrf_token %}
+        {% if users.is_agency %}
+            <div class="form-group">
+                <label class="col-sm-4 control-label">{% trans "Email: *" %}</label>
+                <div class="col-sm-8">
+                    <input type="email" class="form-control" name="email" value="{{users.email}}" required="True">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">{% trans "Agency Name: *" %}</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" name="name" value="{{users.first_name}}" required="True">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">{% trans "Phone Number: *" %}</label>
+                <div class="col-sm-8">
+                    <input type="phone" class="form-control" name="phone_number" value="{{users.phone}}"  pattern="6(3|2|6|5)[0-9]{7}", title="{% trans "Please respect the Guinean numerotation"%}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">{% trans "Address: *" %}</label>
+                <div class="col-sm-8">
+                    <input type="phone" class="form-control" name="address" value="{{users.address}}" required="True">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">{% trans "Expired date: *" %}</label>
+                <div class="col-sm-8">
+                    <input type="date" class="form-control" name="expired_date" value="{{users.expired_date}}" required="True">
+                </div>
+            </div>
+        {% else %}
+            <div class="form-group">
+                <label class="col-sm-4 control-label">{% trans "Email: *" %}</label>
+                <div class="col-sm-8">
+                    <input type="email" class="form-control" name="email" value="{{users.email}}" required="True">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">{% trans "First Name: *" %}</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" name="first_name" value="{{users.first_name}}" required="True">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">{% trans "Last Name: *" %}</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" name="last_name" value="{{users.last_name}}" required="True">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">{% trans "ID Number: *" %}</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" name="id_number" value="{{users.id_number}}" required="True">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">{% trans "Ministry: *" %}</label>
+                <div class="col-sm-8">
+                    {% if users.is_admin %}
+                        {% with ministry="" %}{% endwith %}
+                        {% for ministry in ministries %}
+                            {% if ministry.id == users.ministry_id %}
+                                <input name="ministry" value="{{ministry.name}}" class="form-control" readonly="true"/>
+                            {% endif %}
+                        {% endfor %}
+                    {% else %}
+                        <select name="ministry" class="form-control">
+                            {% for ministry in ministries %}
+                                {% if ministry.id == users.ministry_id %}
+                                    <option value="{{ministry.id}}" selected> {{ministry.name}} </option>
+                                {% else %}
+                                    <option value="{{ministry.id}}"> {{ministry.name}} </option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">{% trans "Position: *" %}</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" name="position" value="{{users.position}}">
+                </div>
+            </div>
+        {% endif %}
+        <div class="form-group">
+            <div class="btn-rigth">
+                <button type="submit" class="btn btn-lg btn-send">
+                    <span class="glyphicon glyphicon-refresh"></span>
+                    {% trans "Update" %}
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}

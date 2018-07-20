@@ -1,0 +1,2829 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-22 10:54+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: config/prod_settings.py:19 config/settings.py:21
+msgid "French"
+msgstr "Français"
+
+#: config/settings.py:20
+msgid "English"
+msgstr "Anglais"
+
+#: config/urls.py:44
+msgid "eBiassi Admin"
+msgstr "Administrateur de eBiassi"
+
+#: config/urls.py:45 config/urls.py:46
+msgid "eBiassi Administration"
+msgstr "Administration de eBiassi"
+
+#: travel_details/forms.py:20
+#: travel_details/templates/travel_details/liste_personne.html:45
+#: travel_details/templates/travel_details/liste_personne.html:99
+#: travel_details/templates/travel_details/old_mission.html:212
+#: travel_details/templates/travel_details/personnes.html:54
+msgid "Matricule"
+msgstr "Matricule"
+
+#: travel_details/forms.py:21 travel_details/forms.py:530
+#: travel_details/templates/travel_details/agency_account.html:18
+#: travel_details/templates/travel_details/all_agencies.html:31
+#: travel_details/templates/travel_details/all_agencies.html:90
+#: travel_details/templates/travel_details/all_missions.html:40
+#: travel_details/templates/travel_details/all_missions.html:78
+#: travel_details/templates/travel_details/liste_personne.html:97
+#: travel_details/templates/travel_details/old_mission.html:230
+#: travel_details/templates/travel_details/personnes.html:72
+#: travel_details/templates/travel_details/user_account.html:19
+#: travel_details/templates/travel_details/user_missions.html:39
+#: travel_details/templates/travel_details/user_missions.html:76
+#: travel_details/templates/travel_details/users.html:34
+#: travel_details/templates/travel_details/users.html:92
+#: travel_details/templates/travel_details/users_daaf.html:51
+#: travel_details/templates/travel_details/users_daaf.html:113
+msgid "Email"
+msgstr "Email"
+
+#: travel_details/forms.py:22
+#: travel_details/templates/travel_details/liste_personne.html:46
+#: travel_details/templates/travel_details/liste_personne.html:92
+#: travel_details/templates/travel_details/old_mission.html:218
+#: travel_details/templates/travel_details/personnes.html:60
+#: travel_details/templates/travel_details/traveler_options.html:32
+#: travel_details/templates/travel_details/users.html:32
+#: travel_details/templates/travel_details/users.html:93
+#: travel_details/templates/travel_details/users_daaf.html:49
+#: travel_details/templates/travel_details/users_daaf.html:114
+msgid "First Name"
+msgstr "Prénom"
+
+#: travel_details/forms.py:23
+#: travel_details/templates/travel_details/liste_personne.html:47
+#: travel_details/templates/travel_details/liste_personne.html:93
+#: travel_details/templates/travel_details/old_mission.html:224
+#: travel_details/templates/travel_details/personnes.html:66
+#: travel_details/templates/travel_details/traveler_options.html:33
+#: travel_details/templates/travel_details/users.html:33
+#: travel_details/templates/travel_details/users.html:94
+#: travel_details/templates/travel_details/users_daaf.html:50
+#: travel_details/templates/travel_details/users_daaf.html:115
+msgid "Last Name"
+msgstr "Nom"
+
+#: travel_details/forms.py:24
+#: travel_details/templates/travel_details/users.html:95
+#: travel_details/templates/travel_details/users_daaf.html:116
+msgid "ID Number"
+msgstr "Numéro d'Identification"
+
+#: travel_details/forms.py:25
+#: travel_details/templates/travel_details/liste_personne.html:96
+#: travel_details/templates/travel_details/old_mission.html:262
+#: travel_details/templates/travel_details/personnes.html:102
+#: travel_details/templates/travel_details/users.html:97
+#: travel_details/templates/travel_details/users_daaf.html:118
+msgid "Position"
+msgstr "Titre / Poste"
+
+#: travel_details/forms.py:26
+msgid "Departement"
+msgstr "Departement"
+
+#: travel_details/forms.py:27
+#: travel_details/templates/travel_details/liste_personne.html:30
+#: travel_details/templates/travel_details/liste_personne.html:48
+#: travel_details/templates/travel_details/liste_personne.html:98
+#: travel_details/templates/travel_details/missions.html:71
+#: travel_details/templates/travel_details/missions.html:82
+#: travel_details/templates/travel_details/missions.html:99
+#: travel_details/templates/travel_details/old_mission.html:256
+#: travel_details/templates/travel_details/personnes.html:96
+#: travel_details/templates/travel_details/users.html:98
+#: travel_details/templates/travel_details/users_daaf.html:52
+#: travel_details/templates/travel_details/users_daaf.html:119
+msgid "Ministry"
+msgstr "Ministère / Institution"
+
+#: travel_details/forms.py:28
+msgid "Situation"
+msgstr "Situation"
+
+#: travel_details/forms.py:29
+msgid "Genre"
+msgstr "Genre"
+
+#: travel_details/forms.py:50
+msgid "Register"
+msgstr "S'inscrire"
+
+#: travel_details/forms.py:71
+msgid "Login"
+msgstr "Connexion"
+
+#: travel_details/forms.py:72
+msgid "Your email address"
+msgstr "Votre adresse mail"
+
+#: travel_details/forms.py:73
+msgid "Your password"
+msgstr "Votre mot de passe"
+
+#: travel_details/forms.py:76
+#: travel_details/views.py:148
+msgid "Log in"
+msgstr "Se Connecter"
+
+#: travel_details/forms.py:88
+msgid "ADMINISTRATOR"
+msgstr "ADMINISTRATEUR"
+
+#: travel_details/forms.py:89 travel_details/templates/base.html:396
+msgid "Ch. to Outside Travels"
+msgstr "Ch. de Voyage à l’Extérieur"
+
+#: travel_details/forms.py:90
+msgid "DAF"
+msgstr "DAF"
+
+#: travel_details/forms.py:113 travel_details/forms.py:542
+#: travel_details/forms.py:769
+#: travel_details/templates/travel_details/personne_profile.html:71
+#: travel_details/templates/travel_details/user_profile.html:67
+msgid "Please respect the Guinean numerotation"
+msgstr "S'il vous plaît veuillez respecter la numérotation Guinéenne"
+
+#: travel_details/forms.py:126 travel_details/forms.py:127
+msgid "password don't match"
+msgstr "les mots de passes ne correspondent pas"
+
+#: travel_details/forms.py:133
+msgid "The reason"
+msgstr "La raison"
+
+#: travel_details/forms.py:157 travel_details/forms.py:223
+msgid "The name of your mission"
+msgstr "Le titre de la mission"
+
+#: travel_details/forms.py:163 travel_details/forms.py:229
+msgid "Nomber of people"
+msgstr "Nombre de Personne"
+
+#: travel_details/forms.py:171 travel_details/forms.py:237
+#: travel_details/forms.py:485
+msgid "What the mission is about"
+msgstr "C'est quoi l'objet de la mission"
+
+#: travel_details/forms.py:189 travel_details/forms.py:255
+msgid "Why there no mission copy"
+msgstr "Pourquoi il n'y a pas d'ordre de mission"
+
+#: travel_details/forms.py:268
+msgid "Why this mission is exceptional ?"
+msgstr "Pour quelle raison cette mission est-elle exceptionnelle ?"
+
+#: travel_details/forms.py:288
+#: travel_details/templates/travel_details/mission_details.html:1228
+msgid "Approuve"
+msgstr "Approuver"
+
+#: travel_details/forms.py:289
+msgid "Reject"
+msgstr "Réjéter"
+
+#: travel_details/forms.py:346
+msgid "Ex : 48"
+msgstr "Ex : 48"
+
+#: travel_details/forms.py:404
+msgid "Explain why you are approving this flight proposition"
+msgstr "Expliquez pourquoi vous approuvez cette proposition de vol"
+
+#: travel_details/forms.py:431
+msgid "If you have any comment about this confirmation please type it here !"
+msgstr ""
+"Si vous avez des commentaires sur cette confirmation, veuillez le saisir ici!"
+
+#: travel_details/forms.py:479
+msgid "The title of the mission"
+msgstr "Le titre de la mission"
+
+#: travel_details/forms.py:522
+msgid "First name"
+msgstr "Prénom"
+
+#: travel_details/forms.py:526
+msgid "Last name"
+msgstr "Nom"
+
+#: travel_details/forms.py:534 travel_details/forms.py:778
+#: travel_details/templates/travel_details/liste_personne.html:94
+#: travel_details/templates/travel_details/old_mission.html:236
+#: travel_details/templates/travel_details/personnes.html:78
+msgid "Gender"
+msgstr "Sexe"
+
+#: travel_details/forms.py:538
+msgid "phone number"
+msgstr "Téléphone"
+
+#: travel_details/forms.py:588 travel_details/forms.py:603
+#: travel_details/forms.py:655 travel_details/forms.py:670
+msgid "Country name"
+msgstr "Nom du pays"
+
+#: travel_details/forms.py:593 travel_details/forms.py:608
+#: travel_details/forms.py:660 travel_details/forms.py:675
+msgid "City name"
+msgstr "Nom de la ville"
+
+#: travel_details/forms.py:630 travel_details/forms.py:697
+msgid "Departure date can not be higher than return date"
+msgstr "La date de depart ne peut etre posterieur à la date de retour!"
+
+#: travel_details/forms.py:635 travel_details/forms.py:702
+msgid "Departure and arrival countries can not be the same"
+msgstr "Les pays de départ et d'arrivée ne peuvent être les mêmes"
+
+#: travel_details/forms.py:639 travel_details/forms.py:706
+msgid "Your last travel have the same departure and arrival country"
+msgstr "Votre dernier voyage a le même pays de départ et d'arrivée"
+
+#: travel_details/forms.py:735
+msgid "passport"
+msgstr "Passport"
+
+#: travel_details/forms.py:741
+msgid "matricule"
+msgstr "Matricule"
+
+#: travel_details/forms.py:746
+msgid "first name"
+msgstr "Prénom"
+
+#: travel_details/forms.py:752
+msgid "last name"
+msgstr "Nom"
+
+#: travel_details/forms.py:758
+msgid "email"
+msgstr "Email"
+
+#: travel_details/forms.py:764
+msgid "telephone"
+msgstr "Téléphone"
+
+#: travel_details/forms.py:772
+msgid "state"
+msgstr "Status"
+
+#: travel_details/forms.py:783
+msgid "ministry"
+msgstr "Ministère / Institution"
+
+#: travel_details/forms.py:822
+msgid "Explain why you giving that score to this flight offre"
+msgstr "Expliquez pourquoi vous attribuez cette note à cette offre"
+
+#: travel_details/management/commands/send_mail.py:122
+msgid "Choosing a flight submission reminder"
+msgstr "Choisir un rappel de soumission de vol"
+
+#: travel_details/models.py:110
+msgid "man"
+msgstr "Masculin"
+
+#: travel_details/models.py:111
+msgid "woman"
+msgstr "Feminin"
+
+#: travel_details/models.py:115
+msgid "Minister"
+msgstr "Ministre"
+
+#: travel_details/models.py:116
+msgid "Public worker"
+msgstr "Agent de l'Etat"
+
+#: travel_details/models.py:117
+msgid "Contractual"
+msgstr "Contractuel"
+
+#: travel_details/models.py:118
+msgid "Consultant"
+msgstr "Consultant"
+
+#: travel_details/models.py:119
+msgid "Trainee"
+msgstr "Stagiaire"
+
+#: travel_details/models.py:120
+msgid "Military"
+msgstr "Militaire"
+
+#: travel_details/templates/404.html:17
+msgid "PAGE NOT FOUND"
+msgstr "PAGE NON TROUVÉE"
+
+#: travel_details/templates/404.html:19
+msgid ""
+"You have been tricked into click on a link that can not be found. Please "
+"check the url or go to"
+msgstr ""
+"Vous vous êtes trompé en cliquant sur un lien qui ne peut être trouvé. "
+"Vérifiez l'URL ou allez à la "
+
+#: travel_details/templates/404.html:19 travel_details/templates/500.html:19
+msgid "main page"
+msgstr "page d'accueil"
+
+#: travel_details/templates/404.html:19
+msgid "and see if you can locate what you are looking for"
+msgstr "et voir si vous pouvez trouver ce que vous recherchez"
+
+#: travel_details/templates/500.html:17
+msgid "UNAUTHORIZED"
+msgstr "NON AUTORISÉ"
+
+#: travel_details/templates/500.html:19
+msgid ""
+"You have been tricked into click on a link that you are not authorize. "
+"Please go to"
+msgstr ""
+"Vous vous êtes trompé en cliquant sur un lien que vous n'êtes pas autorisé. "
+"S'il vous plaît allez à la"
+
+#: travel_details/templates/500.html:19
+msgid "and we will locate to the page you are authorized"
+msgstr "et nous allons vous rédirigez sur la page qui vous est autorisée"
+
+#: travel_details/templates/base.html:9
+msgid "Guinea Government Official Travel Tracker"
+msgstr "Gestion de voyage des agents de l'Etat"
+
+#: travel_details/templates/base.html:338
+#: travel_details/templates/base.html:340
+msgid "Missions"
+msgstr "Missions"
+
+#: travel_details/templates/base.html:346
+msgid "Users"
+msgstr "Utilisateurs"
+
+#: travel_details/templates/base.html:351
+msgid "Register User"
+msgstr "Inscrire un utilisateur"
+
+#: travel_details/templates/base.html:352
+msgid "All Ch. to Outside Travels"
+msgstr "Tous les Ch. de Voyage à l’Extérieur"
+
+#: travel_details/templates/base.html:353
+msgid "All DAF "
+msgstr "Tous les DAFs"
+
+#: travel_details/templates/base.html:359
+msgid "All DAF"
+msgstr "DAFs"
+
+#: travel_details/templates/base.html:363
+#: travel_details/templates/travel_details/old_mission.html:201
+msgid "Travellers"
+msgstr "Voyageurs"
+
+#: travel_details/templates/base.html:364
+#: travel_details/templates/travel_details/charts.html:41
+msgid "Charts"
+msgstr "Statistiques"
+
+#: travel_details/templates/base.html:367
+msgid "Agencies"
+msgstr "Agences"
+
+#: travel_details/templates/base.html:372
+msgid "Register Agency"
+msgstr "Inscrire une Agence"
+
+#: travel_details/templates/base.html:374
+msgid "All Agencies"
+msgstr "Agences"
+
+#: travel_details/templates/base.html:375
+msgid " All Company"
+msgstr "Compagnies"
+
+#: travel_details/templates/base.html:382
+msgid "My Account"
+msgstr "Mon compte"
+
+#: travel_details/templates/base.html:394
+msgid "Administrator"
+msgstr "Administrateur"
+
+#: travel_details/templates/travel_details/agencies.html:27
+#: travel_details/templates/travel_details/agency_account.html:19
+#: travel_details/templates/travel_details/agency_registration.html:49
+#: travel_details/templates/travel_details/all_agencies.html:30
+#: travel_details/templates/travel_details/all_agencies.html:91
+#: travel_details/templates/base.html:398
+#: travel_details/templates/travel_details/mission_details.html:1031
+#: travel_details/templates/travel_details/mission_details.html:1218
+#: travel_details/templates/travel_details/mission_details.html:1504
+#: travel_details/templates/travel_details/old_mission.html:355
+msgid "Agency"
+msgstr "Agence"
+
+#: travel_details/templates/base.html:400
+#: travel_details/templates/travel_details/action_tracking.html:54
+msgid "User"
+msgstr "Utilisateur"
+
+#: travel_details/templates/base.html:406
+#: travel_details/templates/travel_details/user_profile.html:40
+msgid "My Profile"
+msgstr "Mon profile"
+
+#: travel_details/templates/base.html:412
+msgid "Change my Password"
+msgstr "Changer mon mot de passe"
+
+#: travel_details/templates/base.html:425
+msgid "Logout"
+msgstr "Déconnecter"
+
+#: travel_details/templates/base.html:458
+#: travel_details/templates/travel_details/login.html:157
+msgid "Ministry of Budget"
+msgstr "Ministère du Budget"
+
+#: travel_details/templates/base.html:458
+msgid "All rights reserved."
+msgstr "Tous droits reservés."
+
+#: travel_details/templates/registration/password_reset_complete.html:20
+msgid "Your password has been set. You may go ahead and "
+msgstr "Votre mot de passe à été fixé.  Vous pouvez"
+
+#: travel_details/templates/registration/password_reset_complete.html:20
+#: travel_details/templates/registration/password_reset_confirm.html:77
+#: travel_details/templates/registration/password_reset_done.html:19
+msgid " Log In"
+msgstr " Se Connecter"
+
+#: travel_details/templates/registration/password_reset_complete.html:20
+msgid " now"
+msgstr " maintenant"
+
+#: travel_details/templates/registration/password_reset_confirm.html:53
+#: travel_details/templates/registration/password_reset_confirm.html:67
+msgid "Change password"
+msgstr "Changer le mot de passe"
+
+#: travel_details/templates/registration/password_reset_confirm.html:58
+msgid "New password: *"
+msgstr "Nouveau mot de passe : *"
+
+#: travel_details/templates/registration/password_reset_confirm.html:62
+msgid "New password confirmation: *"
+msgstr "Nouveau mot de passe de confirmation : *"
+
+#: travel_details/templates/registration/password_reset_confirm.html:73
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used."
+msgstr ""
+"Le lien de réinitialisation du mot de passe est incorrect, peut être parce "
+"qu'il a été déjà utilisé"
+
+#: travel_details/templates/registration/password_reset_confirm.html:74
+msgid "Please request a new password reset."
+msgstr "S'il vous plaît demander une nouvelle réinitialisation de mot de passe"
+
+#: travel_details/templates/registration/password_reset_confirm.html:77
+msgid "You may go to the "
+msgstr "Vous pouvez acceder à la "
+
+#: travel_details/templates/registration/password_reset_confirm.html:77
+#: travel_details/templates/registration/password_reset_form.html:46
+msgid " page"
+msgstr " page"
+
+#: travel_details/templates/registration/password_reset_done.html:16
+msgid ""
+"We've emailed you instructions for setting up your password, if an account "
+"exists with the email you entered. You should receive them shortly."
+msgstr ""
+"Nous vous avons envoyé des instructions pour parametrer votre mot de passe, "
+"si un compte existe avec le mail que vous avez saisi. Vous devriez le "
+"recevoir sous peu de temps"
+
+#: travel_details/templates/registration/password_reset_done.html:19
+msgid ""
+"If you don't receive an email, please make sure you've entered the address "
+"you registered with and check your spam folder. Or goto the"
+msgstr ""
+"Si vous n'avez pas reçu de mail, s'il vous plaît assurez-vous que vous avez "
+"saisi l'adresse enregistrée et vérifiez dans le Spam. Ou aller à la"
+
+#: travel_details/templates/registration/password_reset_done.html:19
+msgid " page and request new password again"
+msgstr " page et demander un nouveau mot de passe encore"
+
+#: travel_details/templates/registration/password_reset_form.html:46
+msgid "Go back to the"
+msgstr "Retour à la"
+
+#: travel_details/templates/registration/password_reset_form.html:46
+#: travel_details/templates/travel_details/register.html:58
+msgid " Log in"
+msgstr " Se Connecter"
+
+#: travel_details/templates/registration/password_reset_form.html:47
+msgid ""
+"If you have forgot your account's password. Enter your email address and "
+"we'll send you a recovery link."
+msgstr ""
+"Si vous avez oublier votre mot de passe. Saisissez votre adresse mail et "
+"nous vous enverrons un lien de récupération"
+
+#: travel_details/templates/registration/password_reset_form.html:53
+msgid "Email: "
+msgstr "Email"
+
+#: travel_details/templates/registration/password_reset_form.html:58
+msgid "Send Recovery Email"
+msgstr "Envoyer le mail de récupération"
+
+#: travel_details/templates/travel_details/agencies.html:27
+#: travel_details/templates/travel_details/agency_account.html:19
+#: travel_details/templates/travel_details/agency_registration.html:49
+#: travel_details/templates/travel_details/mission_details.html:1031
+#: travel_details/templates/travel_details/mission_details.html:1218
+#: travel_details/templates/travel_details/mission_details.html:1504
+msgid "Agency Name"
+msgstr "Agence"
+
+#: travel_details/templates/travel_details/agencies.html:28
+#: travel_details/templates/travel_details/traveler_options.html:41
+msgid "Flight"
+msgstr "Vol"
+
+#: travel_details/templates/travel_details/agencies.html:29
+#: travel_details/templates/travel_details/all_missions.html:48
+#: travel_details/templates/travel_details/all_missions.html:86
+#: travel_details/templates/travel_details/traveler_options.html:40
+#: travel_details/templates/travel_details/user_missions.html:47
+#: travel_details/templates/travel_details/user_missions.html:84
+msgid "Class"
+msgstr "Classe"
+
+#: travel_details/templates/travel_details/agencies.html:30
+msgid "Price"
+msgstr "Prix"
+
+#: travel_details/templates/travel_details/agencies.html:31
+#: travel_details/templates/travel_details/confirm.html:29
+msgid "Time"
+msgstr "Heure(s)"
+
+#: travel_details/templates/travel_details/agencies.html:32
+msgid "Select"
+msgstr "Selectionner"
+
+#: travel_details/templates/travel_details/agencies.html:53
+msgid "Submit Your Selection"
+msgstr "Envoyer votre selection"
+
+#: travel_details/templates/travel_details/agencies.html:66
+msgid "Please give the reason why you select these three flights?"
+msgstr ""
+"S'il vous plaît, donnez la raison pour laquelle vous sélectionnez ces trois "
+"vols"
+
+#: travel_details/templates/travel_details/agencies.html:72
+msgid "Submit"
+msgstr "Envoyer"
+
+#: travel_details/templates/travel_details/agencies.html:73
+#: travel_details/templates/travel_details/traveler_form.html:170
+msgid "Cancel"
+msgstr "Annuler"
+
+#: travel_details/templates/travel_details/agencies.html:83
+msgid "Sorry No Flight Submited Yet For This Mission."
+msgstr "Désolé pas de vol soumis pour cette mission"
+
+#: travel_details/templates/travel_details/agency_account.html:14
+#: travel_details/templates/travel_details/user_account.html:14
+msgid "Hi This is your Account."
+msgstr "Bonjour Ceci est votre compte."
+
+#: travel_details/templates/travel_details/agency_account.html:30
+#: travel_details/templates/travel_details/user_account.html:21
+msgid "Change Your Password"
+msgstr "Changer votre mot de passe"
+
+#: travel_details/templates/travel_details/agency_registration.html:42
+msgid "Registration of a travel agency"
+msgstr "Inscription d'une agence de voyage"
+
+#: travel_details/templates/travel_details/agency_registration.html:53
+#: travel_details/templates/travel_details/user_send_mail.html:49
+msgid "User Email"
+msgstr "Email de l'utilisateur"
+
+#: travel_details/templates/travel_details/agency_registration.html:57
+msgid "Password"
+msgstr "Mot de passe"
+
+#: travel_details/templates/travel_details/agency_registration.html:61
+msgid "Confirm Password"
+msgstr "Confirmer le mot de passe : *"
+
+#: travel_details/templates/travel_details/agency_registration.html:65
+#: travel_details/templates/travel_details/all_agencies.html:93
+#: travel_details/templates/travel_details/mission_details.html:308
+msgid "Phone Number"
+msgstr "Téléphone"
+
+#: travel_details/templates/travel_details/agency_registration.html:69
+msgid "Your Address"
+msgstr "Votre Adresse"
+
+#: travel_details/templates/travel_details/agency_registration.html:73
+#: travel_details/templates/travel_details/agency_send_mail.html:48
+#: travel_details/templates/travel_details/personnes.html:124
+#: travel_details/templates/travel_details/user_send_mail.html:55
+msgid "Send"
+msgstr "Envoyer"
+
+#: travel_details/templates/travel_details/agency_registration.html:76
+msgid "This Platform is Brought to you By The Ministry of Budget"
+msgstr "Cette plateforme vous est offerte par le Ministère du Budget"
+
+#: travel_details/templates/travel_details/agency_registration.html:79
+#: travel_details/templates/travel_details/register.html:68
+msgid "This link is no longer valid or bad link"
+msgstr "Ce lien n'est plus valide ou mauvais lien"
+
+#: travel_details/templates/travel_details/agency_send_mail.html:35
+msgid "Send Email Registration to Agency"
+msgstr "Envoyer le courier d'inscription à l'agence"
+
+#: travel_details/templates/travel_details/agency_send_mail.html:42
+msgid "Agency Email"
+msgstr "Email de l'agence"
+
+#: travel_details/templates/travel_details/all_agencies.html:24
+msgid "Agency list"
+msgstr "Liste des Agences"
+
+#: travel_details/templates/travel_details/all_agencies.html:29
+#: travel_details/templates/travel_details/flights.html:40
+#: travel_details/templates/travel_details/liste_personne.html:43
+#: travel_details/templates/travel_details/mission_details.html:248
+#: travel_details/templates/travel_details/mission_details.html:272
+#: travel_details/templates/travel_details/mission_details.html:304
+#: travel_details/templates/travel_details/mission_details.html:664
+#: travel_details/templates/travel_details/mission_details.html:745
+#: travel_details/templates/travel_details/mission_details.html:772
+#: travel_details/templates/travel_details/mission_details.html:800
+#: travel_details/templates/travel_details/mission_details.html:1030
+#: travel_details/templates/travel_details/mission_details.html:1217
+#: travel_details/templates/travel_details/mission_details.html:1503
+#: travel_details/templates/travel_details/missions.html:97
+#: travel_details/templates/travel_details/users.html:31
+#: travel_details/templates/travel_details/users_daaf.html:48
+msgid "#"
+msgstr "#"
+
+#: travel_details/templates/travel_details/all_agencies.html:32
+#: travel_details/templates/travel_details/liste_personne.html:49
+#: travel_details/templates/travel_details/missions.html:107
+#: travel_details/templates/travel_details/missions.html:168
+#: travel_details/templates/travel_details/missions.html:228
+#: travel_details/templates/travel_details/missions.html:317
+#: travel_details/templates/travel_details/users.html:35
+#: travel_details/templates/travel_details/users_daaf.html:53
+msgid "View"
+msgstr "Afficher"
+
+#: travel_details/templates/travel_details/all_agencies.html:34
+msgid "Edite Agency"
+msgstr "Editer l'agence"
+
+#: travel_details/templates/travel_details/all_agencies.html:35
+#: travel_details/templates/travel_details/mission_details.html:748
+#: travel_details/templates/travel_details/mission_details.html:774
+#: travel_details/templates/travel_details/mission_details.html:803
+#: travel_details/templates/travel_details/users.html:37
+#: travel_details/templates/travel_details/users_daaf.html:56
+msgid "States"
+msgstr "Etats"
+
+#: travel_details/templates/travel_details/all_agencies.html:49
+#: travel_details/templates/travel_details/liste_personne.html:68
+#: travel_details/templates/travel_details/users.html:50
+#: travel_details/templates/travel_details/users_daaf.html:72
+msgid " View"
+msgstr " Afficher"
+
+#: travel_details/templates/travel_details/all_agencies.html:56
+#: travel_details/templates/travel_details/liste_personne.html:75
+#: travel_details/templates/travel_details/users.html:56
+#: travel_details/templates/travel_details/users_daaf.html:80
+msgid " Edit"
+msgstr " Editer"
+
+#: travel_details/templates/travel_details/all_agencies.html:63
+#: travel_details/templates/travel_details/users.html:67
+#: travel_details/templates/travel_details/users_daaf.html:88
+msgid " Deactivate"
+msgstr " Désactiver"
+
+#: travel_details/templates/travel_details/all_agencies.html:71
+#: travel_details/templates/travel_details/users.html:75
+#: travel_details/templates/travel_details/users_daaf.html:96
+msgid " Activate"
+msgstr " Activer"
+
+#: travel_details/templates/travel_details/all_agencies.html:87
+msgid "Agency Details"
+msgstr "Details de l'agence"
+
+#: travel_details/templates/travel_details/all_agencies.html:92
+msgid "Agency Address"
+msgstr "Adresse de l'agence"
+
+#: travel_details/templates/travel_details/all_agencies.html:105
+#: travel_details/templates/travel_details/users.html:110
+#: travel_details/templates/travel_details/users_daaf.html:131
+msgid "Are You Sure?"
+msgstr "Etes-vous sûr ?"
+
+#: travel_details/templates/travel_details/all_agencies.html:108
+#: travel_details/templates/travel_details/users.html:113
+#: travel_details/templates/travel_details/users_daaf.html:134
+msgid "are you sure you want to "
+msgstr "Etes-vous sûr de vouloir "
+
+#: travel_details/templates/travel_details/all_agencies.html:108
+#: travel_details/templates/travel_details/users.html:113
+#: travel_details/templates/travel_details/users_daaf.html:134
+msgid "deactivate"
+msgstr "désactiver"
+
+#: travel_details/templates/travel_details/all_agencies.html:108
+#: travel_details/templates/travel_details/users.html:113
+#: travel_details/templates/travel_details/users_daaf.html:134
+msgid "activate"
+msgstr "activer"
+
+#: travel_details/templates/travel_details/all_agencies.html:108
+msgid " this agency?"
+msgstr " cette agence"
+
+#: travel_details/templates/travel_details/all_agencies.html:111
+#: travel_details/templates/travel_details/mission_details.html:228
+#: travel_details/templates/travel_details/mission_details.html:1083
+#: travel_details/templates/travel_details/users.html:116
+#: travel_details/templates/travel_details/users_daaf.html:137
+msgid "Yes"
+msgstr "Oui"
+
+#: travel_details/templates/travel_details/all_agencies.html:112
+#: travel_details/templates/travel_details/flights.html:72
+#: travel_details/templates/travel_details/mission.html:235
+#: travel_details/templates/travel_details/mission_details.html:205
+#: travel_details/templates/travel_details/mission_details.html:556
+#: travel_details/templates/travel_details/mission_details.html:626
+#: travel_details/templates/travel_details/mission_details.html:864
+#: travel_details/templates/travel_details/mission_details.html:884
+#: travel_details/templates/travel_details/mission_details.html:1007
+#: travel_details/templates/travel_details/mission_details.html:1085
+#: travel_details/templates/travel_details/mission_details.html:1194
+#: travel_details/templates/travel_details/mission_details.html:1436
+#: travel_details/templates/travel_details/mission_details.html:1476
+#: travel_details/templates/travel_details/missions.html:295
+#: travel_details/templates/travel_details/old_mission.html:421
+#: travel_details/templates/travel_details/update_mission.html:227
+#: travel_details/templates/travel_details/users.html:117
+#: travel_details/templates/travel_details/users_daaf.html:138
+msgid "No"
+msgstr "Non"
+
+#: travel_details/templates/travel_details/mission_details.html:230
+msgid "Close"
+msgstr "Fermer"
+
+#: travel_details/templates/travel_details/all_missions.html:18
+msgid "Pending Missions"
+msgstr "Missions en attentes"
+
+#: travel_details/templates/travel_details/all_missions.html:26
+#: travel_details/templates/travel_details/user_missions.html:22
+msgid "Approved Missions"
+msgstr "Missions approuvées"
+
+#: travel_details/templates/travel_details/all_missions.html:41
+#: travel_details/templates/travel_details/all_missions.html:79
+#: travel_details/templates/travel_details/user_missions.html:40
+#: travel_details/templates/travel_details/user_missions.html:77
+msgid "Title"
+msgstr "Titre"
+
+#: travel_details/templates/travel_details/all_missions.html:42
+#: travel_details/templates/travel_details/all_missions.html:80
+#: travel_details/templates/travel_details/mission.html:137
+#: travel_details/templates/travel_details/old_mission.html:132
+#: travel_details/templates/travel_details/traveler_form.html:55
+#: travel_details/templates/travel_details/update_mission.html:123
+#: travel_details/templates/travel_details/user_missions.html:41
+#: travel_details/templates/travel_details/user_missions.html:78
+msgid "Description"
+msgstr "Description"
+
+#: travel_details/templates/travel_details/all_missions.html:43
+#: travel_details/templates/travel_details/all_missions.html:81
+#: travel_details/templates/travel_details/traveler_form.html:61
+#: travel_details/templates/travel_details/traveler_options.html:35
+#: travel_details/templates/travel_details/user_missions.html:42
+#: travel_details/templates/travel_details/user_missions.html:79
+msgid "Place"
+msgstr "Place"
+
+#: travel_details/templates/travel_details/all_missions.html:44
+#: travel_details/templates/travel_details/all_missions.html:82
+#: travel_details/templates/travel_details/traveler_form.html:67
+#: travel_details/templates/travel_details/traveler_options.html:36
+#: travel_details/templates/travel_details/update_mission.html:143
+#: travel_details/templates/travel_details/user_missions.html:43
+#: travel_details/templates/travel_details/user_missions.html:80
+msgid "City or State"
+msgstr "Ville ou Etat"
+
+#: travel_details/templates/travel_details/all_missions.html:45
+#: travel_details/templates/travel_details/all_missions.html:83
+#: travel_details/templates/travel_details/traveler_form.html:73
+#: travel_details/templates/travel_details/traveler_options.html:37
+#: travel_details/templates/travel_details/update_mission.html:137
+#: travel_details/templates/travel_details/user_missions.html:44
+#: travel_details/templates/travel_details/user_missions.html:81
+msgid "Country"
+msgstr "Pays"
+
+#: travel_details/templates/travel_details/all_missions.html:46
+#: travel_details/templates/travel_details/all_missions.html:84
+#: travel_details/templates/travel_details/mission.html:166
+#: travel_details/templates/travel_details/mission.html:176
+#: travel_details/templates/travel_details/mission_details.html:148
+#: travel_details/templates/travel_details/mission_details.html:1033
+#: travel_details/templates/travel_details/mission_details.html:1220
+#: travel_details/templates/travel_details/mission_details.html:1506
+#: travel_details/templates/travel_details/missions.html:102
+#: travel_details/templates/travel_details/old_mission.html:150
+#: travel_details/templates/travel_details/old_mission.html:160
+#: travel_details/templates/travel_details/traveler_form.html:104
+#: travel_details/templates/travel_details/traveler_form.html:114
+#: travel_details/templates/travel_details/traveler_options.html:38
+#: travel_details/templates/travel_details/update_mission.html:153
+#: travel_details/templates/travel_details/update_mission.html:163
+#: travel_details/templates/travel_details/user_missions.html:45
+#: travel_details/templates/travel_details/user_missions.html:82
+msgid "Departure Date"
+msgstr "Date de départ"
+
+#: travel_details/templates/travel_details/all_missions.html:47
+#: travel_details/templates/travel_details/all_missions.html:85
+#: travel_details/templates/travel_details/mission.html:188
+#: travel_details/templates/travel_details/mission.html:198
+#: travel_details/templates/travel_details/mission_details.html:149
+#: travel_details/templates/travel_details/old_mission.html:172
+#: travel_details/templates/travel_details/old_mission.html:182
+#: travel_details/templates/travel_details/traveler_form.html:122
+#: travel_details/templates/travel_details/traveler_form.html:132
+#: travel_details/templates/travel_details/traveler_options.html:39
+#: travel_details/templates/travel_details/update_mission.html:175
+#: travel_details/templates/travel_details/update_mission.html:185
+#: travel_details/templates/travel_details/user_missions.html:46
+#: travel_details/templates/travel_details/user_missions.html:83
+msgid "Return Date"
+msgstr "Date de retour"
+
+#: travel_details/templates/travel_details/all_missions.html:51
+#: travel_details/templates/travel_details/user_missions.html:49
+msgid "Mission Flight Price"
+msgstr "Prix du vol de la mission"
+
+#: travel_details/templates/travel_details/all_missions.html:54
+msgid "Confirm Flights For This Mission"
+msgstr "Confirmer les vols pour cette mission"
+
+#: travel_details/templates/travel_details/all_missions.html:64
+#: travel_details/templates/travel_details/user_missions.html:59
+msgid "Rejected Missions"
+msgstr "Missions rejétées"
+
+#: travel_details/templates/travel_details/change_password.html:53
+msgid "Change my password"
+msgstr "Changer mon mot de passe"
+
+#: travel_details/templates/travel_details/change_password.html:59
+msgid "Old Password: *"
+msgstr "Ancien mot de passe : *"
+
+#: travel_details/templates/travel_details/change_password.html:65
+msgid "New Password: *"
+msgstr "Nouveau mot de passe : *"
+
+#: travel_details/templates/travel_details/change_password.html:71
+msgid "Confirm Password: *"
+msgstr "Confirmer le mot de passe : *"
+
+#: travel_details/templates/travel_details/change_password.html:80
+msgid " Save Changes"
+msgstr "Enregistrer les changements"
+
+#: travel_details/templates/travel_details/charts.html:50
+#: travel_details/templates/travel_details/mission_details.html:844
+msgid "Exit"
+msgstr "Quitter"
+
+#: travel_details/templates/travel_details/confirm.html:22
+msgid "Select Your Prefered Flight and Confirm"
+msgstr "Sélectionnez votre vol préféré et confirmez"
+
+#: travel_details/templates/travel_details/confirm.html:23
+msgid "(Only one choice is allowed)"
+msgstr "Un seul choix est autorisé"
+
+#: travel_details/templates/travel_details/confirm.html:29
+msgid "Flights"
+msgstr "Vols"
+
+#: travel_details/templates/travel_details/confirm.html:35
+#: travel_details/templates/travel_details/mission_details.html:625
+#: travel_details/templates/travel_details/mission_details.html:863
+#: travel_details/templates/travel_details/mission_details.html:883
+#: travel_details/templates/travel_details/mission_details.html:1193
+msgid "Confirm"
+msgstr "Confirmer"
+
+#: travel_details/templates/travel_details/create_success.html:54
+msgid ""
+"Your account has been successfully created. It will be activated soon, "
+"please wait."
+msgstr ""
+"Votre compte à été créé avec succès. Il sera activé bientôt, patientez SVP."
+
+#: travel_details/templates/travel_details/flights.html:25
+msgid "list of company"
+msgstr "Liste des Compagnies"
+
+#: travel_details/templates/travel_details/flights.html:32
+msgid "Add new company"
+msgstr "Ajouter une nouvelle Compagnie"
+
+#: travel_details/templates/travel_details/flights.html:41
+#: travel_details/templates/travel_details/mission_details.html:385
+#: travel_details/templates/travel_details/mission_details.html:480
+#: travel_details/templates/travel_details/mission_details.html:1219
+#: travel_details/templates/travel_details/mission_details.html:1505
+msgid "Company"
+msgstr "Compagnie "
+
+#: travel_details/templates/travel_details/flights.html:42
+msgid "Created at"
+msgstr "Créé le"
+
+#: travel_details/templates/travel_details/flights.html:62
+msgid "Add company"
+msgstr "Ajouter une Compagnie"
+
+#: travel_details/templates/travel_details/flights.html:66
+msgid "Company name"
+msgstr "Nom de la Compagnie"
+
+#: travel_details/templates/travel_details/flights.html:71
+#: travel_details/templates/travel_details/mission_details.html:204
+#: travel_details/templates/travel_details/mission_details.html:298
+#: travel_details/templates/travel_details/mission_details.html:1435
+#: travel_details/templates/travel_details/mission_details.html:1475
+msgid "Validate"
+msgstr "Valider"
+
+#: travel_details/templates/travel_details/liste_personne.html:25
+msgid "Persons list"
+msgstr "Liste des Voyageurs"
+
+#: travel_details/templates/travel_details/liste_personne.html:32
+#: travel_details/templates/travel_details/missions.html:62
+#: travel_details/templates/travel_details/missions.html:73
+#: travel_details/templates/travel_details/missions.html:84
+#: travel_details/templates/travel_details/action_tracking.html:24
+#: travel_details/templates/travel_details/action_tracking.html:33
+#: travel_details/templates/travel_details/action_tracking.html:42
+msgid "All"
+msgstr "Tous"
+
+#: travel_details/templates/travel_details/liste_personne.html:51
+msgid "Edit"
+msgstr "Editer"
+
+#: travel_details/templates/travel_details/liste_personne.html:88
+msgid "Person Details"
+msgstr "Details du Voyageur"
+
+#: travel_details/templates/travel_details/liste_personne.html:95
+#: travel_details/templates/travel_details/old_mission.html:244
+msgid "Phone"
+msgstr "Téléphone"
+
+#: travel_details/templates/travel_details/liste_personne.html:100
+#: travel_details/templates/travel_details/mission_details.html:667
+#: travel_details/templates/travel_details/old_mission.html:250
+#: travel_details/templates/travel_details/personnes.html:90
+msgid "State"
+msgstr "Statut"
+
+#: travel_details/templates/travel_details/login.html:154
+msgid "Republic of Guinea"
+msgstr "République de Guinée"
+
+#: travel_details/templates/travel_details/login.html:155
+msgid "Labor - Justice - Solidarity"
+msgstr "Travail - Justice - Solidarité"
+
+#: travel_details/templates/travel_details/login.html:162
+msgid "eBiassi"
+msgstr "eBiassi"
+
+#: travel_details/templates/travel_details/login.html:163
+msgid "State Travel Manager"
+msgstr "Gestionnaire de voyage de l'État"
+
+#: travel_details/templates/travel_details/login.html:172
+msgid "Forget your password? "
+msgstr "Mot de passe oublié ? "
+
+#: travel_details/templates/travel_details/login.html:172
+msgid "reset"
+msgstr "Réinitialiser"
+
+#: travel_details/templates/travel_details/login.html:174
+msgid "You are connected"
+msgstr "Vous êtes connecté"
+
+#: travel_details/templates/travel_details/login.html:176
+#: travel_details/templates/travel_details/login.html:178
+msgid "Back to mission page"
+msgstr "Retour à la page de mission"
+
+#: travel_details/templates/travel_details/mission.html:113
+#: travel_details/templates/travel_details/old_mission.html:109
+#: travel_details/templates/travel_details/personnes.html:37
+#: travel_details/templates/travel_details/traveler_form.html:36
+#: travel_details/templates/travel_details/update_mission.html:105
+msgid "Guinean Officials Trips Tracker"
+msgstr "Gestion de voyage des agents de l'Etat"
+
+#: travel_details/templates/travel_details/mission.html:124
+#: travel_details/templates/travel_details/mission_details.html:137
+#: travel_details/templates/travel_details/old_mission.html:120
+#: travel_details/templates/travel_details/traveler_form.html:47
+#: travel_details/templates/travel_details/user_missions.html:36
+#: travel_details/templates/travel_details/user_missions.html:73
+msgid "Mission Details"
+msgstr "Détails de la Mission"
+
+#: travel_details/templates/travel_details/mission.html:125
+msgid "If this mission is urgent please check this checkbox"
+msgstr "Si cette mission est urgente, veuillez cocher cette case"
+
+#: travel_details/templates/travel_details/mission.html:129
+#: travel_details/templates/travel_details/old_mission.html:124
+#: travel_details/templates/travel_details/update_mission.html:115
+msgid "Mission"
+msgstr "Mission"
+
+#: travel_details/templates/travel_details/mission.html:131
+#: travel_details/templates/travel_details/mission_details.html:144
+#: travel_details/templates/travel_details/missions.html:101
+#: travel_details/templates/travel_details/old_mission.html:126
+#: travel_details/templates/travel_details/traveler_form.html:49
+#: travel_details/templates/travel_details/update_mission.html:117
+msgid "Mission Title"
+msgstr "Titre de la mission"
+
+#: travel_details/templates/travel_details/mission.html:143
+msgid "Number of travellers"
+msgstr "Nombre de voyageurs"
+
+#: travel_details/templates/travel_details/mission.html:149
+msgid "Do you have a mission Copy"
+msgstr "Avez-vous un odre de mission ?"
+
+#: travel_details/templates/travel_details/mission.html:150
+msgid "YES"
+msgstr "OUI"
+
+#: travel_details/templates/travel_details/mission.html:151
+msgid "NO"
+msgstr "NON"
+
+#: travel_details/templates/travel_details/mission.html:157
+msgid "Please give the reason why there no mission copy"
+msgstr ""
+"Veuillez donner la raison pour laquelle il n'y a pas d'ordre de mission"
+
+#: travel_details/templates/travel_details/mission.html:163
+#: travel_details/templates/travel_details/update_mission.html:150
+msgid "Date"
+msgstr "Date"
+
+#: travel_details/templates/travel_details/mission.html:181
+#: travel_details/templates/travel_details/update_mission.html:168
+msgid "Must be greater than or equal to the current date"
+msgstr "doit être supérieure ou égale à la date du jour"
+
+#: travel_details/templates/travel_details/mission.html:203
+#: travel_details/templates/travel_details/update_mission.html:190
+msgid "Must be the date of the day or > = the date of departure"
+msgstr "doit être la date du jour ou supérieure à la date de départ"
+
+#: travel_details/templates/travel_details/mission.html:213
+#: travel_details/templates/travel_details/old_mission.html:403
+#: travel_details/templates/travel_details/traveler_form.html:152
+#: travel_details/templates/travel_details/update_mission.html:209
+msgid "Send Your Mission"
+msgstr "Envoyer la Mission"
+
+#: travel_details/templates/travel_details/mission.html:225
+#: travel_details/templates/travel_details/mission_details.html:222
+#: travel_details/templates/travel_details/mission_details.html:857
+#: travel_details/templates/travel_details/mission_details.html:877
+#: travel_details/templates/travel_details/mission_details.html:992
+#: travel_details/templates/travel_details/old_mission.html:414
+#: travel_details/templates/travel_details/update_mission.html:220
+msgid "Confirmation"
+msgstr "Confirmation"
+
+#: travel_details/templates/travel_details/mission.html:228
+#: travel_details/templates/travel_details/old_mission.html:417
+#: travel_details/templates/travel_details/update_mission.html:223
+msgid "Is your Informations Correct ?"
+msgstr "Vos informations sont-elles correctes ?"
+
+#: travel_details/templates/travel_details/mission.html:233
+#: travel_details/templates/travel_details/mission_details.html:1005
+#: travel_details/templates/travel_details/old_mission.html:420
+#: travel_details/templates/travel_details/update_mission.html:226
+msgid "Yes and Send"
+msgstr "Oui et Envoyer"
+
+#: travel_details/templates/travel_details/mission_details.html:142
+#: travel_details/templates/travel_details/mission_details.html:1038
+#: travel_details/templates/travel_details/mission_details.html:1065
+msgid "Details"
+msgstr "Détails"
+
+#: travel_details/templates/travel_details/mission_details.html:146
+#: travel_details/templates/travel_details/old_mission.html:193
+msgid "Justification"
+msgstr "Justification"
+
+#: travel_details/templates/travel_details/mission_details.html:150
+#: travel_details/templates/travel_details/missions.html:100
+msgid "Submission date"
+msgstr "Date de soumission"
+
+#: travel_details/templates/travel_details/mission_details.html:152
+msgid "Submited By"
+msgstr "Soumise par"
+
+#: travel_details/templates/travel_details/mission_details.html:157
+#: travel_details/templates/travel_details/mission_details.html:159
+#: travel_details/templates/travel_details/mission_details.html:161
+#: travel_details/templates/travel_details/mission_details.html:163
+#: travel_details/templates/travel_details/mission_details.html:165
+#: travel_details/templates/travel_details/mission_details.html:167
+#: travel_details/templates/travel_details/mission_details.html:171
+#: travel_details/templates/travel_details/mission_details.html:173
+#: travel_details/templates/travel_details/mission_details.html:178
+msgid "Status"
+msgstr "Statut"
+
+#: travel_details/templates/travel_details/mission_details.html:157
+#: travel_details/templates/travel_details/missions.html:141
+#: travel_details/templates/travel_details/missions.html:197
+#: travel_details/templates/travel_details/missions.html:263
+msgid "Complete "
+msgstr "Complète "
+
+#: travel_details/templates/travel_details/mission_details.html:159
+#: travel_details/templates/travel_details/missions.html:143
+#: travel_details/templates/travel_details/missions.html:199
+#: travel_details/templates/travel_details/missions.html:265
+msgid "Mission creation "
+msgstr "Creation de mission"
+
+#: travel_details/templates/travel_details/mission_details.html:161
+#: travel_details/templates/travel_details/missions.html:145
+#: travel_details/templates/travel_details/missions.html:201
+#: travel_details/templates/travel_details/missions.html:267
+msgid "Agencies are Submiting "
+msgstr "En attente de soumission "
+
+#: travel_details/templates/travel_details/mission_details.html:163
+#: travel_details/templates/travel_details/missions.html:147
+#: travel_details/templates/travel_details/missions.html:203
+#: travel_details/templates/travel_details/missions.html:269
+msgid "Choosing an agency"
+msgstr "Choisir une agence"
+
+#: travel_details/templates/travel_details/mission_details.html:165
+#: travel_details/templates/travel_details/missions.html:149
+#: travel_details/templates/travel_details/missions.html:205
+#: travel_details/templates/travel_details/missions.html:271
+msgid "Waiting for the ticket"
+msgstr "En attente du billet"
+
+#: travel_details/templates/travel_details/mission_details.html:168
+#: travel_details/templates/travel_details/missions.html:208
+#: travel_details/templates/travel_details/missions.html:302
+msgid "Time Out"
+msgstr "Delai depassé"
+
+#: travel_details/templates/travel_details/mission_details.html:171
+#: travel_details/templates/travel_details/missions.html:150
+msgid "Executed and closed"
+msgstr "Exécuté et fermé"
+
+#: travel_details/templates/travel_details/mission_details.html:174
+#: travel_details/templates/travel_details/missions.html:153
+#: travel_details/templates/travel_details/missions.html:213
+#: travel_details/templates/travel_details/missions.html:275
+msgid "Execution canceled"
+msgstr "Exécution annulée"
+
+#: travel_details/templates/travel_details/mission_details.html:178
+#: travel_details/templates/travel_details/missions.html:160
+#: travel_details/templates/travel_details/missions.html:220
+#: travel_details/templates/travel_details/missions.html:309
+msgid "Unpublished"
+msgstr "Non publiée"
+
+#: travel_details/templates/travel_details/mission_details.html:183
+msgid "View mission order"
+msgstr "Afficher l'ordre de mission"
+
+#: travel_details/templates/travel_details/mission_details.html:188
+#: travel_details/templates/travel_details/mission_details.html:198
+#: travel_details/views.py:1157 travel_details/views.py:1184
+msgid "Upload mission order"
+msgstr "Charger l'ordre de mission"
+
+#: travel_details/templates/travel_details/mission_details.html:215
+msgid "confirm the execution of the mission"
+msgstr "Confirmer l'exécution de la mission"
+
+#: travel_details/templates/travel_details/mission_details.html:225
+msgid "Do you confirm that the mission effectively took place ?"
+msgstr "Confirmez-vous que la mission a effectivement eu lieu ?"
+
+#: travel_details/templates/travel_details/mission_details.html:229
+msgid "Is Cancel"
+msgstr "Est-Annuler"
+
+#: travel_details/templates/travel_details/mission_details.html:243
+#: travel_details/templates/travel_details/mission_details.html:267
+#: travel_details/templates/travel_details/mission_details.html:292
+msgid "Travelers"
+msgstr "Voyageurs"
+
+#: travel_details/templates/travel_details/mission_details.html:249
+#: travel_details/templates/travel_details/mission_details.html:305
+#: travel_details/templates/travel_details/mission_details.html:746
+#: travel_details/templates/travel_details/mission_details.html:801
+msgid "Last Name & First Name"
+msgstr "Noms"
+
+#: travel_details/forms.py:518
+#: travel_details/templates/travel_details/liste_personne.html:44
+#: travel_details/templates/travel_details/liste_personne.html:91
+#: travel_details/templates/travel_details/mission_details.html:250
+#: travel_details/templates/travel_details/mission_details.html:306
+#: travel_details/templates/travel_details/mission_details.html:747
+#: travel_details/templates/travel_details/mission_details.html:802
+#: travel_details/templates/travel_details/old_mission.html:206
+#: travel_details/templates/travel_details/personnes.html:48
+#: travel_details/templates/travel_details/traveler_options.html:34
+#: travel_details/templates/travel_details/users.html:96
+#: travel_details/templates/travel_details/users_daaf.html:117
+msgid "Passport"
+msgstr "Passeport"
+
+#: travel_details/templates/travel_details/mission_details.html:251
+#: travel_details/templates/travel_details/mission_details.html:274
+#: travel_details/templates/travel_details/mission_details.html:310
+#: travel_details/templates/travel_details/old_mission.html:274
+#: travel_details/templates/travel_details/personnes.html:114
+msgid "Class type"
+msgstr "Classe"
+
+#: travel_details/templates/travel_details/mission_details.html:273
+msgid "Name"
+msgstr "Nom"
+
+#: travel_details/templates/travel_details/mission_details.html:281
+#: travel_details/templates/travel_details/mission_details.html:773
+#: travel_details/templates/travel_details/mission_details.html:781
+#: travel_details/templates/travel_details/personnes.html:46
+msgid "Person"
+msgstr "Voyageur"
+
+#: travel_details/templates/travel_details/mission_details.html:297
+msgid "Number of person :"
+msgstr "Nombre de voyageurs :"
+
+#: travel_details/templates/travel_details/mission_details.html:335
+msgid "Your propositions"
+msgstr "Vos propositions"
+
+#: travel_details/templates/travel_details/mission_details.html:343
+#: travel_details/templates/travel_details/mission_details.html:436
+#: travel_details/templates/travel_details/mission_details.html:1212
+msgid "Propositions"
+msgstr "Propositions"
+
+#: travel_details/templates/travel_details/mission_details.html:353
+#: travel_details/templates/travel_details/mission_details.html:448
+#: travel_details/templates/travel_details/mission_details.html:665
+msgid "Departure"
+msgstr "Départ"
+
+#: travel_details/templates/travel_details/mission_details.html:369
+msgid "Return"
+msgstr "Retour"
+
+#: travel_details/templates/travel_details/mission_details.html:391
+#: travel_details/templates/travel_details/mission_details.html:486
+#: travel_details/templates/travel_details/mission_details.html:1035
+#: travel_details/templates/travel_details/mission_details.html:1222
+#: travel_details/templates/travel_details/mission_details.html:1508
+#: travel_details/templates/travel_details/old_mission.html:382
+msgid "Price GNF"
+msgstr "Prix GNF"
+
+#: travel_details/templates/travel_details/mission_details.html:397
+#: travel_details/templates/travel_details/mission_details.html:492
+#: travel_details/templates/travel_details/mission_details.html:1036
+#: travel_details/templates/travel_details/mission_details.html:1223
+#: travel_details/templates/travel_details/mission_details.html:1509
+#: travel_details/templates/travel_details/old_mission.html:388
+msgid "Price USD"
+msgstr "Prix USD"
+
+#: travel_details/templates/travel_details/mission_details.html:403
+#: travel_details/templates/travel_details/mission_details.html:498
+#: travel_details/templates/travel_details/old_mission.html:374
+msgid "Image of Ticket"
+msgstr "Image du Billet"
+
+#: travel_details/templates/travel_details/mission_details.html:409
+#: travel_details/templates/travel_details/mission_details.html:504
+msgid "Validity (in hours)"
+msgstr "Validité (en heures)"
+
+#: travel_details/templates/travel_details/mission_details.html:420
+msgid "Send proposition"
+msgstr "Envoyer la proposition"
+
+#: travel_details/templates/travel_details/mission_details.html:434
+msgid "Proposal expired. Update your proposal"
+msgstr "Proposition expirée. Mettre à jour votre proposition"
+
+#: travel_details/templates/travel_details/mission_details.html:464
+msgid "Arrival"
+msgstr "Arrivée"
+
+#: travel_details/templates/travel_details/mission_details.html:514
+#: travel_details/templates/travel_details/personne_profile.html:141
+#: travel_details/templates/travel_details/user_profile.html:135
+msgid "Update"
+msgstr "Mis à jour"
+
+#: travel_details/templates/travel_details/mission_details.html:521
+#: travel_details/templates/travel_details/mission_details.html:1032
+#: travel_details/templates/travel_details/old_mission.html:368
+msgid "Company "
+msgstr "Compagnie "
+
+#: travel_details/templates/travel_details/mission_details.html:522
+msgid "Departure "
+msgstr "Départ "
+
+#: travel_details/templates/travel_details/mission_details.html:523
+msgid "Arrival "
+msgstr "Arrivée"
+
+#: travel_details/templates/travel_details/mission_details.html:524
+msgid "Price GNF "
+msgstr "Prix en GNF"
+
+#: travel_details/templates/travel_details/mission_details.html:525
+msgid "Price USD "
+msgstr "Prix USD"
+
+#: travel_details/templates/travel_details/mission_details.html:527
+#: travel_details/templates/travel_details/mission_details.html:564
+msgid "Offer Status "
+msgstr "Statut de l’offre "
+
+#: travel_details/templates/travel_details/mission_details.html:529
+#: travel_details/templates/travel_details/mission_details.html:566
+msgid "Validated"
+msgstr "Validé"
+
+#: travel_details/templates/travel_details/mission_details.html:531
+#: travel_details/templates/travel_details/mission_details.html:568
+msgid "Not Validated"
+msgstr "Non Validé"
+
+#: travel_details/templates/travel_details/mission_details.html:533
+#: travel_details/templates/travel_details/mission_details.html:570
+msgid "Pending"
+msgstr "En attente"
+
+#: travel_details/templates/travel_details/mission_details.html:536
+msgid "Acceptance Date "
+msgstr "Date d'acceptation"
+
+#: travel_details/templates/travel_details/mission_details.html:538
+msgid "View flight ticket"
+msgstr "Voir le billet d'avion"
+
+#: travel_details/templates/travel_details/mission_details.html:540
+#: travel_details/templates/travel_details/mission_details.html:549
+msgid "Upload flight ticket"
+msgstr "Importer le billet d'avion"
+
+#: travel_details/templates/travel_details/mission_details.html:555
+msgid "Upload and send"
+msgstr "Importer et envoyer"
+
+#: travel_details/templates/travel_details/mission_details.html:575
+#: travel_details/templates/travel_details/mission_details.html:1225
+msgid "Validity"
+msgstr "Validité"
+
+#: travel_details/templates/travel_details/mission_details.html:575
+msgid "hours"
+msgstr "heures"
+
+#: travel_details/templates/travel_details/mission_details.html:578
+msgid "View travel booking"
+msgstr "Afficher la reservation du billet"
+
+#: travel_details/templates/travel_details/mission_details.html:582
+msgid "Payement confirmed At "
+msgstr "Paiement confirmé le"
+
+#: travel_details/templates/travel_details/mission_details.html:583
+msgid "Amount confirmed "
+msgstr "Montant confirmé "
+
+#: travel_details/templates/travel_details/mission_details.html:592
+#: travel_details/templates/travel_details/mission_details.html:1142
+msgid "Confirm Payement"
+msgstr "Confirmer le paiement "
+
+#: travel_details/templates/travel_details/mission_details.html:613
+#: travel_details/templates/travel_details/mission_details.html:1152
+msgid "Payment confirmation"
+msgstr "Confirmation de Paiement"
+
+#: travel_details/templates/travel_details/mission_details.html:619
+msgid "Put the amount, you have received (GNF)"
+msgstr "Mettez le montant que vous avez reçu (GNF)"
+
+#: travel_details/templates/travel_details/mission_details.html:650
+#: travel_details/templates/travel_details/old_mission.html:282
+msgid "Travels"
+msgstr "Voyages"
+
+#: travel_details/templates/travel_details/mission_details.html:653
+msgid "Travel List"
+msgstr "Liste de voyages"
+
+#: travel_details/templates/travel_details/mission_details.html:655
+msgid "Add Travel"
+msgstr "Ajouter un voyage"
+
+#: travel_details/templates/travel_details/mission_details.html:666
+#: travel_details/templates/travel_details/mission_details.html:909
+#: travel_details/templates/travel_details/old_mission.html:300
+#: travel_details/templates/travel_details/update_mission.html:135
+msgid "Destination"
+msgstr "Destination"
+
+#: travel_details/templates/travel_details/mission_details.html:668
+msgid "Actions"
+msgstr "Actions"
+
+#: travel_details/templates/travel_details/mission_details.html:695
+msgid "Cancel this Travel"
+msgstr "Annuler ce voyage"
+
+#: travel_details/templates/travel_details/mission_details.html:702
+msgid " View Travelers"
+msgstr " Afficher les voyageurs"
+
+#: travel_details/templates/travel_details/mission_details.html:715
+msgid " Publish"
+msgstr " Publier"
+
+#: travel_details/templates/travel_details/mission_details.html:719
+msgid "Unpublish"
+msgstr "Non publiée"
+
+#: travel_details/templates/travel_details/mission_details.html:721
+msgid " Published"
+msgstr "Publié"
+
+#: travel_details/templates/travel_details/mission_details.html:736
+msgid "Who are part of this mission"
+msgstr "Quels sont ceux qui font parti de cette mission"
+
+#: travel_details/templates/travel_details/mission_details.html:759
+#: travel_details/templates/travel_details/mission_details.html:784
+#: travel_details/templates/travel_details/mission_details.html:817
+msgid "Activated"
+msgstr "Activé"
+
+#: travel_details/templates/travel_details/mission_details.html:761
+#: travel_details/templates/travel_details/mission_details.html:786
+#: travel_details/templates/travel_details/mission_details.html:821
+msgid "Deactivated"
+msgstr "Désactivé"
+
+#: travel_details/templates/travel_details/mission_details.html:805
+#: travel_details/templates/travel_details/action_tracking.html:55
+msgid "Action"
+msgstr "Action"
+
+#: travel_details/templates/travel_details/mission_details.html:828
+msgid "Cancelled"
+msgstr "Annulé"
+
+#: travel_details/templates/travel_details/mission_details.html:832
+msgid "re-integrate"
+msgstr "réintégré"
+
+#: travel_details/templates/travel_details/mission_details.html:860
+msgid "Confirm publication"
+msgstr "Confirmer la publication"
+
+#: travel_details/templates/travel_details/mission_details.html:880
+msgid "are you sure you want to cancel this travel ?"
+msgstr "Êtes-vous sûr de vouloir annuler ce voyage ?"
+
+#: travel_details/templates/travel_details/mission_details.html:911
+#: travel_details/templates/travel_details/old_mission.html:302
+msgid "Departure Country"
+msgstr "Pays de départ"
+
+#: travel_details/templates/travel_details/mission_details.html:917
+#: travel_details/templates/travel_details/old_mission.html:309
+msgid "Departure City or State"
+msgstr "Ville ou Etat de départ"
+
+#: travel_details/templates/travel_details/mission_details.html:923
+#: travel_details/templates/travel_details/old_mission.html:315
+msgid "Departure date"
+msgstr "Date de départ"
+
+#: travel_details/templates/travel_details/mission_details.html:928
+msgid ""
+"your departure date must be greater than or equal to the last travel arrival "
+"date"
+msgstr ""
+"votre date de départ doit être supérieure ou égale à la dernière date "
+"d'arrivée du voyage"
+
+#: travel_details/templates/travel_details/mission_details.html:929
+#: travel_details/templates/travel_details/old_mission.html:321
+msgid ""
+"your departure date must be between mission departure date and arrival date"
+msgstr ""
+"votre date de départ doit être entre la date de départ de la mission et la "
+"date d'arrivée"
+
+#: travel_details/templates/travel_details/mission_details.html:930
+#: travel_details/templates/travel_details/old_mission.html:322
+msgid "your departure date must be less than or equal to arrival date"
+msgstr "votre date de départ doit être inférieure ou égale à la date d'arrivée"
+
+#: travel_details/templates/travel_details/mission_details.html:932
+#: travel_details/templates/travel_details/old_mission.html:324
+msgid "Destination Country"
+msgstr "Pays de destination"
+
+#: travel_details/templates/travel_details/mission_details.html:938
+#: travel_details/templates/travel_details/old_mission.html:331
+msgid "Destination City or State"
+msgstr "Ville ou Etat de destination"
+
+#: travel_details/templates/travel_details/mission_details.html:944
+#: travel_details/templates/travel_details/mission_details.html:1034
+#: travel_details/templates/travel_details/mission_details.html:1221
+#: travel_details/templates/travel_details/mission_details.html:1507
+#: travel_details/templates/travel_details/old_mission.html:337
+msgid "Arrival Date"
+msgstr "Date d'arrivée"
+
+#: travel_details/templates/travel_details/mission_details.html:949
+msgid ""
+"your arrival date must be greater than or equal to the last travel arrival "
+"date"
+msgstr ""
+"votre date d'arrivée doit être supérieure ou égale à la dernière date "
+"d'arrivée du voyage"
+
+#: travel_details/templates/travel_details/mission_details.html:950
+#: travel_details/templates/travel_details/old_mission.html:342
+msgid ""
+"your arrival date must be between mission departure date and arrival date"
+msgstr ""
+"votre date d'arrivée doit être entre la date de départ de la mission et la "
+"date d'arrivée"
+
+#: travel_details/templates/travel_details/mission_details.html:951
+#: travel_details/templates/travel_details/old_mission.html:343
+msgid "your arrival date must be greater than or equal to departure date"
+msgstr "votre date d'arrivée doit être supérieure ou égale à la date de départ"
+
+#: travel_details/templates/travel_details/mission_details.html:954
+msgid ""
+"If this is the last travel for the mission please check the following "
+"checkbox ? "
+msgstr ""
+"Si c'est le dernier voyage pour la mission, veuillez cocher la case suivante"
+
+#: travel_details/templates/travel_details/mission_details.html:963
+msgid "Save the travel"
+msgstr "Enregistrer le voyage"
+
+#: travel_details/templates/travel_details/mission_details.html:982
+msgid "Cancel the Mission"
+msgstr "Annuler la mission"
+
+#: travel_details/templates/travel_details/mission_details.html:995
+msgid "Give the reason for the cancellation of the mission"
+msgstr "Donnez la raison de l'annulation de la mission"
+
+#: travel_details/templates/travel_details/mission_details.html:1025
+msgid "Proposition Choosed"
+msgstr "Proposition choisie"
+
+#: travel_details/templates/travel_details/mission_details.html:1037
+#: travel_details/templates/travel_details/mission_details.html:1224
+#: travel_details/templates/travel_details/mission_details.html:1510
+msgid "Ticket"
+msgstr "Billet"
+
+#: travel_details/templates/travel_details/mission_details.html:1054
+#: travel_details/templates/travel_details/mission_details.html:1245
+#: travel_details/templates/travel_details/mission_details.html:1304
+#: travel_details/templates/travel_details/mission_details.html:1363
+#: travel_details/templates/travel_details/mission_details.html:1528
+#: travel_details/templates/travel_details/missions.html:128
+#: travel_details/templates/travel_details/missions.html:185
+#: travel_details/templates/travel_details/missions.html:251
+msgid " Read "
+msgstr " Lire "
+
+#: travel_details/templates/travel_details/mission_details.html:1058
+#: travel_details/templates/travel_details/mission_details.html:1249
+#: travel_details/templates/travel_details/mission_details.html:1308
+#: travel_details/templates/travel_details/mission_details.html:1367
+#: travel_details/templates/travel_details/mission_details.html:1532
+#: travel_details/templates/travel_details/missions.html:132
+#: travel_details/templates/travel_details/missions.html:189
+#: travel_details/templates/travel_details/missions.html:255
+msgid " No attachement "
+msgstr " Pas de fichier joint "
+
+#: travel_details/templates/travel_details/mission_details.html:1077
+msgid "Validation details"
+msgstr "Détails de la validation"
+
+#: travel_details/templates/travel_details/mission_details.html:1080
+msgid "Validated by : "
+msgstr "Validé par : "
+
+#: travel_details/templates/travel_details/mission_details.html:1081
+msgid "Validation date : "
+msgstr "Date de validation : "
+
+#: travel_details/templates/travel_details/mission_details.html:1083
+#: travel_details/templates/travel_details/mission_details.html:1085
+msgid "Confirm credit check : "
+msgstr "Vérification de crédit effectué : "
+
+#: travel_details/templates/travel_details/mission_details.html:1088
+msgid "Agency choosen : "
+msgstr "Agence choisie : "
+
+#: travel_details/templates/travel_details/mission_details.html:1089
+msgid "for reason : "
+msgstr "Pour les raisons : "
+
+#: travel_details/templates/travel_details/mission_details.html:1100
+msgid "Payement confirmed at : "
+msgstr "Paiement confirmé le : "
+
+#: travel_details/templates/travel_details/mission_details.html:1101
+msgid "Confirmed amount : "
+msgstr "Montant confirmé : "
+
+#: travel_details/templates/travel_details/mission_details.html:1104
+msgid " Read the bill "
+msgstr " Lire la facture "
+
+#: travel_details/templates/travel_details/mission_details.html:1109
+msgid " Read the Add bill "
+msgstr "Lire la facture additive "
+
+#: travel_details/templates/travel_details/mission_details.html:1114
+msgid " No bill provided "
+msgstr " Pas de facture fournie "
+
+#: travel_details/templates/travel_details/mission_details.html:1123
+msgid "Agency confirmed payement At "
+msgstr "Paiement confirmé par l'agence le "
+
+#: travel_details/templates/travel_details/mission_details.html:1124
+msgid "Confirmed amount "
+msgstr "Montant confirmé "
+
+#: travel_details/templates/travel_details/mission_details.html:1129
+msgid "Ok"
+msgstr "Ok"
+
+#: travel_details/templates/travel_details/mission_details.html:1158
+msgid "Final amount (GNF)"
+msgstr "Montant final (GNF)"
+
+#: travel_details/templates/travel_details/mission_details.html:1164
+msgid "Upload the Bill"
+msgstr "Télécharger la facture"
+
+#: travel_details/templates/travel_details/mission_details.html:1168
+msgid "Additive Bill"
+msgstr "Facture Additive"
+
+#: travel_details/templates/travel_details/mission_details.html:1174
+msgid "Additive bill (GNF)"
+msgstr "Facture Additive (GNF)"
+
+#: travel_details/templates/travel_details/mission_details.html:1180
+msgid "Upload the Additive Bill"
+msgstr "Télécharger la facture additive"
+
+#: travel_details/templates/travel_details/mission_details.html:1187
+msgid "Comment(s)"
+msgstr "Commentaire(s)"
+
+#: travel_details/templates/travel_details/mission_details.html:1226
+msgid "Rating"
+msgstr "Suggestion"
+
+#: travel_details/templates/travel_details/mission_details.html:1267
+msgid "Choice "
+msgstr "Choix "
+
+#: travel_details/templates/travel_details/mission_details.html:1270
+#: travel_details/templates/travel_details/mission_details.html:1329
+#: travel_details/templates/travel_details/mission_details.html:1390
+msgid "Raison"
+msgstr "Raison"
+
+#: travel_details/templates/travel_details/mission_details.html:1271
+#: travel_details/templates/travel_details/mission_details.html:1330
+#: travel_details/templates/travel_details/mission_details.html:1391
+msgid "Rated at"
+msgstr "Noté le"
+
+#: travel_details/templates/travel_details/mission_details.html:1278
+#: travel_details/templates/travel_details/mission_details.html:1337
+msgid " Click to rate"
+msgstr " Cliquez pour noter"
+
+#: travel_details/templates/travel_details/mission_details.html:1280
+#: travel_details/templates/travel_details/mission_details.html:1339
+#: travel_details/templates/travel_details/mission_details.html:1397
+msgid " Not rated"
+msgstr " Pas noté"
+
+#: travel_details/templates/travel_details/mission_details.html:1326
+msgid "Score : "
+msgstr "Score :"
+
+#: travel_details/templates/travel_details/mission_details.html:1387
+msgid "Rated : "
+msgstr "Noté :"
+
+#: travel_details/templates/travel_details/mission_details.html:1417
+msgid "Confirm the choice"
+msgstr "Confirmez votre choix"
+
+#: travel_details/templates/travel_details/mission_details.html:1423
+msgid "Are you sure this departement has credit?"
+msgstr "Êtes-vous sûr que ce departement a des crédits ?"
+
+#: travel_details/templates/travel_details/mission_details.html:1429
+msgid "Reason why you choose this agence"
+msgstr "Raison pour laquelle vous choisissez cette agence"
+
+#: travel_details/templates/travel_details/mission_details.html:1451
+msgid "Sort your choice"
+msgstr "Classez votre choix"
+
+#: travel_details/templates/travel_details/mission_details.html:1457
+msgid "Your Choice "
+msgstr "Votre choix"
+
+#: travel_details/templates/travel_details/mission_details.html:1460
+msgid "-- select --"
+msgstr "-- selectionner --"
+
+#: travel_details/templates/travel_details/mission_details.html:1469
+msgid "Reason"
+msgstr "Raison"
+
+#: travel_details/templates/travel_details/mission_details.html:1498
+msgid "Your Choosed Suggestion"
+msgstr "Vos suggestions choisies"
+
+#: travel_details/templates/travel_details/mission_details.html:1511
+msgid "Validity(in hours)"
+msgstr "Validité(en heures)"
+
+#: travel_details/templates/travel_details/mission_details.html:1512
+msgid "Validation Date"
+msgstr "Date de validation"
+
+#: travel_details/templates/travel_details/missions.html:41
+msgid "All missions"
+msgstr "Toutes les Missions"
+
+#: travel_details/templates/travel_details/missions.html:47
+msgid " Add new mission"
+msgstr " Ajouter une nouvelle mission"
+
+#: travel_details/templates/travel_details/missions.html:51
+msgid " Add an Exceptional Mission"
+msgstr " Ajouter une mission exceptionnelle"
+
+#: travel_details/templates/travel_details/missions.html:60
+msgid "Mission type"
+msgstr "Type de la mission"
+
+#: travel_details/templates/travel_details/missions.html:63
+msgid "Normal Missions"
+msgstr "Missions normales"
+
+#: travel_details/templates/travel_details/missions.html:64
+msgid "Exceptional Missions"
+msgstr "Missions Exceptionnelles"
+
+#: travel_details/templates/travel_details/missions.html:65
+msgid "Mission Not Executed and Canceled"
+msgstr "Mission Non exécutée et annulée"
+
+#: travel_details/templates/travel_details/missions.html:98
+msgid "Type"
+msgstr "Type"
+
+#: travel_details/templates/travel_details/missions.html:104
+msgid "Document"
+msgstr "Document"
+
+#: travel_details/templates/travel_details/missions.html:106
+msgid "Status "
+msgstr "Statut "
+
+#: travel_details/templates/travel_details/missions.html:109
+msgid "State "
+msgstr "Etat "
+
+#: travel_details/templates/travel_details/missions.html:151
+#: travel_details/templates/travel_details/missions.html:211
+#: travel_details/templates/travel_details/missions.html:273
+msgid "Executed"
+msgstr "Executé"
+
+#: travel_details/templates/travel_details/missions.html:155
+#: travel_details/templates/travel_details/missions.html:215
+msgid "Unknown"
+msgstr "Inconnu"
+
+#: travel_details/templates/travel_details/missions.html:233
+msgid "Active"
+msgstr "Active"
+
+#: travel_details/templates/travel_details/missions.html:235
+msgid "deactivated"
+msgstr "désactivé"
+
+#: travel_details/templates/travel_details/missions.html:280
+msgid "Re-launch"
+msgstr "Relancer"
+
+#: travel_details/templates/travel_details/missions.html:288
+msgid "Re-launch Mission"
+msgstr "Relancer la mission"
+
+#: travel_details/templates/travel_details/missions.html:291
+msgid "Are you sure you want to re-launch this mission?"
+msgstr "Êtes-vous sûr de vouloir relancer cette mission ?"
+
+#: travel_details/templates/travel_details/missions.html:294
+msgid "Activate"
+msgstr "Activer"
+
+#: travel_details/templates/travel_details/old_mission.html:139
+#: travel_details/templates/travel_details/traveler_form.html:147
+#: travel_details/templates/travel_details/update_mission.html:129
+msgid "Mission Copy"
+msgstr "Ordre de mission"
+
+#: travel_details/templates/travel_details/old_mission.html:147
+msgid "Date & Justification"
+msgstr "Date & Justification"
+
+#: travel_details/templates/travel_details/old_mission.html:165
+msgid "Must be less than or equal to the date of arrival"
+msgstr "Doit être inférieur ou égal à la date d'arrivée"
+
+#: travel_details/templates/travel_details/old_mission.html:187
+msgid "Must be greater than or equal to the date of departure"
+msgstr "Doit être supérieur ou égal à la date de départ"
+
+#: travel_details/templates/travel_details/old_mission.html:288
+msgid "Travel"
+msgstr "Trajet"
+
+#: travel_details/templates/travel_details/old_mission.html:307
+msgid ""
+"Your departure country it empty, equal to the second departure country or "
+"equal to the destination country"
+msgstr ""
+"Votre pays de départ est vide, égal au deuxième pays de départ ou égal au "
+"pays de destination"
+
+#: travel_details/templates/travel_details/old_mission.html:320
+msgid "your departure date must be grater than the last arrival date"
+msgstr ""
+"votre date de départ doit être supérieure à la dernière date d'arrivée du "
+"voyage"
+
+#: travel_details/templates/travel_details/old_mission.html:329
+msgid ""
+"Your destination country it empty, equal to the second destionation country "
+"or equal to the departure country"
+msgstr ""
+"Votre pays de destination est vide, égal au deuxième pays de destination ou "
+"égal au pays de départ"
+
+#: travel_details/templates/travel_details/old_mission.html:349
+msgid "Flight ticket details"
+msgstr "Billet de vol eBiassi"
+
+#: travel_details/templates/travel_details/old_mission.html:358
+msgid "Other Agency"
+msgstr "Autre agence"
+
+#: travel_details/templates/travel_details/old_mission.html:394
+msgid "Bill"
+msgstr "Facture"
+
+#: travel_details/templates/travel_details/personne_profile.html:34
+msgid "Personne Profile"
+msgstr "Profil du voyageur"
+
+#: travel_details/templates/travel_details/personne_profile.html:39
+#, fuzzy
+#| msgid "Passport Number: *"
+msgid "Passport: *"
+msgstr "Passport: *"
+
+#: travel_details/templates/travel_details/personne_profile.html:45
+msgid "Matricule: *"
+msgstr "Matricule : *"
+
+#: travel_details/templates/travel_details/personne_profile.html:51
+#: travel_details/templates/travel_details/user_profile.html:84
+msgid "First Name: *"
+msgstr "Prénom : *"
+
+#: travel_details/templates/travel_details/personne_profile.html:57
+#: travel_details/templates/travel_details/user_profile.html:90
+msgid "Last Name: *"
+msgstr "Nom : *"
+
+#: travel_details/templates/travel_details/personne_profile.html:63
+#: travel_details/templates/travel_details/user_profile.html:53
+#: travel_details/templates/travel_details/user_profile.html:78
+msgid "Email: *"
+msgstr "Email: *"
+
+#: travel_details/templates/travel_details/personne_profile.html:69
+msgid "Phone number: *"
+msgstr "Téléphone : *"
+
+#: travel_details/templates/travel_details/personne_profile.html:71
+#: travel_details/templates/travel_details/personnes.html:84
+msgid "Phone number"
+msgstr "Téléphone"
+
+#: travel_details/templates/travel_details/personne_profile.html:75
+#: travel_details/templates/travel_details/user_profile.html:125
+msgid "Position: *"
+msgstr "Titre / Poste : *"
+
+#: travel_details/templates/travel_details/personne_profile.html:95
+msgid "Gender: *"
+msgstr "Sexe : *"
+
+#: travel_details/templates/travel_details/personne_profile.html:109
+msgid "State: *"
+msgstr "Status : *"
+
+#: travel_details/templates/travel_details/personne_profile.html:123
+#: travel_details/templates/travel_details/user_profile.html:102
+msgid "Ministry: *"
+msgstr "Ministère / Institution : *"
+
+#: travel_details/templates/travel_details/register.html:58
+msgid "Already have an account"
+msgstr "Vous avez déjà un compte"
+
+#: travel_details/templates/travel_details/register.html:59
+msgid "User Registration"
+msgstr "Inscription de l'utilisateur"
+
+#: travel_details/templates/travel_details/traveler_form.html:79
+msgid "Start Date"
+msgstr "Date de début"
+
+#: travel_details/templates/travel_details/traveler_form.html:86
+#: travel_details/templates/travel_details/traveler_form.html:96
+msgid "End Date"
+msgstr "Date de fin"
+
+#: travel_details/templates/travel_details/traveler_form.html:139
+msgid "Select Your Class"
+msgstr "Sélectionnez la classe"
+
+#: travel_details/templates/travel_details/traveler_form.html:143
+msgid "Select your flight"
+msgstr "Sélectionnez le vol"
+
+#: travel_details/templates/travel_details/traveler_form.html:163
+msgid "Is your Informations Correct?"
+msgstr "Vos informations sont-elles correctes ?"
+
+#: travel_details/templates/travel_details/traveler_form.html:166
+msgid "Please make sure all your information is correct before you submit it."
+msgstr ""
+"Assurez-vous que toutes vos informations sont correctes avant de les "
+"soumettre."
+
+#: travel_details/templates/travel_details/traveler_form.html:169
+msgid "Confirm and Send"
+msgstr "Confirmer et Envoyer"
+
+#: travel_details/templates/travel_details/traveler_options.html:31
+msgid "Traveler Details"
+msgstr "Détails du voyageur"
+
+#: travel_details/templates/travel_details/traveler_options.html:44
+msgid "Your Flight Information"
+msgstr "Votre information de vol"
+
+#: travel_details/templates/travel_details/traveler_options.html:49
+msgid "Flight available"
+msgstr "Vol disponible"
+
+#: travel_details/templates/travel_details/traveler_options.html:54
+msgid "Flight Type"
+msgstr "Type de vol"
+
+#: travel_details/templates/travel_details/traveler_options.html:60
+msgid "Class Type"
+msgstr "Type de classe"
+
+#: travel_details/templates/travel_details/traveler_options.html:66
+msgid "Date and Time"
+msgstr "Date et heures"
+
+#: travel_details/templates/travel_details/traveler_options.html:72
+msgid "Flight Price"
+msgstr "Prix du vol"
+
+#: travel_details/templates/travel_details/traveler_options.html:79
+msgid "Flight not available"
+msgstr "Vol non disponible"
+
+#: travel_details/templates/travel_details/traveler_options.html:85
+msgid "Send your Info"
+msgstr "Envoyer vos informations"
+
+#: travel_details/templates/travel_details/update_mission.html:106
+msgid "(Please when you edit your mission you must import your mission order.)"
+msgstr ""
+"Lorsque vous modifiez votre mission, vous devez importer votre ordre de "
+"mission."
+
+#: travel_details/templates/travel_details/update_mission.html:113
+msgid "Modify your mission"
+msgstr "Modifier votre mission"
+
+#: travel_details/templates/travel_details/update_mission.html:197
+msgid "Flight Informations"
+msgstr "Informations du vol"
+
+#: travel_details/templates/travel_details/update_mission.html:199
+msgid "Select the flight"
+msgstr "Sélectionner le vol"
+
+#: travel_details/templates/travel_details/update_mission.html:203
+msgid "Select the Class"
+msgstr "Sélectionner la classe"
+
+#: travel_details/templates/travel_details/user_account.html:20
+msgid "User Name"
+msgstr "Nom d'utilisateur"
+
+#: travel_details/templates/travel_details/user_missions.html:16
+msgid " Create a mission"
+msgstr " créer une mission"
+
+#: travel_details/templates/travel_details/user_missions.html:86
+msgid "Why this Mission is not been Approved"
+msgstr "Pourquoi cette mission n'a-t-elle pas été approuvée ?"
+
+#: travel_details/templates/travel_details/user_missions.html:90
+msgid "Click here to edit"
+msgstr "Cliquez ici pour éditer"
+
+#: travel_details/templates/travel_details/user_missions.html:101
+msgid "Waiting for Confirmation"
+msgstr "En attente de confirmation"
+
+#: travel_details/templates/travel_details/user_missions.html:110
+msgid "You don't have any approved or not approved mission yet."
+msgstr "Vous n'avez aucune mission approuvée ou non approuvée pour le moment"
+
+#: travel_details/templates/travel_details/user_profile.html:42
+msgid "Agency Profile"
+msgstr "Profil de l'Agence"
+
+#: travel_details/templates/travel_details/user_profile.html:44
+msgid "Ch. to Outside Travel Profile"
+msgstr "Profil du Ch. de voyage à l'extérieur"
+
+#: travel_details/templates/travel_details/user_profile.html:46
+msgid "DAF Profile"
+msgstr "Profil du DAF"
+
+#: travel_details/templates/travel_details/user_profile.html:59
+msgid "Agency Name: *"
+msgstr "Nom de l'Agence : *"
+
+#: travel_details/templates/travel_details/user_profile.html:65
+msgid "Phone Number: *"
+msgstr "Téléphone : *"
+
+#: travel_details/templates/travel_details/user_profile.html:71
+msgid "Address: *"
+msgstr "Adresse : *"
+
+#: travel_details/templates/travel_details/user_profile.html:96
+msgid "ID Number: *"
+msgstr "Numéro d'Identification : *"
+
+#: travel_details/templates/travel_details/user_send_mail.html:38
+msgid "Send Email Registration to User"
+msgstr "Envoyer le courier d'inscription à l'utilisateur"
+
+#: travel_details/templates/travel_details/user_send_mail.html:45
+msgid "Type user: "
+msgstr "Type utilisateur: "
+
+#: travel_details/templates/travel_details/users.html:25
+msgid "list of Ch. to Outside Travels"
+msgstr "Liste des Chargés de Voyage à l'Extérieur"
+
+#: travel_details/templates/travel_details/users.html:36
+#: travel_details/templates/travel_details/users_daaf.html:55
+msgid "Edite User"
+msgstr "Editer l'utilisateur"
+
+#: travel_details/templates/travel_details/users.html:89
+msgid "Ch. to Outside Travel Details"
+msgstr "Details des Ch. de voyage à l'extérieur"
+
+#: travel_details/templates/travel_details/users.html:113
+#: travel_details/templates/travel_details/users_daaf.html:134
+msgid " this user?"
+msgstr " cet utilisateur ?"
+
+#: travel_details/templates/travel_details/users_daaf.html:25
+msgid "DAF list"
+msgstr "Liste des DAFs"
+
+#: travel_details/templates/travel_details/users_daaf.html:110
+msgid "DAF Details"
+msgstr "Détails du DAF"
+
+#: travel_details/views.py:97
+msgid "you have successfully signed up"
+msgstr "Vous vous êtes inscrit avec succès"
+
+#: travel_details/views.py:198 travel_details/views.py:444
+msgid "Account Deleted"
+msgstr "Compte supprimé"
+
+#: travel_details/views.py:203 travel_details/views.py:450
+msgid "Account succesfully deleted"
+msgstr "Compte supprimé avec succès"
+
+#: travel_details/views.py:222 travel_details/views.py:408
+msgid "Account deactivated"
+msgstr "Compte désactivé"
+
+#: travel_details/views.py:226 travel_details/views.py:412
+msgid "You have Successfully deactivate this account"
+msgstr "Vous avez désactivé ce compte avec succès"
+
+#: travel_details/views.py:235 travel_details/views.py:421
+msgid "Account activated"
+msgstr "Compte activé"
+
+#: travel_details/views.py:239 travel_details/views.py:425
+msgid "You have Successfully activate this account"
+msgstr "Vous avez activé ce compte avec succès"
+
+#: travel_details/views.py:256 travel_details/views.py:1256
+msgid "The mission you are trying to read does not exist !"
+msgstr "La mission que vous essayez de lire n'existe pas"
+
+#: travel_details/views.py:268
+msgid "You have Successfully publish this mission"
+msgstr "Vous avez publié avec succès cette mission"
+
+#: travel_details/views.py:308
+msgid "Needed Ticket"
+msgstr "Billet nécessaire"
+
+#: travel_details/views.py:323
+msgid ""
+"Unable to cancel this person, error occured  when trying to get his "
+"informations !"
+msgstr ""
+"Impossible d'annuler cette personne, une erreur s'est produite lors de la "
+"tentative d'obtenir ses informations"
+
+#: travel_details/views.py:332
+msgid "You have Successfully remove this person of the mission"
+msgstr "Vous avez réussi à enléver cette personne de la mission"
+
+#: travel_details/views.py:339
+msgid "You have successfully removed the person and canceled this travel"
+msgstr "Vous avez enléver cette personne de la mission avec succès"
+
+#: travel_details/views.py:347
+msgid ""
+"You have Successfully remove person, cancel current travel and cancel this "
+"mission"
+msgstr ""
+"Vous avez supprimé la personne avec succès, annulé le voyage en cours et "
+"annulé cette mission"
+
+#: travel_details/views.py:362
+msgid "Person remove"
+msgstr "Voyageur annulée"
+
+#: travel_details/views.py:383
+msgid "Person re-integrate"
+msgstr "réintégré"
+
+#: travel_details/views.py:388
+msgid "You have Successfully re-integrate this person of the mission"
+msgstr "Vous avez réintégré avec succès cette personne de la mission"
+
+#: travel_details/views.py:390
+msgid "This person is already canceled from this travel"
+msgstr "Ce voyageur a déjà été annulé pour ce voyage"
+
+#: travel_details/views.py:492
+msgid "Your password was Successfully Updated!"
+msgstr "Votre mot de passe a été mis à jour avec succès"
+
+#: travel_details/views.py:501 travel_details/views.py:2185
+#: travel_details/views.py:2187
+msgid "Please correct the error below!"
+msgstr "Veuillez corriger l'erreur ci-dessous!"
+
+#: travel_details/views.py:565
+msgid "Personne Profil has been updated succesfully"
+msgstr "Le profil de la personne a été mis à jour avec succès"
+
+#: travel_details/views.py:592
+msgid "The agency's account has been successfully updated"
+msgstr "Le compte de l'agence a été mis à jour avec succès"
+
+#: travel_details/views.py:606 travel_details/views.py:620
+msgid "This Profil has been updated succesfully"
+msgstr "Ce profil a été mis à jour avec succès"
+
+#: travel_details/views.py:693 travel_details/views.py:728
+msgid "eBiassi App"
+msgstr "Application eBiassi"
+
+#: travel_details/views.py:697 travel_details/views.py:732
+msgid "Your have Successfully sent a link!"
+msgstr "Vous avez envoyé un lien avec succès!"
+
+#: travel_details/views.py:766
+msgid "Your Account has been created succesfully "
+msgstr "Votre compte a été créé avec succès"
+
+#: travel_details/views.py:769
+msgid "This agency has already been registered"
+msgstr "Cette agence a été déjà enregistrée"
+
+#: travel_details/views.py:771
+msgid "This link has already been used"
+msgstr "Ce lien a déjà été utilisé"
+
+#: travel_details/views.py:976
+msgid "You have succesfully added an exceptional mission to the system"
+msgstr "Vous avez ajoute une mission exeptionnelle avec succes"
+
+#: travel_details/views.py:1070
+msgid "Your mission has been submited, please make a flight demand"
+msgstr "Votre mission a été soumise, faites une demande de vol"
+
+#: travel_details/views.py:1078 travel_details/views.py:1726
+msgid "Mission Creation"
+msgstr "Creation de la mission"
+
+#: travel_details/views.py:1246
+msgid "Mission Canceled"
+msgstr "Mission annulée"
+
+#: travel_details/views.py:1252
+msgid "Mission has been canceled successfully"
+msgstr "La mission a été annulé avec succès"
+
+#: travel_details/views.py:1344
+msgid "Your proposition was succesfully updated"
+msgstr "Votre offre a été mise à jour avec succès"
+
+#: travel_details/views.py:1389
+msgid "Your proposition was succesfully submited"
+msgstr "Votre offre a été soumise avec succès"
+
+#: travel_details/views.py:1404 travel_details/views.py:1422
+msgid "Flight Submission"
+msgstr "Offre"
+
+#: travel_details/views.py:1491
+msgid "Your ticket has not been choosed"
+msgstr "Votre billet n'a pas été choisi"
+
+#: travel_details/views.py:1508
+msgid "Your ticket has been choosed"
+msgstr "Votre billet a été choisi"
+
+#: travel_details/views.py:1524
+msgid "Approved suggestion"
+msgstr "Offre approuvée"
+
+#: travel_details/views.py:1543
+msgid "Your choice has been successfully submited"
+msgstr "Votre choix a été soumis avec succès"
+
+#: travel_details/views.py:1545
+msgid ""
+"You have to select one flight and give the explain why you are selecting it "
+"before hiting the submit button"
+msgstr ""
+"Vous devez sélectionner un vol et donner l'explication pour laquelle vous le "
+"choisissez avant de cliquer sur le bouton de soumission"
+
+#: travel_details/views.py:1579 travel_details/views.py:1595
+msgid "The confirmation has been successfully submited"
+msgstr "La confirmation a été envoyée avec succès"
+
+#: travel_details/views.py:1581 travel_details/views.py:1597
+msgid "The payement confirmation can't be done right now, try later !"
+msgstr ""
+"La confirmation de paiement ne peut pas être faite maintenant, essayez plus "
+"tard!"
+
+#: travel_details/views.py:1652
+msgid "User has made final flight choice"
+msgstr "L'utilisateur a fait le choix final du vol"
+
+#: travel_details/views.py:1657
+msgid "Your choice hase been successfully submited"
+msgstr "Votre choix a été soumis avec succès"
+
+#: travel_details/views.py:1659
+msgid "You have to select one flight before hiting the submit button"
+msgstr ""
+"Vous devez sélectionner un vol avant de cliquer sur le bouton de soumission"
+
+#: travel_details/views.py:1677
+msgid ""
+"There is already a travel with the same departure date and same departure "
+"contry for this mission"
+msgstr ""
+"Il y a déjà un voyage avec la même date de départ et le même départ pour "
+"cette mission"
+
+#: travel_details/views.py:1731
+msgid "Travel saved successfully for this mission"
+msgstr "Voyage sauvegardé avec succès pour cette mission"
+
+#: travel_details/views.py:1746
+msgid "Rating saved successfully"
+msgstr "Évaluation enregister avec succes!"
+
+#: travel_details/views.py:1885
+msgid "Your Mission order is saved successfully"
+msgstr "Votre ordre de mission a été enregistré avec succès"
+
+#: travel_details/views.py:1941 travel_details/views.py:1961
+#: travel_details/views.py:1980
+msgid "eBiassi Flight ticket"
+msgstr "Billet de vol eBiassi"
+
+#: travel_details/views.py:1987
+msgid "Your Flight ticket has been sent successfully"
+msgstr "Votre billet d'avion a été envoyé avec succès"
+
+#: travel_details/views.py:2099
+msgid "Travel successfully deleted"
+msgstr "Voyage supprimé avec succès"
+
+#: travel_details/views.py:2128
+msgid "Travel Canceled"
+msgstr "Voyage annulé"
+
+#: travel_details/views.py:2134
+msgid "Travel successfully canceled"
+msgstr "Voyage annulé avec succès"
+
+#: travel_details/views.py:2182
+msgid "Succes !"
+msgstr "Succès !"
+
+#: travel_details/views.py:2203
+msgid "Company added succesfully !"
+msgstr "Compagnie ajoutée avec succès!"
+
+#: travel_details/views.py:2243
+msgid "Your confirmation was submitted successfully"
+msgstr "Votre confirmation a été envoyée avec succès"
+
+#: travel_details/views.py:2245
+msgid "Your confirmation can't be saved try it later"
+msgstr "Votre confirmation ne peut pas être enregistrée, essayez-la plus tard"
+
+#: travel_details/views.py:2261
+msgid "Your mission confirmation is canceled successfully"
+msgstr "Votre confirmation de mission est annulée avec succès"
+
+#: travel_details/views.py:2263
+msgid "Your mission confirmation can't be saved, please try again later"
+msgstr ""
+"Votre confirmation de mission ne peut pas être enregistrée, veuillez "
+"réessayer plus tard"
+
+#: travel_details/models.py:115
+msgid "minister"
+msgstr "Ministre"
+
+#: travel_details/models.py:116
+msgid "public worker"
+msgstr "Agent de l'Etat"
+
+#: travel_details/models.py:117
+msgid "contractual"
+msgstr "Contractuel"
+
+#: travel_details/models.py:118
+msgid "consultant"
+msgstr "Consultant"
+
+#: travel_details/models.py:119
+msgid "trainee"
+msgstr "Stagiaire"
+
+#: travel_details/models.py:120
+msgid "military"
+msgstr "Militaire"
+
+#: travel_details/views.py:1283
+msgid "Backrest has been rejected successfully"
+msgstr "Dossier rejete avec succes"
+
+#: travel_details/views.py:1311
+msgid "Backrest has been accepted successfully"
+msgstr "Dossier accepte avec succes"
+
+#: travel_details/views.py:
+msgid "You have succesfully updated an exceptional mission to the system"
+msgstr "Vous avez modifie une mission exeptionnelle avec succes"
+
+#: travel_details/templates/travel_details/mission_details.html:195
+#: travel_details/templates/travel_details/missions.html:152
+#: travel_details/templates/travel_details/missions.html:216
+#: travel_details/templates/travel_details/missions.html:311
+msgid "Executed and waiting for validation"
+msgstr "Executé et en attente pour validation"
+
+#: travel_details/templates/travel_details/mission_details.html:1335
+msgid "Give the reason for the validation of the mission"
+msgstr "Donner la raison de validation de la mission"
+
+#: travel_details/templates/travel_details/mission_details.html:1365
+msgid "Give the reason for the rejection of the mission"
+msgstr "Donner la raison de rejet de la mission"
+
+#: travel_details/templates/travel_details/mission_details.html:1389
+msgid "Edit the Mission"
+msgstr "Editer la mission"
+
+#: travel_details/templates/travel_details/mission_details.html:204
+#: travel_details/templates/travel_details/missions.html:159
+#: travel_details/templates/travel_details/missions.html:223
+#: travel_details/templates/travel_details/missions.html:318
+msgid "Rejected"
+msgstr "Réjétée"
+
+#: travel_details/templates/travel_details/mission_details.html:1319
+msgid "Validation the Mission"
+msgstr "Validation de la mission"
+
+#: travel_details/templates/travel_details/mission_details.html:1323
+msgid "Rejection the Mission"
+msgstr "Rejet de la mission"
+
+#: travel_details/templates/travel_details/mission_details.html:171
+msgid "Raison of reject"
+msgstr "Raison de rejet"
+
+#: travel_details/templates/travel_details/mission_details.html:205
+#: travel_details/templates/travel_details/missions.html:157
+#: travel_details/templates/travel_details/missions.html:221
+#: travel_details/templates/travel_details/missions.html:316
+msgid "Approved and closed"
+msgstr "Approuvée et fermée"
+
+#: travel_details/templates/travel_details/mission_details.html:680
+msgid "View ticket condition of sale"
+msgstr "Afficher les conditions de ventes du billet"
+
+#: travel_details/templates/travel_details/mission_details.html:407
+#: travel_details/templates/travel_details/mission_details.html:416
+msgid "Relunch"
+msgstr "Relancer"
+
+#: travel_details/templates/travel_details/mission_details.html:502
+#: travel_details/templates/travel_details/mission_details.html:609
+msgid "Rate"
+msgstr "Taux"
+
+#: travel_details/templates/travel_details/mission_details.html:419
+msgid "Are you sure to relunch ?"
+msgstr "Etes-vous sûr de relancer ?"
+
+#: travel_details/templates/travel_details/mission_details.html:1440
+#: travel_details/templates/travel_details/mission_details.html:1825
+#: travel_details/templates/travel_details/mission_details.html:1138
+msgid "Rate in GNF"
+msgstr "Taux en GNF"
+
+#: travel_details/templates/travel_details/mission_details.html:424
+msgid "Yes, Relunch"
+msgstr "Oui, Relancer"
+
+#: travel_details/templates/travel_details/mission_details.html:520
+msgid "Sale condition"
+msgstr "Condition de vente"
+
+#: travel_details/templates/travel_details/mission_details.html:1142
+#: travel_details/templates/travel_details/mission_details.html:1446
+#: travel_details/templates/travel_details/mission_details.html:1831
+msgid "Attachments"
+msgstr "Pièces jointes"
+
+#: travel_details/templates/travel_details/mission_details.html:701
+msgid "Upload flight ticket and Confirm your rate"
+msgstr "Importer le billet d'avion et confirmez votre taux"
+
+#: travel_details/templates/travel_details/mission_details.html:705
+msgid "Amount of the bill(GNF) "
+msgstr "Montant de la facture (GNF)"
+
+#: travel_details/templates/travel_details/mission_details.html:709
+msgid "Give your rate of the today"
+msgstr "Donner votre taux du jour"
+
+#: travel_details/templates/travel_details/mission_details.html:713
+msgid "Flight ticket"
+msgstr "Billet d'avion"
+
+#: travel_details/templates/travel_details/all_agencies.html:32
+msgid "Expired date"
+msgstr "Date d'expiration"
+
+#: travel_details/templates/travel_details/user_profile.html:77
+msgid "Expired date: *"
+msgstr "Date d'expiration: *"
+
+#: travel_details/templates/base.html:402
+msgid "Users Actions"
+msgstr "Actions utilisateurs"
+
+#: travel_details/templates/travel_details/action_tracking.html:18
+msgid "Users actions"
+msgstr "Actions utilisateurs"
+
+#: travel_details/templates/travel_details/action_tracking.html:22
+msgid "By User"
+msgstr "Par Utilisateur"
+
+#: travel_details/templates/travel_details/action_tracking.html:31
+msgid "By Action"
+msgstr "Par Action"
+
+#: travel_details/templates/travel_details/action_tracking.html:40
+msgid "By Visited Page"
+msgstr "Par page visitée"
+
+#: travel_details/templates/travel_details/action_tracking.html:56
+msgid "Action Date"
+msgstr "Date de l'action"
+
+#: travel_details/templates/travel_details/action_tracking.html:58
+msgid "Visited Page"
+msgstr "Page visitée"
+
+#: travel_details/templates/travel_details/action_tracking.html:59
+msgid "Ip Address"
+msgstr "Adresse IP"
+
+#: travel_details/templates/travel_details/action_tracking.html:59
+msgid "Browser"
+msgstr "Navigateur"
+
+#: travel_details/templates/travel_details/action_tracking.html:57
+msgid "Hour"
+msgstr "Heure"
+
+#: travel_details/views.py:145
+msgid "connection"
+msgstr "connexion"
+
+#: travel_details/views.py:161
+msgid "Log Out"
+msgstr "deconnexion"
+
+#: travel_details/views.py:192
+msgid "Display of the list of daafs"
+msgstr "Affichage de la liste des daafs"
+
+#: travel_details/views.py:212
+msgid "Display of the list of travelers"
+msgstr "Affichage de la liste des voyageurs"
+
+#: travel_details/views.py:240
+#: travel_details/views.py:557
+msgid "Deleting user"
+msgstr "Suppression d'un utilisateur"
+
+#: travel_details/views.py:271
+msgid "Disabling user"
+msgstr "Désactivation d'un utilisateur"
+
+#: travel_details/views.py:292
+msgid "Enabling user"
+msgstr "Activation d'un utilisateur"
+
+#: travel_details/views.py:330
+msgid "Publishing mission"
+msgstr "Publication de mission"
+
+#: travel_details/views.py:403
+msgid "Removing traveller in the mission"
+msgstr "Retrait du voyageur dans la mission"
+
+#: travel_details/views.py:450
+msgid "Re-integrating traveller in the mission"
+msgstr "Réintégrer le voyageur dans la mission"
+
+#: travel_details/views.py:501
+msgid "Deactivating user account"
+msgstr "Désactivation d'un compte utilisateur"
+
+#: travel_details/views.py:523
+msgid "Activating user account"
+msgstr "Activation d'un compte utilisateur"
+
+#: travel_details/views.py:593
+msgid "Update mission"
+msgstr "Mise à jour de la mission"
+
+#: travel_details/views.py:603
+msgid "Display mission edition page"
+msgstr "Affichage de la page d'édition de la mission"
+
+#: travel_details/views.py:623
+msgid "Updating user password"
+msgstr "Modification du mot passe utilisateur"
+
+#: travel_details/views.py:713
+msgid "Update traveller informations"
+msgstr "Modification des informations du voyageur"
+
+#: travel_details/views.py:742
+msgid "Display user profile page"
+msgstr "Affichage du profile de l'utilisateur"
+
+#: travel_details/views.py:724
+msgid "Display traveller edition page"
+msgstr "Affichage de la page d'édition du voyageur"
+
+#: travel_details/views.py:799
+msgid "Update user profile"
+msgstr "Mise à jour du profile utilisateur"
+
+#: travel_details/views.py:834
+msgid "Display agency account"
+msgstr "Affichage d'un compte agence"
+
+#: travel_details/views.py:855
+msgid "Display user account"
+msgstr "Affichage d'un compte utilisateur"
+
+#: travel_details/views.py:886
+msgid "Display users actions"
+msgstr "Affichage des actions des utilisateurs"
+
+#: travel_details/views.py:942
+msgid "Send registration link to user"
+msgstr "Envoi du lien d'enregistrement à l'utilisateur"
+
+#: travel_details/views.py:963
+msgid "Display user registration link page"
+msgstr "Affichage de la page d'enregistrement de l'utilisateur"
+
+#: travel_details/views.py:1003
+msgid "Send registration link to agency"
+msgstr "Envoi du lien d'enregistrement à l'agence"
+
+#: travel_details/views.py:963
+msgid "Display agency registration link page"
+msgstr "Affichage de la page d'enregistrement de l'agence"
+
+msgid "Your mission cant not be relunch"
+msgstr "Votre mission ne peut pas etre relancée"
+
+msgid "First rate"
+msgstr "Premier choix"
+
+msgid "Second rate"
+msgstr "Second choix"

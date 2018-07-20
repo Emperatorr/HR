@@ -1,0 +1,526 @@
+{% load staticfiles %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{% trans "Guinea Government Official Travel Tracker" %}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap-theme.min.css' %}">
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	{% block link %}
+	{% endblock %}
+	{% block topjs %}
+	{% endblock %}
+	<style>
+		
+		@font-face {
+			font-family: 'CenturyGothic';
+			src: url({% static 'fonts/centurygothic-webfont.eot' %});
+			src: url({% static 'fonts/centurygothic-webfont.eot?#iefix' %}) format('embedded-opentype'),
+					url({% static 'fonts/centurygothic-webfont.woff' %}) format('woff'),
+					url({% static 'centurygothic-webfont.ttf' %}) format('truetype'),
+					url({% static 'fonts/centurygothic-webfont.svg#CenturyGothicRegular' %}) format('svg');
+			font-weight: normal;
+			font-style: normal;
+		
+		}
+
+		@font-face {
+			font-family: 'CenturyGothic';
+			src: url('centurygothicbold-webfont.eot');
+			src: url('centurygothicbold-webfont.eot?#iefix') format('embedded-opentype'),
+				 url('centurygothicbold-webfont.woff') format('woff'),
+				 url('centurygothicbold-webfont.ttf') format('truetype'),
+				 url('centurygothicbold-webfont.svg#CenturyGothicBold') format('svg');
+			font-weight: bold;
+			font-style: normal;
+		}
+
+	    html, body {
+			font-family: 'Century Gothic', CenturyGothic, sans-serif;
+			font-size: 17px;
+			margin: 0;
+			padding: 0;
+			height: 100%;
+		}
+		.text-center {
+			margin-bottom: 2%;
+			font-weight: bold;
+		}
+		.messages {
+			list-style: none;
+    		text-align: center;
+			width: 700px;
+		}
+		.field-error {
+			border: 3px solid red !important;
+		}
+		.page {
+			position: relative; /* needed for footer positioning*/
+			margin: 0 auto; /* center */
+			height: auto !important; /* real browsers */
+			height: 100%; /* treaded as min-height*/
+			min-height: 100%;
+		}
+		.container {
+			margin-top: 1%;
+			margin-bottom: 5%;
+		}
+		.logo {
+			position: relative;
+		}
+		.logo-img {
+			width: 250px;
+			height: 90px;
+		}
+
+		.body {
+			display: block;
+			padding-bottom:20px;
+			padding-bottom:20px;
+		}
+		.alert {
+			position: absolute;
+			text-align: center;
+			width: 500px;
+    		margin: 0 25%;
+		}
+		.alert-block {
+			position: absolute;
+			width: 360px;
+			text-align: center;
+		}
+		.alert > ul {
+			list-style: none;
+			padding: 0;
+		}
+        .body:before {
+			content: "";
+			top: 0;
+		    left: 0;
+		    bottom: 0;
+		    right: 0;
+		    position: absolute;
+			z-index: -1;
+            background: url({% static 'images/page-cove.png' %}) no-repeat center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: 38%;
+			opacity: .1;
+        }
+		.nav li a:focus,
+		.nav li a:hover {
+			background-color: #2773A9;
+			font-weight: bold;
+			color: #ffffff;
+		}
+		.nav .open>a, .nav .open>a:focus,
+		.nav .open>a:hover,
+		.dropdown-menu>li>a:hover {
+			background-color: #2773A9;
+			background-image: linear-gradient(to bottom,#2773A9 0,#2773A9 100%);
+		}
+		.dropdown-menu,
+		.navbar-inverse .navbar-nav>.open>a,
+		.navbar-inverse .navbar-nav>.open>a {
+			background-color: #2773A9;
+			background-image: linear-gradient(to bottom,#2773A9 0,#2773A9 100%);
+		}
+		.navbar-nav li a {
+			color: #ffffff !important;
+			font-size: 20px;
+			text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black !important;
+		}
+		.navbar-nav li a:hover {
+			text-decoration: underline;
+			font-weight: bold;
+		}
+
+		.title-center {
+			text-align: center;
+			font-weight: bold;
+		}
+		.list-group-item {
+			margin: 2%;
+			font-size: 1.2rem;
+		}
+
+		.footer {
+			background-color: #2773A9;
+			position: absolute;
+			bottom: 0;
+			margin-top: auto;
+			width: 100%;
+			height:40px;
+		}
+
+		.footer p {
+			text-align: center;
+			color: #FFFFFF;
+		}
+
+		.footer a {
+			font-size: 19px;
+			color: #FFFFFF;
+			font-weight: bold;
+		}
+
+		.navbar{
+		  margin-bottom: 0;
+		}
+
+		.navbar-inverse {
+			background-image: url({% static 'images/cover.jpg' %});
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			width: 100%;
+			border-radius: 0;
+			border-color: #F5F5F5;
+			height: 100px;
+		}
+		.navbar-brand {
+			padding: 3px 15px;
+		}
+		.reset_password {
+			font-size: 15px;
+			text-align: center;
+		}
+		.text-left {
+			color: #fff;
+			font-size: 16px;
+		}
+		#logout {
+			background-color: #c12e2a;
+		}
+		#profile {
+			background-color: #265a88;
+		}
+		strong {
+			font-size: 20px;
+		}
+		/* code from bootsnip  */
+		.navbar-login
+		{
+			width: 305px;
+			padding: 10px;
+			padding-bottom: 0px;
+		}
+
+		.navbar-login-session
+		{
+			padding: 10px;
+			padding-bottom: 0px;
+			padding-top: 0px;
+		}
+		.error {
+			border: 2px solid red !important;
+		}
+		.icon-size{
+			font-size: 87px;
+		}
+		.error_message {
+			color: red;
+			font-size: 1.1rem;
+		}
+		.group_filter {
+			text-align: center;
+		}
+		.tableau_style {
+			background: #F3F2ED;
+			border: 4px double white;
+			padding: 10px;
+			margin: 10px 0 10px 0;
+			height: 120px;
+			overflow: scroll;
+			text-transform: uppercase;
+			box-shadow: 3px 3px 6px 2px #A9A9A9;
+			-moz-box-shadow: 3px 3px 6px 2px #A9A9A9;
+			-webkit-box-shadow: 3px 3px 6px #A9A9A9;
+		}
+		
+		@media screen and (max-width: 997px) {
+			#navbar {
+				position: relative;
+				margin-top: 48px;
+				border-color: transparent;
+				background-color: #337ab7;
+				z-index: 100000;
+				text-align: center;
+			}
+			.nav .open>a, .nav .open>a:focus,
+			.nav .open>a:hover,
+			.dropdown-menu>li>a:hover {
+				background-color: #337ab7;
+				background-image: linear-gradient(to bottom,#337ab7 0,#337ab7 100%);
+			}
+			.dropdown-menu,
+			.navbar-inverse .navbar-nav>.open>a,
+			.navbar-inverse .navbar-nav>.open>a {
+				background-color: #337ab7;
+				background-image: linear-gradient(to bottom,#337ab7 0,#337ab7 100%);
+			}
+			.navbar-login-session{
+				float: right;
+				clear: both;
+			}
+			strong {
+				font-size: 30px;
+			}
+			.navbar-inverse .navbar-toggle:focus {
+				background-color: transparent;
+			}
+			.navbar-inverse .navbar-toggle:hover {
+				background-color: #ddd;
+			}
+			.navbar-inverse .navbar-toggle {
+				border-color: #ddd;
+			}
+		}
+		@media (max-width: 997px) {
+			.navbar-header {
+				float: none;
+			}
+			.navbar-left,.navbar-right {
+				float: none !important;
+			}
+			.navbar-toggle {
+				display: block;
+			}
+			.navbar-collapse {
+				border-top: 1px solid transparent;
+				box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+			}
+			.navbar-fixed-top {
+				top: 0;
+				border-width: 0 0 1px;
+			}
+			.navbar-collapse.collapse {
+				display: none!important;
+			}
+			.navbar-nav {
+				float: none!important;
+				margin-top: 7.5px;
+			}
+			.navbar-nav>li {
+				float: none;
+			}
+			.navbar-nav>li>a {
+				padding-top: 10px;
+				padding-bottom: 10px;
+			}
+			.collapse.in{
+				display:block !important;
+			}
+		}
+		.blue{
+			color: #337ab7;
+			background-color: #FFFFFF;
+		}
+    </style>
+    {% block style %}{% endblock %}
+</head>
+
+<body>
+	<div class="page">
+		<div class="header">
+			{% block navbar %}
+			{% url 'login' as the_url %}
+					{% if request.get_full_path != the_url %}
+						<div class="navigation-bar"></div>
+					{% endif %}
+					{% if user.is_authenticated %}
+				<nav class="navbar navbar-inverse">
+					<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>
+					{% if user.is_admin  or user.is_agency or user.is_controller %}
+						<a class="navbar-brand" href="{% url 'all_missions' %}">
+							<div class="logo">
+								<img src="{% static 'images/logo.png' %}" alt="logo" class="logo-img">
+							</div>
+						</a>
+					{% else %}
+						<a class="navbar-brand" href="{% url 'user_missions' %}">
+							<div class="logo">
+								<img src="{% static 'images/logo.png' %}" alt="logo" class="logo-img">
+							</div>
+						</a>
+					{% endif %}
+					</div>
+
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-right">
+						{% if user.is_admin or user.is_agency or user.is_controller %}
+							<li><a id="missions" href="{% url 'all_missions' %}">{% trans "Missions" %}</a></li>
+						{% else %}
+							<li><a href="{% url 'user_missions' %}">{% trans "Missions" %}</a></li>
+						{% endif %}
+						{% if user.is_authenticated %}
+							{% if user.is_admin %}
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+										{% trans "Users" %}
+										<span class="caret"></span>
+									</a>
+									<ul class="dropdown-menu">
+										{% if user.is_admin %}
+											<li><a id="agency" href="{% url 'user_send_mail' %}">{% trans "Register User" %}</a></li>
+											<li><a id="all_controller" href="{% url 'users' %}">{% trans "All Ch. to Outside Travels" %}</a></li>
+											<li><a id="all_daaf" href="{% url 'daafs' %}">{% trans "All DAF " %}</a></li>
+										{% endif %}
+										
+									</ul>
+								</li>
+							{% elif user.is_controller %}
+								<li><a id="all_daaf" href="{% url 'daafs' %}">{% trans "All DAF" %}</a></li>
+							{% endif %}
+						{% endif %}
+						{% if not user.is_agency %}
+							<li><a id="pers" href="{% url 'personnes_all' %}">{% trans "Travellers" %}</a></li>
+							{% if user.is_admin %}
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+										{% trans "Charts" %}
+										<span class="caret"></span>
+									</a>
+									<ul class="dropdown-menu">
+										<li><a id="charts" href="{% url 'charts' %}">{% trans "Charts" %}</a></li>
+										<li><a id="actions" href="{% url 'users_action_tracking' %}">{% trans "Users Actions" %}</a></li>
+									</ul>
+								</li>
+							{% else %}
+								<li><a id="charts" href="{% url 'charts' %}">{% trans "Charts" %}</a></li>
+							{% endif %}
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+									{% trans "Agencies" %}
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									{% if user.is_admin %}
+										<li><a id="agency" href="{% url 'agency_send_mail' %}">{% trans "Register Agency" %}</a></li>
+									{% endif %}
+									<li><a id="all_agency" href="{% url 'all_agency' %}">{% trans "All Agencies" %}</a></li>
+									<li><a id="company" href="{% url 'company' %}">{% trans " All Company" %}</a></li>
+								</ul>
+							</li>
+						{% endif %}
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+								<span class="glyphicon glyphicon-user"></span> 
+								{% trans "My Account" %}
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+								{% if user.is_authenticated %}
+									<li>
+										<div class="navbar-login">
+											<div class="row">
+												<div class="col-lg-12">
+													<p class="text-left"><strong>{{user.get_full_name}}</strong></p>
+													<p class="text-left small">{{user.email}}</p>
+													{% if user.is_admin %}
+														<p class="text-left small">{% trans "Administrator" %}</p>
+													{% elif user.is_controller %}
+														<p class="text-left small">{% trans "Ch. to Outside Travels" %}</p>
+													{% elif user.is_agency %}
+														<p class="text-left small">{% trans "Agency" %}</p>
+													{% else %}
+														<p class="text-left small">{% trans "User" %}</p>
+													{% endif %}
+													{% if user.is_admin %}
+														<p class="text-left">
+															<a class="btn btn-primary btn-block btn-sm" id="profile" href="{% url 'user_profile' user.id %}">
+																<i class="glyphicon glyphicon-user"></i>
+																{% trans "My Profile" %}
+															</a>
+														</p>
+													{% endif %}
+												</div>
+												<div class="reset_password">
+													<a href="{% url 'change_password' %}">{% trans "Change my Password" %}</a>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="divider"></li>
+									<li>
+										<div class="navbar-login navbar-login-session">
+											<div class="row">
+												<div class="col-lg-12">
+													<p>
+														<a id="logout" class="btn btn-danger btn-block" href="{% url 'logout' %}">
+															<i class="glyphicon glyphicon-log-out"></i>
+															{% trans "Logout" %}
+														</a>
+													</p>
+												</div>
+											</div>
+										</div>
+									</li>
+								{% endif %}
+							</ul>
+						</li>
+						<li>
+							<a target="_blank" href="{% url 'user_guide' %}">
+								<i style="color: #FFFFFF;font-size: 25px" class="fa">&#63;</i>
+							</a>
+						</li>
+					</ul>
+				</div>
+					</div>
+				</nav>
+				{% endif %}
+			{% endblock %}
+		</div>
+		<div class="body">
+			{% if messages %}
+				<ul class="messages">
+					{% for message in messages %}
+					<li{% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>{{ message }}</li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+
+			<div class="container">
+				{% block content %}
+
+				{% endblock %}
+			</div>
+		</div>
+		<!--div class="footer">
+			<p> © <span id="year"><script>document.write((new Date()).getFullYear());</script> </span> <a href="http://dntechnologie.com/" targtarget="_blank">{% trans "DN Tech" %}</a> . {% trans "All rights reserved." %}</p>
+		</div-->
+	</div>
+    <script src="{% static 'jquery-ui/external/jquery/jquery.js' %}"></script>
+	<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script> 
+	<script src="{% static 'js/error_handling.js' %}"></script>
+	{% block javascript %}
+	{% endblock %}
+	<script>
+		$(document).ready(function(){
+			setTimeout(function(){
+				$(".alert").each(function(index){
+					$(this).delay(200*index).fadeTo(1500,0).slideUp(500,function(){
+						$(this).remove();
+					});
+				});
+			},3000);
+		})
+	</script>
+</body>
+</html>
