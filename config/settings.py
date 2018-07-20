@@ -120,7 +120,7 @@ DATABASES = {
         'USER': 'hr_leaves',
         'PASSWORD': 'hr_leaves@dntech!@#$',
         'HOST': 'localhost',
-        'PORT': ''
+        'PORT': 9432
     }
 }
 

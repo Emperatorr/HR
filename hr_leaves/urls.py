@@ -15,6 +15,7 @@ from .views import (
     update_function,
     update_departement,
     demande,
+    validate_demande,
     all_demande,
     acceuil,
     register,
@@ -39,8 +40,10 @@ urlpatterns = [
     url(r'^update-function/(?P<function_id>[0-9]+)$', update_function, name='update_function'),
     url(r'^update-departement/(?P<departement_id>[0-9]+)$', update_departement, name='update_departement'),
     
-    url(r'^creation-demande/$', demande, name='leave_request'),
-    url(r'^all-demande/$', all_demande, name='all_demande'),
+    url(r'^creation-de-demande/$', demande, name='leave_request'),
+    url(r'^toutes-les-demande/$', all_demande, name='all_demande'),
+    url(r'^valider-une-demande/(?P<dmd_id>[0-9]+)/$', validate_demande, name='validate_demande'),
+
     url(r'^acceuil/$', acceuil, name='acceuil'),
     url(r'^register/$', register, name='register'  ),
     url(r'^list_employe/$', list_employ, name='employees'),
