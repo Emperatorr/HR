@@ -45,7 +45,7 @@ class LoginView(generic.FormView):
     form_class = LoginForm
     form_valid_message = 'you are logged in'
     model = User
-    success_url = reverse_lazy('function')
+    success_url = reverse_lazy('acceuil')
     template_name = 'hr_leaves/login.html'
 
     def get_success_url(self):
@@ -54,10 +54,8 @@ class LoginView(generic.FormView):
         """
         if self.success_url:
             self.request.user.is_agency = False
-            if self.request.user.is_agency:
-                url = reverse('a••••••••••gency', args=[self.request.user.id])
-            else:
-                url = reverse('department')
+
+            url = reverse('acceuil')
         else:
             try:
                 url = self.object.get_absolute_url()
@@ -86,24 +84,21 @@ def logout_view(request):
 
 @login_required
 def delete_user(request, user_id):
-    if request.user.is_admin:
-        user = User.objects.get(id=user_id)
+    user = User.objects.get(id=user_id)
 
-        context = {'user': user.get_full_name()}
-        html_content = render_to_string('mails/user_account_delete.html', context)
+    context = {'user': user.get_full_name()}
+    html_content = render_to_string('mails/user_account_delete.html', context)
 
-        # mail = SentMail()
-        # mail.full_name = request.user.get_full_name()
-        # mail.title = _('Account Deleted')
-        # mail.email = user.email
-        # mail.message = html_content
-        # mail.save()
+    # mail = SentMail()
+    # mail.full_name = request.user.get_full_name()
+    # mail.title = _('Account Deleted')
+    # mail.email = user.email
+    # mail.message = html_content
+    # mail.save()
 
-        user.delete()
-        messages.success(request, _('Account succesfully deleted'))
-        return redirect('users')
-    else:
-        return redirect('all_missions')
+    user.delete()
+    messages.success(request, _('Account succesfully deleted'))
+    return redirect('users')
 
 @login_required
 def change_password(request):
@@ -131,79 +126,70 @@ def change_password(request):
 
 @login_required
 def user_profile(request, user_id):
-    if request.user.is_admin:
-        user = User.objects.get(id=user_id)
+    user = User.objects.get(id=user_id)
 
-        return render(request, 'hr_leaves/user_profile.html', {'users': user, 'ministries': ministries})
-    else:
-        return redirect('all_missions')
+    return render(request, 'hr_leaves/user_profile.html', {'users': user, 'ministries': ministries})
 
 @login_required
 def update_user_profile(request, user_id):
-    if request.user.is_admin:
-        if request.method == 'POST':
-            user = User.objects.get(id=user_id)
-            if user.is_agency:
-                user.email = request.POST.get('email', None)
-                user.first_name = request.POST.get('name', None)
-                user.phone = request.POST.get('phone_number', None)
-                user.address = request.POST.get('address', None)
-                user.expired_date = request.POST.get('expired_date', None)
-                user.save()
-                messages.success(request, _("The agency's account has been successfully updated"))
-                return redirect('all_agency',)
-            elif user.is_controller or user.is_admin:
-                user.email = request.POST.get('email', None)
-                user.first_name = request.POST.get('first_name', None)
-                user.last_name = request.POST.get('last_name', None)
-                user.id_number = request.POST.get('id_number', None)
-                user.passport_number = request.POST.get('passport_number', None)
-                user.position = request.POST.get('position', None)
-                user.address = request.POST.get('address', None)
-                if not user.is_admin:
-                    m = request.POST.get('ministry', None)
-                    user.ministry = Ministry.objects.get(pk=m)
-                user.save()
-                messages.success(request, _('This Profil has been updated succesfully'))
-                return redirect('users',)
-            else:
-                user.email = request.POST.get('email', None)
-                user.first_name = request.POST.get('first_name', None)
-                user.last_name = request.POST.get('last_name', None)
-                user.id_number = request.POST.get('id_number', None)
-                user.passport_number = request.POST.get('passport_number', None)
-                user.position = request.POST.get('position', None)
-                user.address = request.POST.get('address', None)
-                if not user.is_admin:
-                    m = request.POST.get('ministry', None)
-                    user.ministry = Ministry.objects.get(pk=m)
-                user.save()
-                messages.success(request, _('This Profil has been updated succesfully'))
-                return redirect('daafs',)
-
+    if request.method == 'POST':
+        user = User.objects.get(id=user_id)
+        if user.is_agency:
+            user.email = request.POST.get('email', None)
+            user.first_name = request.POST.get('name', None)
+            user.phone = request.POST.get('phone_number', None)
+            user.address = request.POST.get('address', None)
+            user.expired_date = request.POST.get('expired_date', None)
             user.save()
-
-            updated= True
-            # messages.success(request, _('You Profil has been updated succesfully'))
+            messages.success(request, _("The agency's account has been successfully updated"))
+            return redirect('all_agency',)
+        elif user.is_controller or user.is_admin:
+            user.email = request.POST.get('email', None)
+            user.first_name = request.POST.get('first_name', None)
+            user.last_name = request.POST.get('last_name', None)
+            user.id_number = request.POST.get('id_number', None)
+            user.passport_number = request.POST.get('passport_number', None)
+            user.position = request.POST.get('position', None)
+            user.address = request.POST.get('address', None)
+            if not user.is_admin:
+                m = request.POST.get('ministry', None)
+                user.ministry = Ministry.objects.get(pk=m)
+            user.save()
+            messages.success(request, _('This Profil has been updated succesfully'))
+            return redirect('users',)
         else:
-            updated = False
+            user.email = request.POST.get('email', None)
+            user.first_name = request.POST.get('first_name', None)
+            user.last_name = request.POST.get('last_name', None)
+            user.id_number = request.POST.get('id_number', None)
+            user.passport_number = request.POST.get('passport_number', None)
+            user.position = request.POST.get('position', None)
+            user.address = request.POST.get('address', None)
+            if not user.is_admin:
+                m = request.POST.get('ministry', None)
+                user.ministry = Ministry.objects.get(pk=m)
+            user.save()
+            messages.success(request, _('This Profil has been updated succesfully'))
+            return redirect('daafs',)
 
-        return redirect('users',)
+        user.save()
+
+        updated= True
+        # messages.success(request, _('You Profil has been updated succesfully'))
     else:
-        return redirect('all_missions')
+        updated = False
+
+    return redirect('users',)
 
 @login_required
 def user_account(request, user_id):
-    if request.user.is_admin:
-        company = User.objects.get(id=user_id)
-        missions = Mission.objects.all()
+    company = User.objects.get(id=user_id)
+    missions = Mission.objects.all()
 
-        return render(request, 'hr_leaves/user_account.html', {
-            'user': company,
-            'missions': missions
-        })
-    else:
-        return redirect('all_missions')
+    return render(request, 'hr_leaves/user_account.html', {
+        'user': company,
+        'missions': missions
+    })
 
 def get_client_ip(request):
     try:
@@ -277,3 +263,12 @@ def add_function(request):
 
             return redirect('function')
     return render(request, 'hr_leaves/liste_functions.html', {'form': form, 'fonctions': fonction})
+    user = User.objects.get(id=user_id)
+    user.delete()
+    messages.success(request, _('Account succesfully deleted'))
+    return redirect('users')
+
+
+@login_required
+def acceuil(request):
+    return render(request, 'hr_leaves/acceuil.html',)

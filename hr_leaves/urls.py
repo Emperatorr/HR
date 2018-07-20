@@ -10,6 +10,7 @@ from .views import (
     delete_user,
     add_department,
     add_function
+    acceuil
     )
 
 urlpatterns = [
@@ -23,5 +24,7 @@ urlpatterns = [
     url(r'^creation-avec-success/$', create_success, name='create_success'),
     url(r'^add-department/$', add_department, name='department'),
     url(r'^add-function/$', add_function, name='function'),
+
+    url(r'^acceuil/$', acceuil, name='acceuil'),
     
 ]

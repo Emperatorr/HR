@@ -173,10 +173,6 @@
 	<p class="text-center"><strong class="reset">{% trans "Forget your password? " %}<a href="{% url 'password_reset' %}" class="reset-link">{% trans "reset" %}</a></strong></p>
 {% else %}
 	 <p>{% trans "You are connected" %}</p>
-	 {% if user.is_admin or user.is_agency %}
-	 		<a href="{% url 'all_missions' %}"><button type="button" class="btn btn-sucess btn-lg"><span class="glyphicon glyphicon-"></span>{% trans "Back to mission page" %}</button><a>
-	 {% else %}	 
-			<a href="{% url 'user_missions' %}"><button type="button" class="btn btn-sucess btn-lg"><span class="glyphicon glyphicon-"></span>{% trans "Back to mission page" %}</button><a>
-	 {% endif %}	
+		<a href="{% url 'acceuil' %}"><button type="button" class="btn btn-sucess btn-lg"><span class="glyphicon glyphicon-"></span>{% trans "Back to home" %}</button><a>
 {% endif %}
 {% endblock content %}
