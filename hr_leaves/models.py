@@ -72,6 +72,9 @@ class Type_conge(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return '{}'.format(self.name)
+
 class Employe(User):
     matricule = models.CharField(max_length=100, blank=True, null=True)
     first_name = models.CharField(max_length=40, default='')
@@ -91,9 +94,6 @@ class Employe(User):
         
     def get_short_name(self):
         return self.first_name
-
-    # def get_absolute_url(self):
-    #     return reverse('user_profile', args=[self.id])
 
 # Stock des conges
 class Conge(models.Model):

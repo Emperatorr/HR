@@ -100,3 +100,35 @@ class FonctionForm(forms.ModelForm):
                 'class': 'form-control'
             })
         }
+        
+class DemandeForm(forms.ModelForm):
+    
+    # def __init__(self, *args, **kwargs):
+    #     super(DemandeForm, self).__init__(*args, **kwargs)
+
+    class Meta:
+        model = Demande
+        fields = ('type_conge', 'nombre_jour', 'date_debut', 'date_fin')
+        widgets = {
+            'type_conge': forms.Select(attrs={
+                'placeholder': _('Type'),
+                'class': 'form-control'
+            }),
+            'nombre_jour': forms.fields.TextInput(attrs={
+                'placeholder': _('Nomber of day'),
+                'class': 'form-control',
+                'type': 'number',
+                'required': 'True',
+                'title' : _('A integer > 0')
+            }),
+             'date_debut': forms.fields.DateInput(attrs={
+                'type': 'date',
+                'class': 'form-date',
+                'required': 'true'
+            }),
+            'date_fin': forms.fields.DateInput(attrs={
+                'type': 'date',
+                'class': 'form-date',
+                'required': 'true'
+            })
+        }

@@ -1,6 +1,7 @@
 from django  import template
 from django.contrib.humanize.templatetags.humanize import intcomma
 from .. import models
+from django.utils.translation import ugettext_lazy as _
 
 register = template.Library()
 @register.filter
@@ -49,3 +50,14 @@ def prepend_gnf(gnf):
         return "%s%s GNF" % (intcomma(int(gnf)), ("%0.2f" % gnf)[-3:])
     else:
         return ''
+
+@register.filter
+def format_status(status):
+    if status == 0:
+        return _("Pending")
+    elif status == 1:
+        return _("Approuved")
+    elif status == 2:
+        return _("Rejected")
+    else:
+        return 'Unknow'
