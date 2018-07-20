@@ -2,9 +2,6 @@ from rolepermissions.roles import AbstractUserRole
 
 class HR(AbstractUserRole):
     available_permissions = {
-        'login': True,
-        'logout': True,
-        'update_profile': True,
         'create_employer': True,
         'create_department': True,
         'create_position': True,
@@ -20,9 +17,6 @@ class HR(AbstractUserRole):
 
 class Manager(AbstractUserRole):
     available_permissions = {
-        'login': True,
-        'logout': True,
-        'update_profile': True,
         'request_leave': True,
         'approuve_leave': True,
         'reject_leave': True,
@@ -31,8 +25,5 @@ class Manager(AbstractUserRole):
 
 class Employer(AbstractUserRole):
     available_permissions = {
-        'login': True,
-        'logout': True,
-        'update_profile': True,
         'request_leave': True,
     }

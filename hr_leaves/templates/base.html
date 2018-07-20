@@ -283,7 +283,7 @@
 </head>
 
 <body>
-	<div class="page">
+	<div class="page" {% if not user.is_authenticated %} id='particles-js' {% endif %}>
 		<div class="header">
 			{% block navbar %}
 			{% url 'login' as the_url %}
@@ -385,6 +385,11 @@
     <script src="{% static 'jquery-ui/external/jquery/jquery.js' %}"></script>
 	<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script> 
 	<script src="{% static 'js/error_handling.js' %}"></script>
+	{% if not user.is_authenticated %} 
+		<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+		<script src="{% static 'js/particle.js' %}"></script>
+	{% endif %}
+	
 	{% block javascript %}
 	{% endblock %}
 	<script>
