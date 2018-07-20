@@ -45,7 +45,7 @@ class LoginView(generic.FormView):
     form_class = LoginForm
     form_valid_message = 'you are logged in'
     model = User
-    success_url = reverse_lazy('account')
+    success_url = reverse_lazy('function')
     template_name = 'hr_leaves/login.html'
 
     def get_success_url(self):
@@ -55,9 +55,9 @@ class LoginView(generic.FormView):
         if self.success_url:
             self.request.user.is_agency = False
             if self.request.user.is_agency:
-                url = reverse('agency', args=[self.request.user.id])
+                url = reverse('a••••••••••gency', args=[self.request.user.id])
             else:
-                url = reverse('user_missions')
+                url = reverse('department')
         else:
             try:
                 url = self.object.get_absolute_url()
@@ -229,3 +229,51 @@ def delete_user(request, user_id):
         user.delete()
         messages.success(request, _('Account succesfully deleted'))
         return redirect('users')
+
+
+@login_required
+def add_department(request):
+   
+    form = DepartementForm(request.POST or None)
+
+    try:
+        departement = Departement.objects.all()
+    except expression as identifier:
+        pass 
+
+    if request.method == "POST":
+        
+        if form.is_valid():
+            name = form.cleaned_data['name']            
+            departement = Departement()
+            departement.name = name
+            departement.save()
+
+            return redirect('department')
+    return render(request, 'hr_leaves/liste_departments.html', {'form': form, 'departements': departement})
+
+@login_required
+def add_function(request):
+
+    form = FonctionForm(request.POST or None)
+
+    try:
+        fonction = Fonction.objects.all()
+    except expression as identifier:
+        pass 
+
+    if request.method == "POST":
+
+        print("avant")
+        
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            categorie = form.cleaned_data['categorie']
+
+            fonction = Fonction()
+            fonction.name = name
+            fonction.categorie = categorie
+            fonction.save()
+
+            return redirect('function')
+    return render(request, 'hr_leaves/liste_functions.html', {'form': form, 'fonctions': fonction})

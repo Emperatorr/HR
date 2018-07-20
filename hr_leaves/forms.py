@@ -10,6 +10,11 @@ from hr_leaves.models import *
 import datetime
 from django.forms.extras.widgets import SelectDateWidget
 
+CATEGORIE_CHOICES = (
+    ('employe', _('Employe')),
+    ('manager', _('Manager'))
+)
+
 class RegistrationForm(UserCreationForm):
 
     class Meta:
@@ -68,3 +73,30 @@ class LoginForm(AuthenticationForm):
                 Submit('login', _('Log in'))
             )
         )
+
+class DepartementForm(forms.ModelForm):
+     class Meta:
+        model = Departement
+        fields = ['name']
+
+        widgets = {
+            'name': forms.TextInput(attrs={
+                'placeholder': 'Department name',
+                'class': 'form-control'
+            })
+        }
+
+class FonctionForm(forms.ModelForm):
+    class Meta:
+        model = Fonction
+        fields = ['name', 'categorie']
+
+        widgets = {
+            'name': forms.TextInput(attrs={
+                'placeholder': 'Function name',
+                'class': 'form-control'
+            }),
+            'categorie': forms.Select(attrs={
+                'class': 'form-control'
+            })
+        }

@@ -348,13 +348,13 @@
 					<span class="icon-bar"></span>
 					</button>
 					{% if user.is_admin  or user.is_agency or user.is_controller %}
-						<a class="navbar-brand" href="{% url 'all_missions' %}">
+						<a class="navbar-brand" href="">
 							<div class="logo">
 								<img src="{% static 'images/logo.png' %}" alt="logo" class="logo-img">
 							</div>
 						</a>
 					{% else %}
-						<a class="navbar-brand" href="{% url 'user_missions' %}">
+						<a class="navbar-brand" href="">
 							<div class="logo">
 								<img src="{% static 'images/logo.png' %}" alt="logo" class="logo-img">
 							</div>
@@ -364,11 +364,9 @@
 
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
-						{% if user.is_admin or user.is_agency or user.is_controller %}
-							<li><a id="missions" href="{% url 'all_missions' %}">{% trans "Missions" %}</a></li>
-						{% else %}
-							<li><a href="{% url 'user_missions' %}">{% trans "Missions" %}</a></li>
-						{% endif %}
+						
+						<li><a id="missions" href="{% url 'department' %}">{% trans "Departments" %}</a></li>
+						<li><a href="{% url 'function' %}">{% trans "Functions" %}</a></li>
 						{% if user.is_authenticated %}
 							{% if user.is_admin %}
 								<li class="dropdown">
@@ -378,19 +376,19 @@
 									</a>
 									<ul class="dropdown-menu">
 										{% if user.is_admin %}
-											<li><a id="agency" href="{% url 'user_send_mail' %}">{% trans "Register User" %}</a></li>
-											<li><a id="all_controller" href="{% url 'users' %}">{% trans "All Ch. to Outside Travels" %}</a></li>
-											<li><a id="all_daaf" href="{% url 'daafs' %}">{% trans "All DAF " %}</a></li>
+											<li><a id="agency" href="">{% trans "Register User" %}</a></li>
+											<li><a id="all_controller" href="">{% trans "All Ch. to Outside Travels" %}</a></li>
+											<li><a id="all_daaf" href="">{% trans "All DAF " %}</a></li>
 										{% endif %}
 										
 									</ul>
 								</li>
 							{% elif user.is_controller %}
-								<li><a id="all_daaf" href="{% url 'daafs' %}">{% trans "All DAF" %}</a></li>
+								<li><a id="all_daaf" href="">{% trans "All DAF" %}</a></li>
 							{% endif %}
 						{% endif %}
 						{% if not user.is_agency %}
-							<li><a id="pers" href="{% url 'personnes_all' %}">{% trans "Travellers" %}</a></li>
+							<li><a id="pers" href="">{% trans "Travellers" %}</a></li>
 							{% if user.is_admin %}
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -398,12 +396,12 @@
 										<span class="caret"></span>
 									</a>
 									<ul class="dropdown-menu">
-										<li><a id="charts" href="{% url 'charts' %}">{% trans "Charts" %}</a></li>
-										<li><a id="actions" href="{% url 'users_action_tracking' %}">{% trans "Users Actions" %}</a></li>
+										<li><a id="charts" href="">{% trans "Charts" %}</a></li>
+										<li><a id="actions" href="">{% trans "Users Actions" %}</a></li>
 									</ul>
 								</li>
 							{% else %}
-								<li><a id="charts" href="{% url 'charts' %}">{% trans "Charts" %}</a></li>
+								<li><a id="charts" href="">{% trans "Charts" %}</a></li>
 							{% endif %}
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -412,10 +410,10 @@
 								</a>
 								<ul class="dropdown-menu">
 									{% if user.is_admin %}
-										<li><a id="agency" href="{% url 'agency_send_mail' %}">{% trans "Register Agency" %}</a></li>
+										<li><a id="agency" href="">{% trans "Register Agency" %}</a></li>
 									{% endif %}
-									<li><a id="all_agency" href="{% url 'all_agency' %}">{% trans "All Agencies" %}</a></li>
-									<li><a id="company" href="{% url 'company' %}">{% trans " All Company" %}</a></li>
+									<li><a id="all_agency" href="">{% trans "All Agencies" %}</a></li>
+									<li><a id="company" href="">{% trans " All Company" %}</a></li>
 								</ul>
 							</li>
 						{% endif %}
@@ -444,7 +442,7 @@
 													{% endif %}
 													{% if user.is_admin %}
 														<p class="text-left">
-															<a class="btn btn-primary btn-block btn-sm" id="profile" href="{% url 'user_profile' user.id %}">
+															<a class="btn btn-primary btn-block btn-sm" id="profile" href="">
 																<i class="glyphicon glyphicon-user"></i>
 																{% trans "My Profile" %}
 															</a>
@@ -476,7 +474,7 @@
 							</ul>
 						</li>
 						<li>
-							<a target="_blank" href="{% url 'user_guide' %}">
+							<a target="_blank" href="">
 								<i style="color: #FFFFFF;font-size: 25px" class="fa">&#63;</i>
 							</a>
 						</li>

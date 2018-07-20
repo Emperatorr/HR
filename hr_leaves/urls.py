@@ -7,7 +7,9 @@ from .views import (
     update_user_profile,
     change_password,
     create_success,
-    delete_user
+    delete_user,
+    add_department,
+    add_function
     )
 
 urlpatterns = [
@@ -19,5 +21,7 @@ urlpatterns = [
     url(r'^suppression-de-l-utilisateur/(?P<user_id>[0-9]+)$', delete_user, name='delete_user'),
     url(r'^changement-de-mot-de-passe/$', change_password, name='change_password'),
     url(r'^creation-avec-success/$', create_success, name='create_success'),
+    url(r'^add-department/$', add_department, name='department'),
+    url(r'^add-function/$', add_function, name='function'),
     
 ]
