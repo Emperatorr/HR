@@ -92,9 +92,6 @@ class Employe(User):
     def get_short_name(self):
         return self.first_name
 
-    # def get_absolute_url(self):
-    #     return reverse('user_profile', args=[self.id])
-
 # Stock des conges
 class Conge(models.Model):
     employe = models.ForeignKey(Employe, related_name='conges')

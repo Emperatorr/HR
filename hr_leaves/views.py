@@ -36,7 +36,7 @@ class RegistrationView(generic.CreateView):
     form_class = RegistrationForm
     form_valid_message = _('you have successfully signed up')
     success_url = reverse_lazy('login')
-    model = User
+    model = Employe
     template_name = 'hr_leaves/register.html'
 
 
@@ -44,7 +44,7 @@ class RegistrationView(generic.CreateView):
 class LoginView(generic.FormView):
     form_class = LoginForm
     form_valid_message = 'you are logged in'
-    model = User
+    model = Employe
     success_url = reverse_lazy('acceuil')
     template_name = 'hr_leaves/login.html'
 
@@ -83,7 +83,7 @@ def logout_view(request):
 
 @login_required
 def delete_user(request, user_id):
-    user = User.objects.get(id=user_id)
+    user = Employe.objects.get(id=user_id)
 
     context = {'user': user.get_full_name()}
     html_content = render_to_string('mails/user_account_delete.html', context)
@@ -108,13 +108,7 @@ def change_password(request):
             update_session_auth_hash(request, user)
 
             messages.success(request, _('Your password was Successfully Updated!'))
-            if request.user.is_agency:
-                return redirect('agency', request.user.id)
-            if request.user.is_controller:
-                return redirect('user', request.user.id)
-            if not request.user.is_agency and not request.user.is_admin:
-                return redirect('user', request.user.id)
-            return redirect('user_profile', request.user.id)
+            return redirect('acceuil')
         else:
             messages.error(request, _('Please correct the errors below!'))
     else:
@@ -125,60 +119,33 @@ def change_password(request):
 
 @login_required
 def user_profile(request, user_id):
-    user = User.objects.get(id=user_id)
+    user = Employe.objects.get(id=user_id)
+    fonctions = Fonction.objects.all()
+    departments = Departement.objects.all()
 
-    return render(request, 'hr_leaves/user_profile.html', {'users': user, 'ministries': ministries})
+    return render(request, 'hr_leaves/user_profile.html', {'users': user, 'departments': departments, 'fonctions': fonctions, 'genders': GENRE_CHOICES})
 
 @login_required
 def update_user_profile(request, user_id):
     if request.method == 'POST':
-        user = User.objects.get(id=user_id)
-        if user.is_agency:
-            user.email = request.POST.get('email', None)
-            user.first_name = request.POST.get('name', None)
-            user.phone = request.POST.get('phone_number', None)
-            user.address = request.POST.get('address', None)
-            user.expired_date = request.POST.get('expired_date', None)
-            user.save()
-            messages.success(request, _("The agency's account has been successfully updated"))
-            return redirect('all_agency',)
-        elif user.is_controller or user.is_admin:
-            user.email = request.POST.get('email', None)
-            user.first_name = request.POST.get('first_name', None)
-            user.last_name = request.POST.get('last_name', None)
-            user.id_number = request.POST.get('id_number', None)
-            user.passport_number = request.POST.get('passport_number', None)
-            user.position = request.POST.get('position', None)
-            user.address = request.POST.get('address', None)
-            if not user.is_admin:
-                m = request.POST.get('ministry', None)
-                user.ministry = Ministry.objects.get(pk=m)
-            user.save()
-            messages.success(request, _('This Profil has been updated succesfully'))
-            return redirect('users',)
-        else:
-            user.email = request.POST.get('email', None)
-            user.first_name = request.POST.get('first_name', None)
-            user.last_name = request.POST.get('last_name', None)
-            user.id_number = request.POST.get('id_number', None)
-            user.passport_number = request.POST.get('passport_number', None)
-            user.position = request.POST.get('position', None)
-            user.address = request.POST.get('address', None)
-            if not user.is_admin:
-                m = request.POST.get('ministry', None)
-                user.ministry = Ministry.objects.get(pk=m)
-            user.save()
-            messages.success(request, _('This Profil has been updated succesfully'))
-            return redirect('daafs',)
+        user = Employe.objects.get(id=user_id)
+
+        user.email = request.POST.get('email', None)
+        user.first_name = request.POST.get('first_name', None)
+        user.last_name = request.POST.get('last_name', None)
+        user.phone1 = request.POST.get('phone1', '')
+        user.phone2 = request.POST.get('phone2', '')
+        user.address = request.POST.get('address', None)
+        user.genre = request.POST.get('gender', None)
+
+        user.save()
+        messages.success(request, _('Your Profil has been updated succesfully'))
+        return redirect('acceuil')
 
         user.save()
 
-        updated= True
-        # messages.success(request, _('You Profil has been updated succesfully'))
     else:
-        updated = False
-
-    return redirect('users',)
+        return redirect('user_profile', user.id)
 
 @login_required
 def user_account(request, user_id):
@@ -209,7 +176,7 @@ def create_success(request):
 
 @login_required
 def delete_user(request, user_id):
-    user = User.objects.get(id=user_id)
+    user = Employe.objects.get(id=user_id)
     user.delete()
     messages.success(request, _('Account succesfully deleted'))
     return redirect('users')
