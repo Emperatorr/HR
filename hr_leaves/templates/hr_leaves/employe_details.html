@@ -82,7 +82,7 @@
       <tbody>
         {% for conge in conges %}
               <tr>
-                <td></td>
+                <td>{{ forloop.counter }}</td>
                 <td>{{ conge.type_conge }}</td>
                 <td>{{ conge.nombre_jour }}</td>
               </tr>
