@@ -6,23 +6,21 @@ from django.core.exceptions import ValidationError
 from crispy_forms.helper import FormHelper
 from crispy_forms.bootstrap import *
 from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit
-from hr_leaves.models import User
+from hr_leaves.models import *
 import datetime
 from django.forms.extras.widgets import SelectDateWidget
 
 class RegistrationForm(UserCreationForm):
 
     class Meta:
-        model = User
+        model = Employe
         fields = ('email', 'first_name', 'last_name', 'password1',
-                  'password2', 'id_number', 'position', 'matricule', 'genre')
+                  'password2', 'matricule', 'genre')
         labels = {
             'matricule': _('Matricule'),
             'email': _('Email'),
             'first_name': _('First Name'),
             'last_name': _('Last Name'),
-            'id_number': _('ID Number'),
-            'position': _('Position'),
             'departement': _('Departement'),
             'genre': _('Genre')
         }
@@ -32,7 +30,6 @@ class RegistrationForm(UserCreationForm):
 
         self.helper = FormHelper()
         self.helper.layout = Layout(
-            'etat',
             'matricule',
             'first_name',
             'last_name',
@@ -40,10 +37,7 @@ class RegistrationForm(UserCreationForm):
             'email',
             'password1',
             'password2',
-            'id_number',
-            'position',
             'departement',
-            'ministry',
             ButtonHolder(
                 Submit('register', _('Register'))
             )

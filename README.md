@@ -19,7 +19,7 @@ source env_name/bin/activate Or in windows scrips env_name/bin/activate
 
 #### 2. While in the virtualenv Clone the Repository
 ```
-git clone https://github.com/dntech17/hr-leaves.git
+git clone https://github.com/dntech17/hr_leaves.git
 ```
 
 #### 3. cd into the Repo and install dependencies
