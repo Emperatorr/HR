@@ -72,6 +72,7 @@
 		.container {
 			margin-top: 1%;
 			margin-bottom: 5%;
+			width:80%;
 		}
 		.body {
 			display: block;
@@ -310,6 +311,19 @@
 						<div id="navbar" class="navbar-collapse collapse">
 							<ul class="nav navbar-nav navbar-right">
 								<li><a id="missions" href="{% url 'acceuil' %}">{% trans "Home" %}</a></li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+										{% trans "Leaves" %}
+										<span class="caret"></span>
+									</a>
+									<ul class="dropdown-menu">
+										{% if user.is_admin %}
+											<li><a id="leave_request" href="{% url 'leave_request' %}">{% trans "New Leave request" %}</a></li>
+											<li><a id="all_demande" href="{% url 'all_demande' %}">{% trans "All request" %}</a></li>
+										{% endif %}
+										
+									</ul>
+								</li>
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 										<span class="glyphicon glyphicon-user"></span> 

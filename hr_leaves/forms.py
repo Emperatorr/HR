@@ -71,8 +71,8 @@ class LoginForm(AuthenticationForm):
 
 class DemandeForm(forms.ModelForm):
     
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+    # def __init__(self, *args, **kwargs):
+    #     super(DemandeForm, self).__init__(*args, **kwargs)
 
     class Meta:
         model = Demande
@@ -100,18 +100,3 @@ class DemandeForm(forms.ModelForm):
                 'required': 'true'
             })
         }
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
-        self.helper = FormHelper()
-        self.helper.layout = Layout(
-            Fieldset(
-                _('Demande'),
-                Field('type_conge', id="type_conge-field", placeholder=_("type de conge")),
-                Field('status', id="status-field", placeholder=_("Your status"))
-            ),
-            ButtonHolder(
-                Submit('envoi', _('Envoyer'))
-            )
-        )

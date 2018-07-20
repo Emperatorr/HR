@@ -125,18 +125,40 @@ def change_password(request):
 
 @login_required
 def demande(request):
+    form = DemandeForm()
     if request.method == 'POST':
-        form = DemandeForm(request, request.POST)
+        form = DemandeForm(request.POST)
         if form.is_valid():
-            form.save()
+            
+            type_conge = form.cleaned_data['type_conge']
+            nombre_jour = form.cleaned_data['nombre_jour']
+            date_debut = form.cleaned_data['date_debut']
+            date_fin = form.cleaned_data['date_fin']
+
+            print('type: ' + str(type_conge))
+            print('nombre: ' + str(nombre_jour))
+            print('date_debut: ' + str(date_debut))
+            print('date_fin : ' + str(date_fin))
+
+            demande = Demande()
+            demande.type_conge = type_conge
+            demande.nombre_jour = nombre_jour
+            demande.date_debut = date_debut
+            demande.date_fin = date_fin
+            demande.employe = request.user
+            demande.save()
+
             messages.success(request, _('Your request is successfuly sent'))
-            return redirect('leave_request', request.user)
+            return redirect('all_demande')
         else:
             messages.error(request, _('Please correct the errors below!'))
-    else:
-        form = DemandeForm(request)
     return render(request, 'hr_leaves/demande.html', {'form': form })
 
+@login_required
+def all_demande(request):
+    demandes = Demande.objects.filter(employe=request.user)
+    return render(request, 
+    'hr_leaves/all_demande.html', {'demandes': demandes })
 
 @login_required
 def user_profile(request, user_id):

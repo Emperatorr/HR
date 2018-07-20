@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load i18n %}
+{% load lookup %}
 
 {% load staticfiles %}
 
@@ -8,13 +9,21 @@
     #edit {
       color: blue;
     }
+    .btn-groups{
+      margin-bottom:20px;
+    }
   </style>
 {% endblock %}
 
 {% block content %}
-
   <h2 class="text-center">{% trans "Leave Requests List" %}</h2>
   <div class="content">
+    <div class="btn-groups">
+      <a href="{% url 'leave_request' %}" class="btn btn-lg btn-success">
+          <span class="glyphicon glyphicon-plus"></span>
+          {% trans "Add new leave request" %}
+      </a>
+    </div>
     <table class="table table-striped table-bordered" cellspacing="0" width="100%" id="datatable">
       <thead>
         <tr>
@@ -34,11 +43,10 @@
               <td>{{ demande.nombre_jour}}</td>
               <td>{{ demande.date_debut }}</td>
               <td>{{ demande.date_fin }}</td>
-              <td>{{ demande.status }}</td>
+              <td>{{ demande.status|format_status }}</td>
             </tr>
             
           {% endfor %}
-        {% endif %}
       </tbody>
     </table>
   </div>
