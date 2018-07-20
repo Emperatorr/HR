@@ -1,5 +1,6 @@
 {% load staticfiles %}
 {% load i18n %}
+{% load permission_tags %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -303,8 +304,13 @@
 						<div id="navbar" class="navbar-collapse collapse">
 							<ul class="nav navbar-nav navbar-right">
 								<li><a id="missions" href="{% url 'acceuil' %}">{% trans "Home" %}</a></li>
+								{% if user|can:'view_department' %}
 								<li><a id="missions" href="{% url 'department' %}">{% trans "Departments" %}</a></li>
+								{% endif %}
+								{% if user|can:'view_function' %}
 								<li><a href="{% url 'function' %}">{% trans "Functions" %}</a></li>
+								{% endif %}
+								{% if user|can:'view_employer' %}
 								<li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{% trans "Employee" %}<span class="caret"></span></a>
                                         <ul class="dropdown-menu">
@@ -313,6 +319,7 @@
                                         </ul>
                                     
                                 </li>
+                                {% endif %}
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 										<span class="glyphicon glyphicon-user"></span> 
@@ -320,7 +327,7 @@
 										<span class="caret"></span>
 									</a>
 									<ul class="dropdown-menu">
-										{% if user.is_admin %}
+										{% if user|can:'request_leave' %}
 											<li><a href="{% url 'leave_request' %}">{% trans "New Leave request" %}</a></li>
 											<li><a href="{% url 'all_demande' %}">{% trans "All request" %}</a></li>
 										{% endif %}

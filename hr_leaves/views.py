@@ -28,6 +28,10 @@ from django.template.loader import render_to_string
 from django.utils.dateparse import parse_datetime
 from chartit import DataPool, Chart
 from django.shortcuts import render_to_response
+from rolepermissions.decorators import has_role_decorator
+from rolepermissions.roles import assign_role
+from django.contrib.auth.decorators import permission_required
+from rolepermissions.checkers import has_object_permission, has_permission
 
 from django.contrib.auth.hashers import make_password
 from math import *
@@ -208,7 +212,12 @@ def register(request):
             empoly.phone2 = form.cleaned_data['phone2']
             empoly.address = form.cleaned_data['address']
 
+            empoly.set_password('1234')
+
             empoly.save()
+            #empoly.set_password('1234')
+
+            assign_role(empoly,'employer')
 
             for typ in Type_conge.objects.all():
 
@@ -244,7 +253,7 @@ def list_employ(request):
     all_user = Employe.objects.all()
 
     return render(request, 'hr_leaves/list_employees.html', {'all_user':all_user})
-
+"""
 @login_required
 def register(request):
     form = EmployeForm()
@@ -288,6 +297,7 @@ def register(request):
             print("not valid")
 
     return render(request, 'hr_leaves/employe.html', {'form':form})
+"""
 
 def employe_details(request, emp_id):
 
