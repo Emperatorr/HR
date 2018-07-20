@@ -13,6 +13,7 @@ from .views import (
     acceuil,
     register,
     list_employ,
+    employe_details,
     )
 
 urlpatterns = [
@@ -29,5 +30,6 @@ urlpatterns = [
     url(r'^acceuil/$', acceuil, name='acceuil'),
     url(r'^register/$', register, name='register'  ),
     url(r'^list_employe/$', list_employ, name='employees'),
+    url(r'^employe_details/(?P<emp_id>[0-9]+)$', employe_details, name='employe_details')
     
 ]

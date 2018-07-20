@@ -32,15 +32,17 @@
           <th>{% trans "First Name" %}</th>
           <th>{% trans "Last Name" %}</th>
           <th>{% trans "Email" %}</th>
+          <th>{% trans "View" %}</th>
         </tr>
       </thead>
       <tbody>
-        {% for all_users in all_user %}
+        {% for user in all_user %}
               <tr>
                 <td></td>
-                <td>{{ all_users.first_name }}</td>
-                <td>{{ all_users.last_name }}</td>
-                <td>{{ all_users.email }}</td>
+                <td>{{ user.first_name }}</td>
+                <td>{{ user.last_name }}</td>
+                <td>{{ user.email }}</td>
+                <td><a href="{% url 'employe_details' user.id %}">View</a></td>
               </tr>
         {% endfor %}
       </tbody>
