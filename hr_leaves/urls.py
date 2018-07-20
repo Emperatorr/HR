@@ -8,7 +8,9 @@ from .views import (
     change_password,
     create_success,
     delete_user,
-    acceuil
+    acceuil,
+    register,
+    list_employ,
     )
 
 urlpatterns = [
@@ -22,5 +24,7 @@ urlpatterns = [
     url(r'^creation-avec-success/$', create_success, name='create_success'),
 
     url(r'^acceuil/$', acceuil, name='acceuil'),
+    url(r'^register/$', register, name='register'  ),
+    url(r'^list_employe/$', list_employ, name='employees'),
     
 ]

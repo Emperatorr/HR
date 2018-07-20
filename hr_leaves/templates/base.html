@@ -310,6 +310,16 @@
 						<div id="navbar" class="navbar-collapse collapse">
 							<ul class="nav navbar-nav navbar-right">
 								<li><a id="missions" href="{% url 'acceuil' %}">{% trans "Home" %}</a></li>
+								<li>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{% trans "Employee" %}<b class="caret"></b></a>
+                                        <ul class="dropdown-menu">
+                                        <li><a href="{% url 'register' %}">{% trans "registration" %}</a></li>
+                                        <li><a href="{% url 'employees' %}">{% trans "list" %}</a></li>
+                                                    
+                                        
+                                        </ul>
+                                    
+                                </li>
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 										<span class="glyphicon glyphicon-user"></span> 
