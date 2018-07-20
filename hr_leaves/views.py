@@ -216,18 +216,23 @@ def register(request):
                 conge.save()
                 print("end save")
 
-
-            
-
-
             messages.success(request, 'Vous avez bien ajouté un employé')
             return redirect('employees')
             
-
         else:
             print("not valid")
 
     return render(request, 'hr_leaves/employe.html', {'form':form})
+
+def employe_details(request, emp_id):
+
+    employ = Employe.objects.get(id=emp_id)
+    try:
+        conges = Conge.objects.filter(employe=employ)
+    except Conge.DoesNotExist:
+        conges = None
+
+    return render(request, 'hr_leaves/employe_details.html', {'employ':employ, 'conges':conges})
 
 @login_required
 def list_employ(request):
