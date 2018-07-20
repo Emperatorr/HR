@@ -271,6 +271,34 @@ def list_employ(request):
     all_user = Employe.objects.all()
 
     return render(request, 'hr_leaves/list_employees.html', {'all_user':all_user})
+
+@login_required
+def updateEmploye(request,emp_id):
+    employ = get_object_or_404(Employe, pk=emp_id)
+    fonct = Fonction.objects.get(id=employ.fonction.id)
+    dep =  Departement.objects.get(id=employ.departement.id)
+    form = UpdateEmployForm(employ.matricule, employ.first_name, employ.last_name, employ.fonction, employ.departement, employ.phone1, employ.phone2, employ.address, employ.email, employ.genre)
+    if request.method == 'POST':
+        
+        employ.matricule = request.POST.get('matricule')
+        employ.first_name = request.POST.get('first_name')
+        employ.last_name = request.POST.get('last_name')
+        employ.email = request.POST.get('email')
+        employ.genre = request.POST.get('genre')
+        employ.fonction = fonct
+        employ.departement = dep
+        employ.phone1 = request.POST.get('phone1')
+        employ.phone2 = request.POST.get('phone2')
+        employ.address = request.POST.get('address')
+
+        employ.save()
+
+        messages.success(request, 'Vous avez bien modifié l\'employé')
+
+    
+        return redirect('employees')
+
+    return render(request, 'hr_leaves/update_employe.html', {'form':form})
 """
 @login_required
 def register(request):

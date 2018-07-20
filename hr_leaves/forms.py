@@ -204,3 +204,81 @@ class EmployeForm(forms.ModelForm):
                     queryset=Fonction.objects.all(),
                     widget=forms.Select(attrs={'class':'form-control'})
                     )
+
+class UpdateEmployForm(forms.ModelForm):
+    def __init__(self, matricule, first_name, last_name, fonction, departement, phone1, phone2, address, email, genre, * args, **kwargs):
+        super(UpdateEmployForm, self).__init__(*args, **kwargs)
+        
+        self.initial['matricule']     = matricule
+        self.initial['first_name']     = first_name
+        self.initial['last_name']     = last_name
+        self.initial['fonction']     = fonction
+        self.initial['departement']     = departement
+        self.initial['phone1']     = phone1
+        self.initial['phone2']     = phone2
+        self.initial['address']     = address
+        self.initial['email']     = email
+        self.initial['genre'] = genre
+
+    class Meta:
+        model   = Employe
+        fields  = ['matricule','first_name','last_name', 'fonction', 'departement', 'phone1', 'phone2', 'address', 'email', 'genre']
+
+        widgets = {
+                'matricule': forms.TextInput(attrs={
+                    'placeholder': 'Matricule',
+                    'class': 'form-control'
+                }),
+                'first_name': forms.TextInput(attrs={
+                    'placeholder': 'Prenom',
+                    'class': 'form-control'
+                }),
+                'last_name': forms.TextInput(attrs={
+                    'placeholder': 'Nom',
+                    'class': 'form-control'
+                }),
+                'fonction': forms.Select(attrs={
+                    'placeholder': 'fonction',
+                    'class': 'form-control'
+                }),
+                'departement': forms.Select(attrs={
+                    'placeholder': 'Departement',
+                    'class': 'form-control'
+                }),
+                'phone1': forms.fields.TextInput(attrs={
+                    'placeholder': 'Numero de telephone',
+                    'class': 'form-control',
+                    'type': 'tel',
+                    'id' : 'phone',
+                    'min' : '600000000',
+                    'max' : '699999999',
+                    'pattern' : '^6(3|2|6|5)[0-9]{7}',
+                    'title' : 'S\'il vous plait veuiller respecter le format de telephone guineen'
+                }),
+                'phone2': forms.fields.TextInput(attrs={
+                    'placeholder': 'Numero de telephone',
+                    'class': 'form-control',
+                    'type': 'tel',
+                    'id' : 'phone',
+                    'min' : '600000000',
+                    'max' : '699999999',
+                    'pattern' : '^6(3|2|6|5)[0-9]{7}',
+                    'title' : 'S\'il vous plait veuiller respecter le format de telephone guineen'
+                }),
+                'address': forms.Textarea(attrs={
+                    'placeholder': 'Adresse',
+                    'class': 'form-control',
+                    'cols': '10',
+                    'row': '5'
+                }),
+                'email': forms.fields.EmailInput(attrs={
+                    'placeholder': 'Adresse email',
+                    'class': 'form-control'
+                }),
+                'genre': forms.Select(attrs={
+                    'placeholder': 'Genre',
+                    'class': 'form-control'
+                }),
+            }
+        
+
