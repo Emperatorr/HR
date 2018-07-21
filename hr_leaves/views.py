@@ -213,7 +213,6 @@ def register(request):
 
     if request.method == 'POST':
         form = EmployeForm(request.POST)
-        typ_conge = Type_conge.objects.all()
 
         if form.is_valid():
             empoly = Employe()
@@ -233,8 +232,7 @@ def register(request):
             empoly.set_password('1234')
 
             empoly.save()
-            #empoly.set_password('1234')
-
+            
             assign_role(empoly,'employer')
 
             for typ in Type_conge.objects.all():
@@ -244,9 +242,8 @@ def register(request):
                 conge.employe = Employe.objects.last()
                 conge.type_conge = typ
                 conge.nombre_jour = 0
-                print(typ.indice)
+                
                 conge.save()
-                print("end save")
 
             messages.success(request, 'Vous avez bien ajouté un employé')
             return redirect('employees')
