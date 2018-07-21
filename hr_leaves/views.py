@@ -275,18 +275,18 @@ def list_employ(request):
 @login_required
 def updateEmploye(request,emp_id):
     employ = get_object_or_404(Employe, pk=emp_id)
-    fonct = Fonction.objects.get(id=employ.fonction.id)
-    dep =  Departement.objects.get(id=employ.departement.id)
     form = UpdateEmployForm(employ.matricule, employ.first_name, employ.last_name, employ.fonction, employ.departement, employ.phone1, employ.phone2, employ.address, employ.email, employ.genre)
     if request.method == 'POST':
         
+        fonct = Fonction.objects.get(id=request.POST.get('fonction'))
+        depar = Departement.objects.get(id=request.POST.get('departement'))
         employ.matricule = request.POST.get('matricule')
         employ.first_name = request.POST.get('first_name')
         employ.last_name = request.POST.get('last_name')
         employ.email = request.POST.get('email')
         employ.genre = request.POST.get('genre')
         employ.fonction = fonct
-        employ.departement = dep
+        employ.departement = depar
         employ.phone1 = request.POST.get('phone1')
         employ.phone2 = request.POST.get('phone2')
         employ.address = request.POST.get('address')
