@@ -15,12 +15,13 @@
 	<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap-theme.min.css' %}">
 	<link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="{% static 'css/particle.css' %}">
+
 	{% block link %}
 	{% endblock %}
 	{% block topjs %}
 	{% endblock %}
 	<style>
-		
 		@font-face {
 			font-family: 'CenturyGothic';
 			src: url({% static 'fonts/centurygothic-webfont.eot' %});
@@ -69,9 +70,11 @@
 			min-height: 100%;
 		}
 		.container {
+			/*
 			margin-top: 1%;
 			margin-bottom: 5%;
 			width:80%;
+			*/
 		}
 		.body {
 			display: block;
@@ -143,8 +146,9 @@
 			text-align: center;
 		}
 		.text-left {
-			color: #fff;
+			color: #337ab7;
 			font-size: 16px;
+			text-align: center;
 		}
 		#logout {
 			background-color: #c12e2a;
@@ -199,7 +203,7 @@
 				position: relative;
 				margin-top: 15px;
 				border-color: transparent;
-				background-color: #337ab7;
+				background-color: #265a88;
 				z-index: 100000;
 				text-align: center;
 			}

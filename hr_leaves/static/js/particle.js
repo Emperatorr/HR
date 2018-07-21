@@ -9,7 +9,7 @@ particlesJS("particles-js",
         }
       },
       "color": {
-        "value": "#2b2beb"
+        "value": "#265a88"
       },
       "shape": {
         "type": "circle",
@@ -48,8 +48,8 @@ particlesJS("particles-js",
       },
       "line_linked": {
         "enable": true,
-        "distance": 150,
-        "color": "#2a95ac",
+        "distance": 170,
+        "color": "#265a88",
         "opacity": 0.4,
         "width": 1
       },
@@ -110,5 +110,3 @@ particlesJS("particles-js",
     "retina_detect": true
   }
 );
-
-console.log('sa marche')
