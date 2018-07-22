@@ -1,7 +1,7 @@
 #!/bin/bash
 
 THISHOST=$(hostname)
-if [ $THISHOST = "ebiassy" ]; then
+if [ $THISHOST = "hr_leaves" ]; then
     echo "ebiassy send_mail"_$(date +'%Y_%m_%dT%H_%M_%S')
     export USER=smsi
     export MAIL=/var/mail/smsi
