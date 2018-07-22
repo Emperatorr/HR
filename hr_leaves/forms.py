@@ -176,6 +176,7 @@ class EmployeForm(forms.ModelForm):
                 'id' : 'phone',
                 'min' : '600000000',
                 'max' : '699999999',
+                'required': 'False',
                 'pattern' : '^6(3|2|6|5)[0-9]{7}',
                 'title' : 'S\'il vous plait veuiller respecter le format de telephone guineen'
             }),

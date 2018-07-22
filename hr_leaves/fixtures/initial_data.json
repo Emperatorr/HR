@@ -22,7 +22,6 @@
 		"pk": 1,
 		"fields": {
 			"name": "Developpeur",
-			"categorie": "manager",
 			"created_at": "2018-07-20 07:07:07.61434+00",
 			"updated_at": "2018-07-20 07:07:07.61434+00"
 		}
@@ -32,7 +31,6 @@
 		"pk": 2,
 		"fields": {
 			"name": "Developpeur",
-			"categorie": "employe",
 			"created_at": "2018-07-20 07:07:07.61434+00",
 			"updated_at": "2018-07-20 07:07:07.61434+00"
 		}

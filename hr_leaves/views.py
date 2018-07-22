@@ -440,11 +440,8 @@ def add_function(request):
         
         if form.is_valid():
             name = form.cleaned_data['name']
-            categorie = form.cleaned_data['categorie']
-
             fonction = Fonction()
             fonction.name = name
-            fonction.categorie = categorie
             fonction.save()
 
             return redirect('function')
