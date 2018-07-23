@@ -134,12 +134,7 @@ def demande(request):
             date_debut = form.cleaned_data['date_debut']
             date_fin = form.cleaned_data['date_fin']
             reason = form.cleaned_data['reason']
-
-            print('type: ' + str(type_conge))
-            print('nombre: ' + str(nombre_jour))
-            print('date_debut: ' + str(date_debut))
-            print('date_fin : ' + str(date_fin))
-
+            
             demande = Demande()
             demande.type_conge = type_conge
             demande.nombre_jour = nombre_jour
@@ -172,8 +167,18 @@ def validate_demande(request, dmd_id):
         demande.status = 2
     demande.reason = request.POST.get('reason', None)
     demande.by = request.user
-
     demande.save()
+
+    type_conge = demande.type_conge
+    employe = demande.employe
+
+    conges = Conge.objects.filter(
+        employe = demande.employe,
+        type_conge = demande.type_conge
+    )
+    for conge in conges:
+        conge.nombre_jour -= int(demande.nombre_jour)
+        conge.save()
 
     return redirect('all_demande')
 
@@ -213,7 +218,6 @@ def register(request):
 
     if request.method == 'POST':
         form = EmployeForm(request.POST)
-        typ_conge = Type_conge.objects.all()
 
         if form.is_valid():
             empoly = Employe()
@@ -233,8 +237,7 @@ def register(request):
             empoly.set_password('1234')
 
             empoly.save()
-            #empoly.set_password('1234')
-
+            
             assign_role(empoly,'employer')
 
             for typ in Type_conge.objects.all():
@@ -244,9 +247,8 @@ def register(request):
                 conge.employe = Employe.objects.last()
                 conge.type_conge = typ
                 conge.nombre_jour = 0
-                print(typ.indice)
+                
                 conge.save()
-                print("end save")
 
             messages.success(request, 'Vous avez bien ajouté un employé')
             return redirect('employees')
@@ -271,6 +273,34 @@ def list_employ(request):
     all_user = Employe.objects.all()
 
     return render(request, 'hr_leaves/list_employees.html', {'all_user':all_user})
+
+@login_required
+def updateEmploye(request,emp_id):
+    employ = get_object_or_404(Employe, pk=emp_id)
+    form = UpdateEmployForm(employ.matricule, employ.first_name, employ.last_name, employ.fonction, employ.departement, employ.phone1, employ.phone2, employ.address, employ.email, employ.genre)
+    if request.method == 'POST':
+        
+        fonct = Fonction.objects.get(id=request.POST.get('fonction'))
+        depar = Departement.objects.get(id=request.POST.get('departement'))
+        employ.matricule = request.POST.get('matricule')
+        employ.first_name = request.POST.get('first_name')
+        employ.last_name = request.POST.get('last_name')
+        employ.email = request.POST.get('email')
+        employ.genre = request.POST.get('genre')
+        employ.fonction = fonct
+        employ.departement = depar
+        employ.phone1 = request.POST.get('phone1')
+        employ.phone2 = request.POST.get('phone2')
+        employ.address = request.POST.get('address')
+
+        employ.save()
+
+        messages.success(request, 'Vous avez bien modifié l\'employé')
+
+    
+        return redirect('employees')
+
+    return render(request, 'hr_leaves/update_employe.html', {'form':form})
 """
 @login_required
 def register(request):
@@ -415,11 +445,8 @@ def add_function(request):
         
         if form.is_valid():
             name = form.cleaned_data['name']
-            categorie = form.cleaned_data['categorie']
-
             fonction = Fonction()
             fonction.name = name
-            fonction.categorie = categorie
             fonction.save()
 
             return redirect('function')

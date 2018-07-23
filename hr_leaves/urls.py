@@ -20,6 +20,7 @@ from .views import (
     acceuil,
     register,
     list_employ,
+    updateEmploye,
     employe_details,
     add_manager,
     delete_manager
@@ -51,7 +52,8 @@ urlpatterns = [
 
     url(r'^acceuil/$', acceuil, name='acceuil'),
     url(r'^register/$', register, name='register'  ),
-    url(r'^list_employe/$', list_employ, name='employees'),
+    url(r'^list_employe/$', list_employ, name='employees'),   
+    url(r'^update_employe/(?P<emp_id>[0-9]+)$', updateEmploye, name='update_employe'),
     url(r'^employe_details/(?P<emp_id>[0-9]+)$', employe_details, name='employe_details')
     
 ]

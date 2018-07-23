@@ -5,7 +5,14 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-     <p>{% trans "You are connected" %}</p>
-     <p>{% trans "Your home page" %}</p>
+    <div class="row text-center">
+        <p>{% trans "Your are at your home page" %}</p>
+        <a href="{% url 'login' %}">
+            <button type="button" class="btn btn-sucess btn-lg">
+                <span class="glyphicon glyphicon-"></span>{% trans "Back to login page" %}
+            </button>
+        </a>
+        
+    </div>
 {% endif %}
 {% endblock content %}
