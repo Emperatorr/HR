@@ -19,7 +19,7 @@ source env_name/bin/activate Or in windows scrips env_name/bin/activate
 
 #### 2. While in the virtualenv Clone the Repository
 ```
-git clone https://github.com/dntech17/hr_leaves.git
+git clone https://github.com/dntech17/hr_soum.git
 ```
 
 #### 3. cd into the Repo and install dependencies
@@ -31,10 +31,10 @@ pip install -r requirements.txt
 ```
 sudo -i -u postgres
 createuser --interactive -P
-user=hr_leaves
-password=hr_leaves@dntech!@#$
+user=hr_soum
+password=hr_soum@dntech!@#$
 
-createdb hr_leaves_db
+createdb hr_soum_db
 ```
 
 #### 4. Migrate the Database and Create a Superuser

@@ -9,7 +9,7 @@ INTERNAL_IPS = []
 
 # Allow heroku host to execture our app
 ALLOWED_HOSTS = [
-    'rh_leaves.herokuapp.com',
+    'rh_soum.herokuapp.com',
 ]
 
 # Change our secret key in production

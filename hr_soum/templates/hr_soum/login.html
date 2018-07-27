@@ -1,0 +1,178 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block style %}
+   <style type="text/css">
+	 h3 {
+	   text-align: center;
+	 }
+	
+	 .titre h2 {
+		padding-top: 1%;
+		font-size: 9vh;
+		padding-bottom: 1%;
+		color: #104e85
+	 }
+	 .p-tag {
+			margin: -20px 0 10px;
+			font-weight: normal;
+	 }
+	 .reset {
+				font-size: 2.5vh;
+	 }
+	 .reset-link {
+				color: #337ab7;
+	 }
+
+	#form .well {
+		background: rgba(232 , 233, 233, 0.7);
+		background-size: cover;
+		margin-top: 1%;
+		width: 60vh;
+		margin: auto;
+		margin-bottom: 1%;
+		border: 1px solid #000000;
+	}
+	.form-control {
+		height: 5.6vh;
+		font-size: 2.5vh;
+	}
+	 .buttonHolder {
+			text-align: center;
+	 }
+	 .buttonHolder input{
+	    font-weight: bold;
+	    font-size: 3vh;
+	 }
+	 .buttonHolder input:hover {
+	   cursor: pointer;
+	 }
+	 
+	 .logo {
+		margin-bottom: 1%;
+	 }
+	 
+	 .logo h1,
+	 .logo	p,
+	 .logo h2 {
+		padding: 0;
+		margin: 0;
+	 }
+	 
+	 .logo h2 {
+		font-size: 3.5vh !important;
+	 }
+	 
+	 .logo p {
+		font-size: 2.7vh !important;
+		opacity: 0.5;
+	 }
+	 
+	 .logo h1 {
+		text-transform: uppercase;
+		font-size: 6vh !important;
+	 }
+	 
+	 legend{
+		font: 4.9vh bold;
+		text-align: center;
+	 }
+	 div.hr {
+	  display: -webkit-box;
+	  display: -moz-box;
+	  display: -ms-flexbox;
+	  display: -webkit-flex;
+	  display: flex;
+	  width: 100%;
+	  margin: 10px 0;
+	  color: #555;
+	  text-shadow: 0 1px rgba(255, 255, 255, 0.4);
+	}
+	div.hr div {
+	  font-family: 'Courgette', cursive;
+	  font-size: 3.7vh;
+	}
+	div.hr div:first-child,
+	div.hr div:last-child, .line {
+	  -webkit-flex: 1;
+	  -moz-flex: 1;
+	  flex: 1;
+	  position: relative;
+	}
+	div.hr div:first-child:before,
+	div.hr div:last-child:before, .line:before {
+	  content: ' ';
+	  position: absolute;
+	  top: 50%;
+	  left: 0px;
+	  right: 0px;
+	  height: 1px;
+	  background-color: #5F5F5F;
+	  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+	  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+	  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+	}
+	div.hr div:first-child {
+	  margin-right: 20px;
+	}
+	div.hr div:last-child {
+	  margin-left: 20px;
+	}
+	.line {
+		width: 10%;
+		margin-left: 45%;
+		height: 0.5px;
+		padding: 9px 0;
+		opacity: 0.5;
+	}
+	#login_fixed_container{
+		z-index: 0;
+		position: absolute;
+		top:15%;
+		left:33%
+	}
+   </style>
+{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated == False %}
+		<div id="login_fixed_container">
+			<div class="logo row text-center">
+				<h1>{% trans "HR Management" %}</h1>
+			</div>
+
+			<div class="row text-center">
+				<div class="col-md-12 titre">
+					<p>
+						<h2>{% trans "SOUM APP" %}</h2>
+					</p>
+				</div>
+			</div>
+
+		<div class="row" id="form">
+			<div class="well">
+				{% crispy form %}
+			</div>
+		</div>
+		<p class="text-center"><strong class="reset">{% trans "Forget your password? " %}<a href="{% url 'password_reset' %}" class="reset-link">{% trans "reset" %}</a></strong></p>
+	</div>
+{% else %}
+	<div class="row text-center">
+		<p>{% trans "You are connected" %}</p>
+		<a href="{% url 'acceuil' %}">
+			<button type="button" class="btn btn-sucess btn-lg">
+				<span class="glyphicon glyphicon"></span>{% trans "Click here to go back to home" %}
+			</button>
+		</a>
+		<a href="{% url 'logout' %}">
+			<button type="button" class="btn btn-alert btn-lg">
+				<span class="glyphicon glyphicon"></span>{% trans "Click here to Logout" %}
+			</button>
+		</a>  
+	</div>
+{% endif %}
+
+{% endblock content %}

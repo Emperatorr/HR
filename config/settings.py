@@ -53,7 +53,7 @@ EMAIL_USE_TLS = True
 # Application definition
 
 INSTALLED_APPS = (
-    'hr_leaves',
+    'hr_soum',
     
     'django.contrib.admin',
     'django.contrib.auth',
@@ -68,7 +68,7 @@ INSTALLED_APPS = (
     'django_countries',
 )
 
-AUTH_USER_MODEL = 'hr_leaves.Employe'
+AUTH_USER_MODEL = 'hr_soum.Employe'
 
 LOGIN_URL = 'login'
 
@@ -116,7 +116,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'hr_leaves_db',
+        'NAME': 'hr_soum_db',
         'USER': 'hr_leaves',
         'PASSWORD': 'hr_leaves@dntech!@#$',
         'HOST': 'localhost',
@@ -179,5 +179,5 @@ REST_FRAMEWORK = {
     )
 }
 
-ROLEPERMISSIONS_MODULE = 'hr_leaves.roles'
+ROLEPERMISSIONS_MODULE = 'hr_soum.roles'
 ROLEPERMISSIONS_REDIRECT_TO_LOGIN = True

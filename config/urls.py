@@ -20,7 +20,7 @@ from django.conf import settings
 from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.utils.translation import ugettext_lazy as _
-from hr_leaves import urls as hr_urls
+from hr_soum import urls as hr_urls
 
 # urlpatterns = [
 #     url(r'^admin/', include(admin.site.urls)),
@@ -36,6 +36,6 @@ urlpatterns = i18n_patterns(
     url(r'^admin/', include(admin.site.urls)),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-admin.site.site_title = _('RH Leaves Admin')
-admin.site.site_header = _('RH leaves Administration')
-admin.site.index_title = _('RH Leaves Administration')
+admin.site.site_title = _('RH Soum Admin')
+admin.site.site_header = _('RH Soum Administration')
+admin.site.index_title = _('RH Soum Administration')
