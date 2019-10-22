@@ -134,12 +134,7 @@ def demande(request):
             date_debut = form.cleaned_data['date_debut']
             date_fin = form.cleaned_data['date_fin']
             reason = form.cleaned_data['reason']
-
-            print('type: ' + str(type_conge))
-            print('nombre: ' + str(nombre_jour))
-            print('date_debut: ' + str(date_debut))
-            print('date_fin : ' + str(date_fin))
-
+            
             demande = Demande()
             demande.type_conge = type_conge
             demande.nombre_jour = nombre_jour
@@ -172,8 +167,18 @@ def validate_demande(request, dmd_id):
         demande.status = 2
     demande.reason = request.POST.get('reason', None)
     demande.by = request.user
-
     demande.save()
+
+    type_conge = demande.type_conge
+    employe = demande.employe
+
+    conges = Conge.objects.filter(
+        employe = demande.employe,
+        type_conge = demande.type_conge
+    )
+    for conge in conges:
+        conge.nombre_jour -= int(demande.nombre_jour)
+        conge.save()
 
     return redirect('all_demande')
 
