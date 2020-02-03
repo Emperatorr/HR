@@ -34,5 +34,5 @@ wcwidth==0.1.7
 whitenoise==3.3.0
 wrapt==1.10.10
 django_countries==4.6.1
-djangorestframework==3.6.3
+djangorestframework==3.9.1
 django-role-permissions==2.2.0
