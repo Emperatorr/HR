@@ -10,7 +10,7 @@ django-model-utils==3.0.0
 django-notifications-hq==1.2
 django-static-jquery==2.1.4
 gunicorn==19.7.1
-ipython==6.1.0
+ipython==7.16.3
 ipython-genutils==0.2.0
 isort==4.2.15
 jedi==0.10.2
