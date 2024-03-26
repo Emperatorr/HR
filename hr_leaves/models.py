@@ -74,7 +74,7 @@ class Departement(models.Model):
 # Type conges
 class Type_conge(models.Model):
     name = models.CharField(max_length=100, null=True)
-    indice = models.IntegerField(default=1)
+    indice = models.FloatField(default=1)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -103,7 +103,7 @@ class Employe(User):
 
 # Stock des conges
 class Conge(models.Model):
-    employe = models.ForeignKey(Employe, related_name='conges')
+    employe = models.ForeignKey(Employe, related_name='employe')
     type_conge = models.ForeignKey(Type_conge, related_name='conges')
     nombre_jour = models.IntegerField(default=0)
     last_calculation_date = models.DateTimeField(auto_now_add=True, null=True)

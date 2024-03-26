@@ -42,7 +42,7 @@
 		"pk": 2,
 		"fields": {
 			"name": "Annual leave",
-			"indice": 1,
+			"indice": 2.5,
 			"created_at": "2018-07-20 07:07:07.61434+00",
 			"updated_at": "2018-07-20 07:07:07.61434+00"
 		}
@@ -52,7 +52,7 @@
 		"pk": 1,
 		"fields": {
 			"name": "Sick leave",
-			"indice": 1,
+			"indice": 1.0,
 			"created_at": "2018-07-20 07:07:07.61434+00",
 			"updated_at": "2018-07-20 07:07:07.61434+00"
 		}

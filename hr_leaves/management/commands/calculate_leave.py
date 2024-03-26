@@ -25,12 +25,15 @@ def calculate_leaves():
         if conge.last_calculation_date is not None:
             
             interval = get_interval_from_date_to_now(conge.last_calculation_date)
-            now_day = interval.seconds / (3600 * 24 * 28)
-
-            if now_day >= 1:
-                print("it's the end of the month, so we add ")
-                indice = Type_conge.objects.get(id=conge.type_conge.id).indice
-                conge.nombre_jour = ( conge.nombre_jour + indice)
+            interval_day = interval.days
+            month_days = 30
+            indice = Type_conge.objects.get(id=conge.type_conge.id).indice
+            
+            while ((interval_day - month_days) >= 1):
+                conge.nombre_jour = (float(conge.nombre_jour) + float(indice))
+                # print('nouveau nbre jours : ' + str(conge.nombre_jour))
+                
+                interval_day -= month_days
                 conge.last_calculation_date = datetime.datetime.now()
                 conge.save()
 
